@@ -1,4 +1,4 @@
-/*#include <iostream>
+#include <iostream>
 #include <fstream>
 #include "../narzedzia/Vektor.h"
 #include "../narzedzia/striing.h"
@@ -21,11 +21,13 @@ void wczytaj(N_striing a, N_striing& slowo)
 	file.open(a.m_c_str());
 	if (file.good())
 	{
-		N_striing	slow = "";
+		N_striing	linie;
 		while (true)
 		{
-			slowo.m_getline(file);
-			slowo += slow;
+			linie.m_clear();
+			linie.m_getline(file);
+			if (linie == "\0") break;
+			slowo += linie;
 		}
 		file.close();
 	}
@@ -108,15 +110,18 @@ void zapis(N_striing a, N_striing& haslo)
 void wczytuj(N_striing& haslo, bool& istnieje)
 {
 
-	std::fstream file;
+	std::ifstream file;
 	file.open(haslo.m_c_str());
 	if (file.good())
 	{
 		N_striing linie = "";
 		istnieje = true;
 		haslo = "";
-		while (getline(file, linie.m_sts()))
+		while (true)
 		{
+			linie.m_clear();
+			linie.m_getline(file);
+			if (linie == "\0") break;
 			haslo += linie;
 		}
 		file.close();
@@ -136,15 +141,18 @@ int main_rozkowowywanie(N_striing a)
 }
 void wczytaj_rozkodowacz(N_striing a, N_vektor <N_striing> &date, bool& istnieje)
 {
-	std::fstream file;
+	std::ifstream file;
 	file.open(a.m_c_str());
 	if (file.good())
 	{
 		istnieje = true;
-		N_striing linia;
-		while (getline(file, linia.m_sts()))
+		N_striing linie;
+		while (true)
 		{
-			date.m_push_back(linia);
+			linie.m_clear();
+			linie.m_getline(file);
+			if (linie == "\0") break;
+			date.m_push_back(linie);
 		}
 		file.close();
 	}
@@ -321,16 +329,18 @@ void zapis_sz(N_striing a, N_striing& haslo, int* s)
 void wczytuj_sz(N_striing& slowo, N_vektor<N_striing>& s)
 {
 	N_striing linia = "";
-	std::fstream file;
+	std::ifstream file;
 	file.open(slowo.m_c_str());
 	if (file.good())
 	{
 
-		while (getline(file, linia.m_sts())) {
+		while (true) {
+			linia.m_clear();
+			linia.m_getline(file);
+			if (linia == "\0") break;
 			linia += "#@#";
 			s.m_push_back(linia);
 		}
 		file.close();
 	}
 }
-*/
