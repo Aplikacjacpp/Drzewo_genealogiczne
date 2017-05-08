@@ -3,7 +3,7 @@
 #include "Data\Enginer\enigma.h"
 int main()
 {
-/*	//C_data Data;
+	//C_data Data;
 	C_day day;
 	C_month month;
 	C_year year;
@@ -59,10 +59,12 @@ int main()
 	std::cout << "day:\t" <<day.m_what_type()<<"\t"<< Return << "\nmonth:\t" << month.m_what_type() << "\t"<< Return1 << "\nyear:\t" <<year.m_what_type()<<"\t"<< Return2 << "\nId:\t" <<Id.m_what_type()<<"\t"<< Return3 <<
 		"\nFirst_name:\t" <<First.m_what_type()<<"\t"<< Return4 << "\nLast_name:\t" <<Last.m_what_type()<<"\t"<< Return5 << "\nGender:\t" <<gender.m_what_type()<<"\t"<< Return6 << "\n";
 	
-	*/
-	
 
+	
+	/*
 
 	main_szyfrowanie("plik.txt", "dom", 5);
+	system("type plik.txt");
+	main_odszyfrowywanie("plik.txt", "dom", 5);*/
 	return 0;
 }

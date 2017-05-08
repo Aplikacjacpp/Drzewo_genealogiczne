@@ -41,11 +41,11 @@ void wczytaj(N_striing a, N_striing& slowo)
 void zapis(N_striing a, N_striing& haslo);
 void wczytaj_rozkodowacz(N_striing a, N_vektor <N_striing> &date, bool& istnieje);
 void analizuj_rozkodowacz(N_vektor <N_striing> &date, N_striing files);
-int main_odszyfrowywanie(N_striing a, N_striing tablica[], int X)
+int main_odszyfrowywanie(N_striing a, N_striing tablica, int X)
 {
 	N_vektor <alfabet> v;
 	N_striing slowo = "", haslo = "";
-	haslo = tablica[X];
+	haslo.m_itoa(X);
 	wczytaj(a, slowo);
 	ladowanie_sz(v);
 	haslo = szyfrowanie(slowo, v, haslo);
@@ -337,13 +337,16 @@ void wczytuj_sz(N_striing& slowo, N_vektor<N_striing>& s)
 	N_striing linia = "";
 	std::ifstream file;
 	file.open(slowo.m_c_str());
+	int x;
 	if (file.good())
 	{
 
 		while (true) {
 			linia.m_clear();
 			linia.m_getline(file);
+			std::cout << linia;
 			if (linia == "\0") break;
+			std::cin >> x;
 			linia += "#@#";
 			s.m_push_back(linia);
 		}

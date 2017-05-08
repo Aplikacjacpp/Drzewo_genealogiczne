@@ -143,7 +143,8 @@ N_striing& N_striing::m_push_front(const char &gover)
 N_striing N_striing::m_clear()
 {
 	N_striing G;
-	return G;
+	*this = G;
+	return *this;
 }
 N_striing& N_striing::m_shift(int i, const char &value)
 {
