@@ -1,3 +1,16 @@
+/***************************************************************************************************************
+*"sl_date.h"
+*
+*
+*
+*
+*
+*CONTENTS:
+* "Klasa dziecko po klasie C_save_load"
+*HISTORY:
+*version   Date Changes																	 	Author/Programmer
+*1.0     06.05.2017  Orginal design													  Lukasz Witek vel Witkowski
+****************************************************************************************************************/
 #ifndef C_SL_RELATIONS
 #define C_SL_RELATIONS
 #include "save_load.h"

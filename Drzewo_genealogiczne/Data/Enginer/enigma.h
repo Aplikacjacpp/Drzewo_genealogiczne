@@ -1,6 +1,5 @@
-#include <iostream>
+/*#include <iostream>
 #include <fstream>
-#include <string>
 #include "../narzedzia/Vektor.h"
 #include "../narzedzia/striing.h"
 struct alfabet
@@ -18,13 +17,14 @@ N_striing szyfrowanie(N_striing& slowo, N_vektor<alfabet> &v, N_striing& haslo);
 void wczytuj(N_striing& haslo, bool& istnieje);
 void wczytaj(N_striing a, N_striing& slowo)
 {
-	std::fstream file;
+	std::ifstream file;
 	file.open(a.m_c_str());
 	if (file.good())
 	{
 		N_striing	slow = "";
-		while (getline(file, slow.m_sts()))
+		while (true)
 		{
+			slowo.m_getline(file);
 			slowo += slow;
 		}
 		file.close();
@@ -333,3 +333,4 @@ void wczytuj_sz(N_striing& slowo, N_vektor<N_striing>& s)
 		file.close();
 	}
 }
+*/

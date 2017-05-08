@@ -1,3 +1,16 @@
+/***************************************************************************************************************
+*"goverment.h"
+*
+*
+*
+*
+*
+*CONTENTS:
+* "Klasa bazowa dla innych klas do przechowywania 'wierszy' pliku"
+*HISTORY:
+*version   Date Changes																	 	Author/Programmer
+*1.0     06.05.2017  Orginal design													  Lukasz Witek vel Witkowski
+****************************************************************************************************************/
 #ifndef GOVERMENT_H
 #define GOVERMENT_H
 class C_goverment
