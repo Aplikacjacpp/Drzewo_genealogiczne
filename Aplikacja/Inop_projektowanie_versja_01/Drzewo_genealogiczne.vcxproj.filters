@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Data">
+      <UniqueIdentifier>{a27bad39-dbda-444b-b40f-b51205cf9215}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Data">
+      <UniqueIdentifier>{e7e28d3d-b26f-44af-b00e-392036d7312d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Enginer">
+      <UniqueIdentifier>{72b2f141-c347-4c14-b867-9adffa61fa74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Enginer">
+      <UniqueIdentifier>{62c224ee-022c-4eaa-8244-fa06f0ce913c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Databases">
+      <UniqueIdentifier>{0f6de51f-4976-488f-9054-9540dd83d8a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Databases">
+      <UniqueIdentifier>{5a93ae1e-294a-45a2-bf50-c21d5ae44e06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Project_Tools">
+      <UniqueIdentifier>{483123ba-319c-4338-80a9-0f91d8478535}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Project_Tools">
+      <UniqueIdentifier>{a76aeaef-68fc-4352-a9bc-009334decfbf}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="narzedzia\Striing.cpp">
+      <Filter>Resource Files\Project_Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Data\data.cpp">
+      <Filter>Resource Files\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="Data\id.cpp">
+      <Filter>Resource Files\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="Data\first_name.cpp">
+      <Filter>Resource Files\Data</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="narzedzia\striing.h">
+      <Filter>Header Files\Project_Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Data\data.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="Data\id.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="Data\first_name.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
