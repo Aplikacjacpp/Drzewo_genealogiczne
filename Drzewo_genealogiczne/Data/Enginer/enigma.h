@@ -7,6 +7,12 @@ struct alfabet
 	char litera;
 	int lp;
 	int ascii;
+	bool operator==(alfabet &a) {
+		if (litera == a.litera&&lp == a.lp&&ascii == a.ascii) return true; return false;
+	}
+	bool operator!=(alfabet &a) {
+		if (litera != a.litera&&lp != a.lp&&ascii != a.ascii) return true; return false;
+	}
 };
 N_striing szyfrowanie_sz(N_vektor<alfabet>& v, N_striing& haslo, N_vektor<N_striing>& s);
 void ladowanie_sz(N_vektor<alfabet> &v);
@@ -188,13 +194,13 @@ void analizuj_rozkodowacz(N_vektor <N_striing> &date, N_striing files)
 		file.close();
 	}
 }
-int main_szyfrowanie(N_striing a, N_striing tablica[], int X)
+int main_szyfrowanie(N_striing a, N_striing tablica, int X)
 {
 	int s = 0;
 	N_vektor <alfabet> v;
 	N_vektor <N_striing> slo;
 	N_striing  haslo = "";
-	haslo = tablica[X];
+	haslo.m_itoa(X);
 	ladowanie_sz(v);
 	wczytuj_sz(a, slo);
 	haslo = szyfrowanie_sz(v, haslo, slo);

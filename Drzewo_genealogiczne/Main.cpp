@@ -60,6 +60,9 @@ int main()
 		"\nFirst_name:\t" <<First.m_what_type()<<"\t"<< Return4 << "\nLast_name:\t" <<Last.m_what_type()<<"\t"<< Return5 << "\nGender:\t" <<gender.m_what_type()<<"\t"<< Return6 << "\n";
 	
 	*/
+	
 
+
+	main_szyfrowanie("plik.txt", "dom", 5);
 	return 0;
 }
