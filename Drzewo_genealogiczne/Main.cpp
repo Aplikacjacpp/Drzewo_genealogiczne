@@ -3,7 +3,7 @@
 int main()
 {
 	//C_data Data;
-	C_day day;
+	C_day day;		// definicja zmiennej day
 	C_month month;
 	C_year year;
 	C_id Id;
