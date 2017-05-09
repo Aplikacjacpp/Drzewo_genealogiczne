@@ -20,6 +20,8 @@
 using std::cout;
 using std::endl;
 
+
+
 class C_aplication_txt :
 	public C_aplication
 {

@@ -17,6 +17,9 @@ bool C_aplication_txt::operator!=(const C_aplication_txt& aplication_txt) {
 }
 C_aplication_txt::~C_aplication_txt() {}
 
+
+
+
 void C_aplication_txt::CreateLogo()       // metoda tworzy logo (atrape "drzewka")
 {
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);   // metoda ustawia kolory = 15 to bialy
