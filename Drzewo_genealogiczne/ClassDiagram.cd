@@ -3,28 +3,28 @@
   <Class Name="C_date" Collapsed="true">
     <Position X="7.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAgAAAAAAAAAAAAAAAAAgQAgAAAAAAAAAAAgIAAAAAA=</HashCode>
+      <HashCode>CBiAAAAAAABCAAAAAAAAgQAgAAAAAIAAQAAgIAAAAAA=</HashCode>
       <FileName>Data\Date\date.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="C_day" Collapsed="true">
     <Position X="3" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACIAAAAAQAAAAAAAAAAAIQAAACAAAAAAAAAgAAQAAAA=</HashCode>
+      <HashCode>ACIAAAABQAAAAAAAAAAAIQAAACAAAAAAAAAgAAQAAAA=</HashCode>
       <FileName>Data\Date\day.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="C_month" Collapsed="true">
     <Position X="7.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACIAAAAAAACAAAAIAAAAAQAAACAAAAAAAAAgAACAAAA=</HashCode>
+      <HashCode>ACIAAAAAAACAAAAIIAAAAQAAACAAAAAAAAAgAACAAAA=</HashCode>
       <FileName>Data\Date\month.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="C_year" Collapsed="true">
     <Position X="12" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACIAAAAAAAAAAAAAAAAAAQAAACAABBAAAAAggAAAAAA=</HashCode>
+      <HashCode>ACIAAAAAAAAAAAAAAAAAAQAAACAABBAAAAAggAAABAA=</HashCode>
       <FileName>Data\Date\year.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -227,8 +227,8 @@
   <Struct Name="alfabet" Collapsed="true">
     <Position X="16.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAEEAAAAAAA=</HashCode>
-      <FileName>Data\Enginer\enigma.h</FileName>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAQAAEEAAAAAAA=</HashCode>
+      <FileName>Data\Enginer\alphabet.h</FileName>
     </TypeIdentifier>
   </Struct>
   <Font Name="Tahoma" Size="8.25" />
