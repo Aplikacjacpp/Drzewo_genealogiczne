@@ -17,6 +17,7 @@
 #define C_RELATION_H
 #include "..\narzedzia\striing.h"
 #include "../Personaly/id.h"
+#include "../Helpful/definition.h"
 class C_relation
 {
 public:

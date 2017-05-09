@@ -1,7 +1,7 @@
 #include "id.h"
-C_id::C_id() :C_data("d0") { s_data_id = ""; }
-C_id::C_id(N_striing &id) : C_data("d0") { s_data_id = m_is_there_contens(id); }
-C_id::C_id(int id) : C_data("d0") { s_data_id.m_itoa(id); }
+C_id::C_id() :C_data(n_id_data) { s_data_id = ""; }
+C_id::C_id(N_striing &id) : C_data(n_id_data) { s_data_id = m_is_there_contens(id); }
+C_id::C_id(int id) : C_data(n_id_data) { s_data_id.m_itoa(id); }
 C_id::C_id(const C_id &id):C_data(id) {
 	if (this != &id) *this = id;
 }

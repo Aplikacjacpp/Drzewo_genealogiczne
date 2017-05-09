@@ -64,6 +64,15 @@
     <Filter Include="Dokumentacja">
       <UniqueIdentifier>{38b8207f-bfed-4453-9fb8-af6cb3f68c79}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Helpful">
+      <UniqueIdentifier>{e7d09872-44bc-479c-a3af-55e59ebe9c4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dokumentacja\Stara">
+      <UniqueIdentifier>{4709db9f-ed99-4817-a814-dd84042ecc0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dokumentacja\Nowa">
+      <UniqueIdentifier>{0032b377-36df-4f85-bde2-18e08d383d38}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -263,12 +272,22 @@
     <ClInclude Include="Data\Enginer\enigma.h">
       <Filter>Header Files\Enginer</Filter>
     </ClInclude>
+    <ClInclude Include="Data\Helpful\definition.h">
+      <Filter>Header Files\Helpful</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
     <None Include="ClassDiagram2.cd" />
-    <None Include="..\Dokumentacja.doc">
-      <Filter>Dokumentacja</Filter>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="..\Dokumentacja\Wersja robocza\Nowa_wersja\Dok_Firmy_Programistycznej.doc">
+      <Filter>Dokumentacja\Nowa</Filter>
+    </None>
+    <None Include="..\Dokumentacja\Wersja robocza\Nowa_wersja\Dok_Przedsięwzięcia_Prog.doc">
+      <Filter>Dokumentacja\Nowa</Filter>
+    </None>
+    <None Include="..\Dokumentacja\Wersja robocza\Star_wersja\Dokumentacja.doc">
+      <Filter>Dokumentacja\Stara</Filter>
     </None>
   </ItemGroup>
 </Project>

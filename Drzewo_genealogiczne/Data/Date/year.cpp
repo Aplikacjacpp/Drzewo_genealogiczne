@@ -1,7 +1,7 @@
 #include "year.h"
-C_year::C_year() :C_data("Y0") { i_data_year = 0; }
-C_year::C_year(N_striing &year) : C_data("Y0") { i_data_year = m_is_there_contens(year).m_atoi(0, year.m_size()); }
-C_year::C_year(int year) : C_data("Y0") { i_data_year = year; }
+C_year::C_year() :C_data(n_year) { i_data_year = 0; }
+C_year::C_year(N_striing &year) : C_data(n_year) { i_data_year = m_is_there_contens(year).m_atoi(0, year.m_size()); }
+C_year::C_year(int year) : C_data(n_year) { i_data_year = year; }
 C_year::C_year(const C_year &year):C_data(year) {
 	if (this != &year) *this = year;
 }

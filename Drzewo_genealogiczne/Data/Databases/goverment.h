@@ -15,6 +15,7 @@
 #ifndef GOVERMENT_H
 #define GOVERMENT_H
 #include "../narzedzia/striing.h"
+#include "../Helpful/definition.h"
 class C_goverment
 {
 public:
@@ -30,7 +31,7 @@ public:
 
 private:
 	virtual N_striing m_is_there_contens(N_striing &Word) = 0;
-	N_striing s_data_text;
+	N_striing s_goverment_text;
 };
 #endif // !GOVERMENT_H
 

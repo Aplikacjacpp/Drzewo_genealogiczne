@@ -17,6 +17,7 @@
 #ifndef DATA_H
 #define DATA_H
 #include "../narzedzia/striing.h"
+#include "../Helpful/definition.h"
 class C_data
 {
 public:
@@ -33,8 +34,6 @@ public:
 	virtual N_striing m_set_contens() = 0;
 //Methods Implementate
 	N_striing m_what_type();
-protected:
-	//virtual N_striing m_is_there_contens(N_striing &Word) = 0;
 private:
 	virtual N_striing m_is_there_contens(N_striing &Word) = 0;
 	N_striing s_data_text;
