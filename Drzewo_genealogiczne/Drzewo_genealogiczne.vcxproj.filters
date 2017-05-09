@@ -269,11 +269,11 @@
     <ClInclude Include="Data\Databases\goverment_relation.h">
       <Filter>Header Files\Databases</Filter>
     </ClInclude>
-    <ClInclude Include="Data\Enginer\enigma.h">
-      <Filter>Header Files\Enginer</Filter>
-    </ClInclude>
     <ClInclude Include="Data\Helpful\definition.h">
       <Filter>Header Files\Helpful</Filter>
+    </ClInclude>
+    <ClInclude Include="Data\Enginer\alphabet.h">
+      <Filter>Header Files\Enginer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

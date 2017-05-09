@@ -188,7 +188,7 @@
     <ClInclude Include="Data\Date\month.h" />
     <ClInclude Include="Data\Date\year.h" />
     <ClInclude Include="Data\Enginer\enginer.h" />
-    <ClInclude Include="Data\Enginer\enigma.h" />
+    <ClInclude Include="Data\Enginer\alphabet.h" />
     <ClInclude Include="Data\Enginer\save_load.h" />
     <ClInclude Include="Data\Enginer\sl_date.h" />
     <ClInclude Include="Data\Enginer\sl_personalys.h" />

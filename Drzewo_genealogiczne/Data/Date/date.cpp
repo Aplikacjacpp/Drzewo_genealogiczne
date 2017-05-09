@@ -17,14 +17,14 @@ bool C_date::operator!=(const C_date &d) {
 	return false;
 }
 C_date::~C_date() {}
+C_day C_date::m_set_day() { C_day day(m_day_set()); return day; }
+C_month C_date::m_set_month() { C_month month(m_month_set()); return month; }
+C_year C_date::m_set_year() { C_year year(m_year_set()); return year; }
+N_striing  C_date::m_set_DD_MM_YYYY() { return m_day_set() + m_month_set() + m_year_set(); }
+N_striing  C_date::m_set_MM_DD_YYYY() { return m_month_set() + m_day_set()+ m_year_set(); }
+N_striing  C_date::m_set_YYYY_MM_DD() { return m_year_set() + m_month_set() + m_day_set(); }
+N_striing  C_date::m_set_YYYY_DD_MM() { return m_year_set() + m_day_set() + m_month_set(); }
 /*
-C_day m_set_day();
-C_month m_set_month();
-C_year m_set_year();
-N_striing  m_set_DD_MM_YYYY();
-N_striing  m_set_MM_DD_YYYY();
-N_striing  m_set_YYYY_MM_DD();
-N_striing  m_set_YYYY_MM_DD();
 void m_get_DD_MM_YYYY(const C_day& day, const C_month& month, const C_year & year);
 void m_get_DD_MM_YYYY(int day, int month, int year);
 void m_get_DD_MM_YYYY(N_striing day, N_striing month, N_striing year);

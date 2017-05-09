@@ -29,15 +29,13 @@ public:
 	C_day& operator=(const C_day &C);
 	bool operator==(const C_day &C);
 	bool operator!=(const C_day &C);
-	//~C_day();
 	virtual ~C_day();
 	virtual bool m_wchat_is();
 	virtual void m_get_contens(N_striing &contens);
-	virtual N_striing m_set_contens();
-protected:
-
+	N_striing m_day_set();
 private:
 	virtual N_striing m_is_there_contens(N_striing &Word);
+	virtual N_striing m_set_contens();
 	int i_data_day = NULL;
 };
 #endif // !day_H

@@ -29,17 +29,14 @@ public:
 	C_month& operator=(const C_month &C);
 	bool operator==(const C_month &C);
 	bool operator!=(const C_month &C);
-	//~C_month();
 	virtual ~C_month();
 	virtual bool m_wchat_is();
 	virtual void m_get_contens(N_striing &contens);
-	virtual N_striing m_set_contens();
-protected:
-
+	N_striing m_month_set();
 private:
 	virtual N_striing m_is_there_contens(N_striing &Word);
-	//N_striing s_data_month;
 	int i_data_month;
+	virtual N_striing m_set_contens();
 };
 #endif // !month_H
 
