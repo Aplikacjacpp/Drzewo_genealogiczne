@@ -26,7 +26,7 @@ public:
 	C_date operator=(const C_date &d);
 	bool operator==(const C_date &d);
 	bool operator!=(const C_date &d);
-	C_day m_set_day();
+	C_day m_set_day(); 
 	C_month m_set_month();
 	C_year m_set_year();
 	N_striing  m_set_DD_MM_YYYY();
