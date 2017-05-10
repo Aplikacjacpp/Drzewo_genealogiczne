@@ -16,3 +16,4 @@ bool C_goverment::operator!=(const C_goverment& goverment) {
 	return false;
 }
 C_goverment::~C_goverment() {}
+

@@ -14,6 +14,7 @@ C_date"
 *1.1	 02.05.2015	 adding a virtual destructor									  Lukasz Witek vel Witkowski
 *1.2	 02.05.2015	 adding parameter constructor								      Lukasz Witek vel Witkowski
 *1.3	 03.05.2015	 adding methods												      Lukasz Witek vel Witkowski
+*1.3     09.05.2017  Adding a overloaded operator                                     Mateusz Marchelewicz
 ****************************************************************************************************************/
 #ifndef C_HUMAN_H
 #define C_HUMAN_H
@@ -32,6 +33,7 @@ public:
 	C_human& operator=(const C_human &human);
 	bool operator==(const C_human &human);
 	bool operator!=(const C_human &human);
+	friend std::ostream& operator<<(std::ostream& is, C_human &human);
 	void m_get_first_name(C_first_name &f_name);
 	void m_get_first_name(N_striing &f_name);
 	void m_get_last_name(C_last_name &l_name);

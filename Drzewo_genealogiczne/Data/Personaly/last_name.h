@@ -12,6 +12,7 @@
 *1.0     25.04.2017  Orginal design													  Mateusz Marchelewicz
 *1.1	 02.05.2015	 Adding a virtual destructor									  Lukasz Witek vel Witkowski
 *1.2	 02.05.2015	 Adding a virtual methods									      Lukasz Witek vel Witkowski
+*1.3     09.05.2017  Adding a overloaded operator									  Mateusz Marchelewicz
 ****************************************************************************************************************/
 #ifndef C_LAST_NAME_H
 #define C_LAST_NAME_H
@@ -25,6 +26,7 @@ public:
 	C_last_name& operator=(const C_last_name &last);
 	bool operator==(const C_last_name &last);
 	bool operator!=(const C_last_name &last);
+	friend std::ostream& operator<<(std::ostream& is, C_last_name &last);
 	//~C_last_name();
 	virtual ~C_last_name();
 	virtual bool m_wchat_is();
