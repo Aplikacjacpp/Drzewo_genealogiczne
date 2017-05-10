@@ -193,6 +193,7 @@
     <ClInclude Include="Data\Enginer\sl_date.h" />
     <ClInclude Include="Data\Enginer\sl_personalys.h" />
     <ClInclude Include="Data\Enginer\sl_relations.h" />
+    <ClInclude Include="Data\Helpful\definition.h" />
     <ClInclude Include="Data\Interface\aplication.h" />
     <ClInclude Include="Data\Interface\aplication_txt.h" />
     <ClInclude Include="Data\narzedzia\striing.h" />
@@ -211,8 +212,11 @@
     <ClInclude Include="Data\Relation\sibling.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\Dokumentacja.doc" />
+    <None Include="..\Dokumentacja\Wersja robocza\Nowa_wersja\Dok_Firmy_Programistycznej.doc" />
+    <None Include="..\Dokumentacja\Wersja robocza\Nowa_wersja\Dok_Przedsięwzięcia_Prog.doc" />
+    <None Include="..\Dokumentacja\Wersja robocza\Star_wersja\Dokumentacja.doc" />
     <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

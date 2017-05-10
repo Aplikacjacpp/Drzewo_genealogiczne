@@ -10,6 +10,11 @@ public:
 	bool operator==(const C_grandparents& grandparents);
 	bool operator!=(const C_grandparents& grandparents);
 	virtual ~C_grandparents();
+	virtual void m_get_id(C_id &id);
+	virtual C_id m_set_id();
+private:
+	C_id ID_index;
+	C_id ID_value;
 };
 #endif // !C_GRANDPARENTS_H
 

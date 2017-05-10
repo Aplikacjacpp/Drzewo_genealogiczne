@@ -1,7 +1,7 @@
 #include "month.h"
-C_month::C_month() :C_data("M0") { i_data_month = 0; }
-C_month::C_month(N_striing &month) : C_data("M0") { i_data_month = m_is_there_contens(month).m_atoi(0, month.m_size()); }
-C_month::C_month(int month) : C_data("M0") { i_data_month = month; }
+C_month::C_month() :C_data(n_month) { i_data_month = 0; }
+C_month::C_month(N_striing &month) : C_data(n_month) { i_data_month = m_is_there_contens(month).m_atoi(0, month.m_size()); }
+C_month::C_month(int month) : C_data(n_month) { i_data_month = month; }
 C_month::C_month(const C_month &month):C_data(month) {
 	if (this != &month) *this = month;
 }

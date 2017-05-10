@@ -1,9 +1,9 @@
 #include "last_name.h"
 
-C_last_name::C_last_name():C_data("&0"){
+C_last_name::C_last_name():C_data(n_last_name){
 	s_data_last_name = "";
 }
-C_last_name::C_last_name(N_striing &last):C_data("&0") {
+C_last_name::C_last_name(N_striing &last):C_data(n_last_name) {
 	s_data_last_name = m_is_there_contens(last);
 }
 C_last_name::C_last_name(const C_last_name &last_name):C_data(last_name) {

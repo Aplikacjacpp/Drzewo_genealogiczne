@@ -25,15 +25,12 @@ public:
 	bool operator==(const C_goverment_relation& goverment_relation);
 	bool operator!=(const C_goverment_relation& goverment_relation);
 	virtual ~C_goverment_relation();
-	/*
-	virtual bool m_wchat_is() = 0;
-	virtual void m_get_contens(N_striing &contens) = 0;
-	virtual N_striing m_set_contens() = 0;
-
+	virtual bool m_wchat_is();
+	virtual void m_get_contens(N_striing &contens);
+	virtual N_striing m_set_contens();
 	private:
-	virtual N_striing m_is_there_contens(N_striing &Word) = 0;
-	N_striing s_data_text;
-	*/
+	virtual N_striing m_is_there_contens(N_striing &Word);
+	N_striing s_goverment_relation;
 };
 #endif // !GOVERMENT_RELATION_H
 

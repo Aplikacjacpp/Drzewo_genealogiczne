@@ -1,7 +1,7 @@
 #include "gender.h"
-C_gender::C_gender() :C_data("!0") { s_data_gender = ""; }
-C_gender::C_gender(bool gender) : C_data("!0") { if (gender) s_data_gender = "Men"; else s_data_gender = "Woman"; }
-C_gender::C_gender(N_striing &gender) : C_data("!0") { s_data_gender = m_is_there_contens(gender); }
+C_gender::C_gender() :C_data(n_gender) { s_data_gender = ""; }
+C_gender::C_gender(bool gender) : C_data(n_gender) { if (gender) s_data_gender = "Men"; else s_data_gender = "Woman"; }
+C_gender::C_gender(N_striing &gender) : C_data(n_gender) { s_data_gender = m_is_there_contens(gender); }
 C_gender::C_gender(const C_gender &gender):C_data(gender) {
 	if (this != &gender) *this = gender;
 }

@@ -1,7 +1,7 @@
 #include "day.h"
-C_day::C_day() :C_data("D0") { i_data_day = 0; }
-C_day::C_day(N_striing &day):C_data("D0") { i_data_day = m_is_there_contens(day).m_atoi(0, day.m_size()); }
-C_day::C_day(int day):C_data("D0") { i_data_day = day; }
+C_day::C_day() :C_data(n_day) { i_data_day = 0; }
+C_day::C_day(N_striing &day):C_data(n_day) { i_data_day = m_is_there_contens(day).m_atoi(0, day.m_size()); }
+C_day::C_day(int day):C_data(n_day) { i_data_day = day; }
 C_day::C_day(const C_day &day):C_data(day) {
 	if (this != &day) *this = day;
 }

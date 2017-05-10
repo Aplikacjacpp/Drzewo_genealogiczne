@@ -1,8 +1,6 @@
 #include "first_name.h"
-C_first_name::C_first_name():C_data("$0"){
-	s_data_first_name = "";
-}
-C_first_name::C_first_name(N_striing &first):C_data("$0") {
+C_first_name::C_first_name() :C_data(n_first_name) { s_data_first_name = ""; }
+C_first_name::C_first_name(N_striing &first) :C_data(n_first_name) {
 	s_data_first_name = m_is_there_contens(first);
 }
 C_first_name::C_first_name(const C_first_name &first_name):C_data(first_name) {

@@ -1,7 +1,7 @@
 #include "parent.h"
-C_parent::C_parent():C_relation(){}
-C_parent::C_parent(C_id &id) : C_relation() { ID_index = id; }
-C_parent::C_parent(const C_id &id) : C_relation() { ID_index = id; }
+C_parent::C_parent():C_relation(n_parent){}
+C_parent::C_parent(C_id &id) : C_relation(n_parent) { ID_index = id; }
+C_parent::C_parent(const C_id &id) : C_relation(n_parent) { ID_index = id; }
 C_parent::C_parent(const C_parent &parent):C_relation(parent) {
 	if (this != &parent) *this = parent;
 }
