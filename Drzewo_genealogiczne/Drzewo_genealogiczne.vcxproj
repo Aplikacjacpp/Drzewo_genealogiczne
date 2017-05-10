@@ -188,7 +188,7 @@
     <ClInclude Include="Data\Date\month.h" />
     <ClInclude Include="Data\Date\year.h" />
     <ClInclude Include="Data\Enginer\enginer.h" />
-    <ClInclude Include="Data\Enginer\enigma.h" />
+    <ClInclude Include="Data\Enginer\alphabet.h" />
     <ClInclude Include="Data\Enginer\save_load.h" />
     <ClInclude Include="Data\Enginer\sl_date.h" />
     <ClInclude Include="Data\Enginer\sl_personalys.h" />
@@ -216,8 +216,6 @@
     <None Include="..\Dokumentacja\Wersja robocza\Nowa_wersja\Dok_Przedsięwzięcia_Prog.doc" />
     <None Include="..\Dokumentacja\Wersja robocza\Star_wersja\Dokumentacja.doc" />
     <None Include="ClassDiagram.cd" />
-    <None Include="ClassDiagram1.cd" />
-    <None Include="ClassDiagram2.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

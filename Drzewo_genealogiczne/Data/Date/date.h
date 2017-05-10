@@ -26,13 +26,14 @@ public:
 	C_date operator=(const C_date &d);
 	bool operator==(const C_date &d);
 	bool operator!=(const C_date &d);
-	/*C_day m_set_day();
+	C_day m_set_day();
 	C_month m_set_month();
 	C_year m_set_year();
 	N_striing  m_set_DD_MM_YYYY();
 	N_striing  m_set_MM_DD_YYYY();
 	N_striing  m_set_YYYY_MM_DD();
-	N_striing  m_set_YYYY_MM_DD();
+	N_striing  m_set_YYYY_DD_MM();
+	/*
 	void m_get_DD_MM_YYYY(const C_day& day, const C_month& month, const C_year & year);
 	void m_shift_day(const C_day &day);
 	void m_shift_day(int &day);
