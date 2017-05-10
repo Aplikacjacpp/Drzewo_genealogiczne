@@ -12,7 +12,7 @@
 *1.0     22.04.2017  Orginal design													  Lukasz Witek vel Witkowski
 *1.1	 02.05.2015	 Adding a virtual destructor									  Lukasz Witek vel Witkowski
 *1.2	 02.05.2015	 Adding a virtual methods									      Lukasz Witek vel Witkowski
-*1.3     09.05.2017  Adding a overloaded operator									  Mateusz Marchelewicz
+*1.3     09.05.2017  Adding a overloaded operators									  Mateusz Marchelewicz
 ****************************************************************************************************************/
 #ifndef C_FIRST_NAME_H
 #define C_FIRST_NAME_H
@@ -26,6 +26,8 @@ public:
 	C_first_name& operator=(const C_first_name &first);
 	bool operator==(const C_first_name &first);
 	bool operator!=(const C_first_name &first);
+	friend bool operator>(const C_first_name &first, const C_first_name &f1);
+	friend bool operator<(const C_first_name &first, const C_first_name &f1);
 	friend std::ostream& operator<<(std::ostream& is, C_first_name &first);
 	//~C_first_name();
 	virtual ~C_first_name();
