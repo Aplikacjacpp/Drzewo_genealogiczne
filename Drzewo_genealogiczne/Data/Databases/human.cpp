@@ -20,6 +20,16 @@ bool C_human::operator!=(const C_human &human) {
 	if (V_date == human.V_date && Id == human.Id && First == human.First && V_last == human.V_last) return false;
 	return true;
 }
+
+
+std::ostream& operator<<(std::ostream& is, C_human &human)
+{
+
+	is << "Human: ";		//is << "Human: " << human.m_get_first_name(&f_name);
+	return is;
+
+}
+
 C_human::~C_human() {}
 void C_human::m_get_first_name(C_first_name &f_name) { First = f_name; }
 void C_human::m_get_first_name(N_striing &f_name) { C_first_name F(f_name); First = F; }
@@ -56,3 +66,7 @@ C_gender C_human::m_set_gender() { return Gender; }
 C_id C_human::m_set_id() { return Id; }
 C_date C_human::m_set_date(int value) { return V_date[value]; }
 C_date C_human::m_set_date() { return V_date[0]; }
+
+
+
+
