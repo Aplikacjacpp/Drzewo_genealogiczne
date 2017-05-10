@@ -19,6 +19,9 @@
 #include "../Relation/children.h"
 #include "../Relation/sibling.h"
 #include "../Relation/parent.h"
+#include "../Relation//grandchildren.h"
+#include "../Relation//grandparents.h"
+#include "../Relation/other.h"
 class C_element
 {
 public:
@@ -59,6 +62,9 @@ private:
 	N_vektor<C_children> V_children;
 	N_vektor<C_parent> V_parent;
 	N_vektor<C_sibling> V_sibling;//trzeba przetestowac czy dziala, jak nie to cos wymysle!!
+	N_vektor<C_grandchildren> V_grandchildren;
+	N_vektor <C_grandparents> V_grandparents;
+
 };
 #endif // !ELEMENT_H
 

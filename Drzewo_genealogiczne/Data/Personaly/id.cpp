@@ -20,14 +20,16 @@ bool C_id::operator!=(const C_id &id) {
 }
 
 
-bool operator> (const C_id &id, const C_id &i1)
+bool C_id::operator>(C_id &id)
 {
-	return id > i1;
+	if (s_data_id.m_atoi(0, s_data_id.m_size()-1) > id.m_set_contens().m_atoi(0, m_set_contens().m_size()-1)) return true;
+	return false;
 }
 
-bool operator< (const C_id &id, const C_id &i1)
+bool C_id::operator<(C_id &id)
 {
-	return id < i1;
+	if (s_data_id.m_atoi(0, s_data_id.m_size()) < id.m_set_contens().m_atoi(0, m_set_contens().m_size())) return true;
+	return false;
 }
 
 

@@ -28,8 +28,8 @@ public:
 	C_id& operator=(const C_id &C);
 	bool operator==(const C_id &C);
 	bool operator!=(const C_id &C);
-	friend bool operator> (const C_id &id, const C_id &i1);
-	friend bool operator< (const C_id &id, const C_id &i1);
+	bool operator>(C_id &id);
+	bool operator<(C_id &id);
 	//~C_id();
 	virtual ~C_id();
 	virtual bool m_wchat_is();
