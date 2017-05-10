@@ -31,6 +31,6 @@ N_striing C_day::m_is_there_contens(N_striing &Word) {
 	} while (y != Word.m_size() && Word.m_size() <= 2);
 	return Word;
 } //do rozwiniecia
-
+N_striing C_day::m_day_set() { return m_set_contens(); }
 
 

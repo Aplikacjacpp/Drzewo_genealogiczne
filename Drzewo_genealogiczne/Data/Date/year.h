@@ -30,17 +30,15 @@ public:
 	C_year& operator=(const C_year &C);
 	bool operator==(const C_year &C);
 	bool operator!=(const C_year &C);
-	//~C_year();
 	virtual ~C_year();
 	virtual bool m_wchat_is();
 	virtual void m_get_contens(N_striing &contens);
-	virtual N_striing m_set_contens();
-protected:
 
+	N_striing m_year_set();
 private:
 	virtual N_striing m_is_there_contens(N_striing &Word);
-	//N_striing s_data_year;
 	int i_data_year;
+	virtual N_striing m_set_contens();
 };
 #endif // !year_H
 

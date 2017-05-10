@@ -1,6 +1,5 @@
 #include <iostream>
 #include "Data\Databases\tree.h"
-#include "Data\Enginer\enigma.h"
 int main()
 {
 	//C_data Data;
@@ -8,11 +7,12 @@ int main()
 	C_month month;
 	C_year year;
 	C_id Id;
-	
+	C_date date;
 	C_last_name Last;
 	C_gender gender(true);
 	N_striing data = "Luka sz";
 	C_first_name First(data);
+	//date()
 	int X;
 	int Return = 0;
 	data = day.m_what_type();

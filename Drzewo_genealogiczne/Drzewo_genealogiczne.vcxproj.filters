@@ -269,17 +269,14 @@
     <ClInclude Include="Data\Databases\goverment_relation.h">
       <Filter>Header Files\Databases</Filter>
     </ClInclude>
-    <ClInclude Include="Data\Enginer\enigma.h">
-      <Filter>Header Files\Enginer</Filter>
-    </ClInclude>
     <ClInclude Include="Data\Helpful\definition.h">
       <Filter>Header Files\Helpful</Filter>
     </ClInclude>
+    <ClInclude Include="Data\Enginer\alphabet.h">
+      <Filter>Header Files\Enginer</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
-    <None Include="ClassDiagram2.cd" />
-    <None Include="ClassDiagram1.cd" />
     <None Include="..\Dokumentacja\Wersja robocza\Nowa_wersja\Dok_Firmy_Programistycznej.doc">
       <Filter>Dokumentacja\Nowa</Filter>
     </None>
@@ -289,5 +286,6 @@
     <None Include="..\Dokumentacja\Wersja robocza\Star_wersja\Dokumentacja.doc">
       <Filter>Dokumentacja\Stara</Filter>
     </None>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>
