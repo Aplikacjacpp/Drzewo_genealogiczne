@@ -22,6 +22,18 @@ bool C_last_name::operator!=(const C_last_name &last_name) {
 	if (s_data_last_name != last_name.s_data_last_name) return true;
 	return false;
 }
+
+
+bool operator> (const C_last_name &last, const C_last_name &l1)
+{
+	return last > l1;
+}
+
+bool operator< (const C_last_name &last, const C_last_name &l1)
+{
+	return last < l1;
+}
+
 C_last_name::~C_last_name() {}
 bool C_last_name::m_wchat_is() { if (this->s_data_last_name.m_size() >= 1) return true; return false; }
 void C_last_name::m_get_contens(N_striing &contens) { this->s_data_last_name = m_is_there_contens(contens); }

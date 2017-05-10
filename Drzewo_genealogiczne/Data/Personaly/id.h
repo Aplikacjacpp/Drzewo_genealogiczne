@@ -13,6 +13,7 @@
 *1.1	 02.05.2015	 Adding a virtual destructor									  Lukasz Witek vel Witkowski
 *1.2	 02.05.2015	 Adding a virtual methods									      Lukasz Witek vel Witkowski
 *1.3	 02.05.2015	 Adding parameter constructors								      Lukasz Witek vel Witkowski
+*1.3     09.05.2017  Adding a overloaded operators									  Mateusz Marchelewicz
 ****************************************************************************************************************/
 #ifndef ID_H
 #define ID_H
@@ -27,6 +28,8 @@ public:
 	C_id& operator=(const C_id &C);
 	bool operator==(const C_id &C);
 	bool operator!=(const C_id &C);
+	friend bool operator> (const C_id &id, const C_id &i1);
+	friend bool operator< (const C_id &id, const C_id &i1);
 	//~C_id();
 	virtual ~C_id();
 	virtual bool m_wchat_is();

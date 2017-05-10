@@ -18,6 +18,19 @@ bool C_id::operator!=(const C_id &id) {
 	if (s_data_id != id.s_data_id) return true; 
 	return false;
 }
+
+
+bool operator> (const C_id &id, const C_id &i1)
+{
+	return id > i1;
+}
+
+bool operator< (const C_id &id, const C_id &i1)
+{
+	return id < i1;
+}
+
+
 C_id::~C_id() {}
 bool C_id::m_wchat_is() { if (this->s_data_id.m_size() >= 1) return true; return false; }
 void C_id::m_get_contens(N_striing &contens) { this->s_data_id = m_is_there_contens(contens); }
