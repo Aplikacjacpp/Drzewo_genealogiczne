@@ -559,3 +559,53 @@ N_striing& N_striing::m_getline(std::ifstream &is) {
 		m_push_back(values);
 	return *this;
 }
+bool N_striing::operator>(N_striing &C) {
+	int i = 0;
+	if (C.size == 0 && size > 0) return true;
+	else if (size == 0 && C.size > 0) return false;
+	else if (Table[i] > C.Table[i]) return true;
+	else if (Table[i] < C.Table[i]) return false;
+	else
+	{
+		if (size <= C.size) {
+			for (i = 0; i < size; i++)
+			{
+				if (Table[i] > C.Table[i]) { return true;  break; }
+				else if (Table[i] < C.Table[i]) { return false; break; }
+			}
+		}
+		else if (size > C.size) {
+			for (i = 0; i < C.size; i++)
+			{
+				if (Table[i] > C.Table[i]) { return true;  break; }
+				else if (Table[i] < C.Table[i]) { return false; break; }
+			}
+		}
+		return false;
+	}
+}
+bool N_striing::operator<(N_striing &C) {
+	int i = 0;
+	if (C.size == 0 && size > 0) return false;
+	else if (size == 0 && C.size > 0) return true;
+	else if (Table[i] < C.Table[i]) return true;
+	else if (Table[i] > C.Table[i]) return false;
+	else
+	{
+		if (size <= C.size) {
+			for (i = 0; i < size; i++)
+			{
+				if (Table[i] < C.Table[i]) { return true;  break; }
+				else if (Table[i] > C.Table[i]) { return false; break; }
+			}
+		}
+		else if (size > C.size) {
+			for (i = 0; i < C.size; i++)
+			{
+				if (Table[i] < C.Table[i]) { return true;  break; }
+				else if (Table[i] > C.Table[i]) { return false; break; }
+			}
+		}
+		return false;
+	}
+}

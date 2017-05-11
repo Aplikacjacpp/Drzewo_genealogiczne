@@ -7,6 +7,8 @@ C_element& C_element::operator=(const C_element &element) {
 	V_children = element.V_children;
 	V_parent = element.V_parent;
 	V_sibling = element.V_sibling;
+	V_grandchildren = element.V_grandchildren;
+	V_grandparents = element.V_grandparents;
 	return *this;
 }
 bool C_element::operator==(const C_element &element) {
@@ -16,7 +18,9 @@ bool C_element::operator==(const C_element &element) {
 	return false;
 }
 bool C_element::operator!=(const C_element &element) {
-	if (V_children != element.V_children&&V_parent != element.V_parent&&V_sibling != element.V_sibling) return true;
+	if (V_children != element.V_children&&V_parent != element.V_parent&&
+		V_sibling != element.V_sibling&&V_grandchildren != element.V_grandchildren&&
+		V_grandparents != element.V_grandparents) return true;
 	return false;
 }
 C_element::~C_element() {}

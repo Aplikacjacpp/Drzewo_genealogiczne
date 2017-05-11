@@ -24,14 +24,16 @@ bool C_last_name::operator!=(const C_last_name &last_name) {
 }
 
 
-bool operator> (const C_last_name &last, const C_last_name &l1)
+bool C_last_name::operator>(C_last_name &last)
 {
-	return last > l1;
+	if (s_data_last_name > last.s_data_last_name) return true;
+	return false;
 }
 
-bool operator< (const C_last_name &last, const C_last_name &l1)
+bool C_last_name::operator<(C_last_name &last)
 {
-	return last < l1;
+	if (s_data_last_name < last.s_data_last_name) return true;
+	return false;
 }
 
 C_last_name::~C_last_name() {}

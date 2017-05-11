@@ -27,8 +27,8 @@ public:
 	bool operator==(const C_last_name &last);
 	bool operator!=(const C_last_name &last);
 	friend std::ostream& operator<<(std::ostream& is, C_last_name &last);
-	friend bool operator< (const C_last_name &last, const C_last_name &l1);
-	friend bool operator> (const C_last_name &last, const C_last_name &l1);
+	bool operator<(C_last_name &last);
+	bool operator>(C_last_name &last);
 	//~C_last_name();
 	virtual ~C_last_name();
 	virtual bool m_wchat_is();

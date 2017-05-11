@@ -14,6 +14,8 @@
 #ifndef C_SL_RELATIONS
 #define C_SL_RELATIONS
 #include "save_load.h"
+#include "../Databases/goverment_relation.h"
+#include "../narzedzia/Vektor.h"
 class C_sl_relations :public C_save_load
 {
 public:
@@ -23,6 +25,8 @@ public:
 	bool operator==(const C_sl_relations& sl_relations);
 	bool operator!=(const C_sl_relations& sl_relations);
 	virtual ~C_sl_relations();
+private:
+	N_vektor<C_goverment_relation> V_goverment_relation;
 };
 #endif // !C_SL_RELATIONS
 

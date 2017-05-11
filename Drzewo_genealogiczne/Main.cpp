@@ -61,14 +61,17 @@ int main()
 /* test*/
 	C_id D1(100), D2(14);
 	if (D1 > D2) std::cout << "dobrze\n";else std::cout << "zle\n";
-/*C_last_name L1, L2;
-	data = "aab";
+	data = "acdd";
+	N_striing data1 = "abc";
+	if (data > data1) std::cout << "dobrze\n"; else std::cout << "zle\n";
+C_last_name L1, L2;
+	data = "acb";
 	L1.m_get_contens(data);
 	data = "abc";
 	L2.m_get_contens(data);
-	if (L1 > L2) std::cout << "dobrze\n"; std::cout << "zle\n";
+	if (L1 > L2) std::cout << "dobrze\n";else std::cout << "zle\n";
 	
-	*//*
+	/*
 
 	main_szyfrowanie("plik.txt", "dom", 5);
 	system("type plik.txt");

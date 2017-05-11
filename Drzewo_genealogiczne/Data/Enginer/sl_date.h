@@ -14,6 +14,8 @@
 #ifndef C_SL_DATE_H
 #define C_SL_DATE_H
 #include "save_load.h"
+#include "../narzedzia/Vektor.h"
+#include "../Databases/goverment_date.h"
 class C_sl_date :public C_save_load
 {
 public:
@@ -23,6 +25,8 @@ public:
 	bool operator==(const C_sl_date& sl_date);
 	bool operator!=(const C_sl_date& sl_date);
 	virtual ~C_sl_date();
+public:
+	N_vektor<C_goverment_date> V_goverment_date;
 };
 #endif // !C_SL_DATE_H
 

@@ -16,6 +16,8 @@ public:
 	N_striing& operator=(const N_striing &C);
 	bool operator==(const N_striing &C);
 	bool operator!=(const N_striing &C);
+	bool operator>(N_striing &C);
+	bool operator<(N_striing &C);
 	N_striing operator+(const N_striing &c);
 	N_striing operator+(const char &c);
 	N_striing operator+(const char c[]);

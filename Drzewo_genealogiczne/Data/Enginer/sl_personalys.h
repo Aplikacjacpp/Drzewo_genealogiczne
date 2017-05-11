@@ -14,6 +14,8 @@
 #ifndef C_SL_PERSONALYS_H
 #define C_SL_PERSONALYS_H
 #include "save_load.h"
+#include "../Databases/goverment_personaly.h"
+#include "../narzedzia/Vektor.h"
 class C_sl_personalys :
 	public C_save_load
 {
@@ -24,6 +26,8 @@ public:
 	bool operator==(const C_sl_personalys& sl_personalys);
 	bool operator!=(const C_sl_personalys& sl_personalys);
 	virtual ~C_sl_personalys();
+private:
+	N_vektor<C_goverment_personaly> V_goverment_personaly;
 };
 #endif // !C_SL_PERSOLALYS_H
 

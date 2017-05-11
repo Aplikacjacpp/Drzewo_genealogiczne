@@ -20,14 +20,16 @@ bool C_first_name::operator!=(const C_first_name &first_name) {
 	return false;
 }
 
-bool operator> (const C_first_name &first, const C_first_name &f1)
+bool C_first_name::operator>(C_first_name &first)
 {
-	return first > f1;
+	if (s_data_first_name > first.s_data_first_name) return true;
+	return false;
 }
 
-bool operator< (const C_first_name &first, const C_first_name &f1)
+bool C_first_name::operator<(C_first_name &first)
 {
-	return first < f1;
+	if (s_data_first_name < first.s_data_first_name) return true;
+	return false;
 }
 
 C_first_name::~C_first_name() {};
