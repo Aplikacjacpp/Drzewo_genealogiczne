@@ -1,5 +1,7 @@
 #include <iostream>
 #include "Data\Databases\tree.h"
+#include "Data\Interface\aplication_txt.h"
+
 int main()
 {
 	//C_data Data;
@@ -70,6 +72,11 @@ C_last_name L1, L2;
 	data = "abc";
 	L2.m_get_contens(data);
 	if (L1 > L2) std::cout << "dobrze\n";else std::cout << "zle\n";
+
+	C_aplication_txt AP;		// test menu w aplikacji - dzia³a!!!
+
+	AP.CreateLogo();
+	AP.MainMenu();
 	
 	/*
 

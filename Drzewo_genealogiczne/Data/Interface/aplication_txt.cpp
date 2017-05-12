@@ -1,4 +1,6 @@
 #include "aplication_txt.h"
+#include <cstdlib>
+
 C_aplication_txt::C_aplication_txt() {}
 C_aplication_txt::C_aplication_txt(const C_aplication_txt & aplication_txt) {}
 C_aplication_txt& C_aplication_txt::operator=(const C_aplication_txt& aplication_txt) {
@@ -62,11 +64,11 @@ void C_aplication_txt::MainMenu()
 
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
 
-		cout << "\n\n\n\n Po menu poruszaj sie za pomoca strzalek ";
+		cout << "\n\n\n\n Use the arrows to navigate the menu ";
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
 		cout << char(24) << " " << char(25);        // kody ASCII strzalek
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
-		cout << ". Wybor zatwierdz klawiszem ";
+		cout << ". Confirm your choice with ";
 
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
 
@@ -122,8 +124,8 @@ void C_aplication_txt::MainMenu()
 
 void C_aplication_txt::Sub1()
 {
-	N_striing MenuSub1[2] = { "1. Enter Tree Name", "2. Exit" };
-	N_striing SubSub1[2] = { "[Enter Your Tree Name]", "[Exit From Program]" };
+	N_striing MenuSub1[2] = { "1. Create New Tree", "2. Exit" };
+	N_striing SubSub1[2] = { "[Create Your New Tree]", "[Exit From Program]" };
 	int ptr = 0, p = 0;
 
 	while (true)
@@ -150,18 +152,24 @@ void C_aplication_txt::Sub1()
 
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
 
-		cout << "\n\n\n\n Po menu poruszaj sie za pomoca strzalek ";
+		cout << "\n\n\n\n Use the arrows to navigate the menu ";
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
 		cout << char(24) << " " << char(25);        // kody ASCII strzalek
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
-		cout << ". Wybor zatwierdz klawiszem ";
-
+		cout << ". Confirm your choice with ";
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
-
 		cout << "ENTER.";
+
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
+		cout << "\n Click ";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
+		cout << "SPACEBAR";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
+		cout << " if you want back to main menu.";
 
 		while (true)
 		{
+			if (GetAsyncKeyState(VK_SPACE)) MainMenu();
 			if (GetAsyncKeyState(VK_UP) != 0)   // strzalka do gory przesuwa wyzej po menu
 			{
 				ptr -= 1;
@@ -237,20 +245,21 @@ void C_aplication_txt::SubMenu1()
 
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
 
-		cout << "\n\n\n\n Po menu poruszaj sie za pomoca strzalek ";
+		cout << "\n\n\n\n Use the arrows to navigate the menu ";
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
 		cout << char(24) << " " << char(25);        // kody ASCII strzalek
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
-		cout << ". Wybor zatwierdz klawiszem ";
+		cout << ". Confirm your choice with ";
 
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
 
 		cout << "ENTER.";
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
-		cout << "\n By wyjsc do menu glownego kliknij ";
+		cout << "\n Click ";
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
-		cout << "SPACJE.";
-
+		cout << "SPACEBAR";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
+		cout << " if you want back to main menu.";
 
 		while (true)
 		{
@@ -348,19 +357,21 @@ void C_aplication_txt::SubMenu2()
 
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
 
-		cout << "\n\n\n\n Po menu poruszaj sie za pomoca strzalek ";
+		cout << "\n\n\n\n Use the arrows to navigate the menu ";
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
 		cout << char(24) << " " << char(25);        // kody ASCII strzalek
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
-		cout << ". Wybor zatwierdz klawiszem ";
+		cout << ". Confirm your choice with ";
 
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
 
 		cout << "ENTER.";
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
-		cout << "\n By wyjsc do menu glownego kliknij ";
+		cout << "\n Click ";
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
-		cout << "SPACJE.";
+		cout << "SPACEBAR";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
+		cout << " if you want back to main menu.";
 
 
 		while (true)
@@ -390,8 +401,11 @@ void C_aplication_txt::SubMenu2()
 				{
 				case 0:
 				{
-					//cout << "IMPORT";
-					// instrukcje
+					/* system("cls");			
+					CreateLogo();
+					system("dir /s H:\TREE_INOP");
+					system("PAUSE");
+					*/
 				} break;
 
 				case 1:
