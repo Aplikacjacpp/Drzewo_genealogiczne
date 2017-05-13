@@ -33,7 +33,7 @@ public:
 	virtual ~C_year();
 	virtual bool m_wchat_is();
 	virtual void m_get_contens(N_striing &contens);
-
+	void m_get_year(N_striing &contens);
 	N_striing m_year_set();
 private:
 	virtual N_striing m_is_there_contens(N_striing &Word);

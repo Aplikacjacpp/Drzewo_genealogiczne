@@ -32,5 +32,7 @@ N_striing C_month::m_is_there_contens(N_striing &Word) {
 	return Word;
 }
 N_striing C_month::m_month_set() { return m_set_contens(); }
-
+void C_month::m_get_month(N_striing &contens) {
+	i_data_month = contens.m_atoi(0, contens.m_size() - 1);
+}
 

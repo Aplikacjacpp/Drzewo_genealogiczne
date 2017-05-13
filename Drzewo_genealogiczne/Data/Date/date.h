@@ -33,21 +33,20 @@ public:
 	N_striing  m_set_MM_DD_YYYY();
 	N_striing  m_set_YYYY_MM_DD();
 	N_striing  m_set_YYYY_DD_MM();
-	/*
-	void m_get_DD_MM_YYYY(const C_day& day, const C_month& month, const C_year & year);
-	void m_shift_day(const C_day &day);
+	void m_get_DD_MM_YYYY(C_day& day, C_month& month, C_year & year);
+	void m_shift_day(C_day &day);
 	void m_shift_day(int &day);
 	void m_shift_day(N_striing &day);
-	void m_shift_month(const C_month& month);
+	/*void m_shift_month(C_month& month);
 	void m_shift_month(int month);
 	void m_shift_month(N_striing month);
-	void m_shift_year(const C_year& year);
+	void m_shift_year(C_year& year);
 	void m_shift_year(int year);
 	void m_shift_year(N_striing year);
-	void m_clear();*/
+	/*void m_clear();*/
 	virtual ~C_date();
 private:
-	char c_type_date;
+	char c_value;
 	N_striing m_analitic_date( N_striing& day);
 };
 #endif //!C_DATE

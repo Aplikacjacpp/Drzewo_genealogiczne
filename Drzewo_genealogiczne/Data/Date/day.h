@@ -33,6 +33,7 @@ public:
 	virtual bool m_wchat_is();
 	virtual void m_get_contens(N_striing &contens);
 	N_striing m_day_set();
+	void m_get_day(N_striing &contens);
 private:
 	virtual N_striing m_is_there_contens(N_striing &Word);
 	virtual N_striing m_set_contens();
