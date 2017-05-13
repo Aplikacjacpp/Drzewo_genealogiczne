@@ -34,10 +34,14 @@ public:
 	void m_get_children(C_children &children);
 	void m_get_parent(C_parent &parent);
 	void m_get_sibling(C_sibling &sibling);
+	void m_get_grandchildren(C_grandchildren &grandchildren);
+	void m_get_grandparents(C_grandparents &grandparents);
 	void m_update_children(int value,C_children &children);
 	void m_update_parent(int value,C_parent &parent);
 	void m_update_sibling(int value,C_sibling &sibling);
 	void m_update_human(const C_human &human);
+	void m_update_grandchildren(int value, C_grandchildren &human);
+	void m_update_grandparents(int value, C_grandparents &human);
 	C_human m_set_Human();
 	C_children m_set_children();
 	C_parent m_set_parent();
@@ -45,16 +49,22 @@ public:
 	C_children m_set_children(int value);
 	C_parent m_set_parent(int value);
 	C_sibling m_set_sibling(int value);
+	C_grandchildren m_set_grandchildren(int value);
+	C_grandparents m_set_grandparents(int value);
 	C_element& m_clean();
 	void m_clean_children();
 	void m_clean_parent();
 	void m_clean_sibling();
+	void m_clean_grandparents();
+	void m_clean_grandchildren();
 	void m_delete_children();
 	void m_delete_parent();
 	void m_delete_sibling();
 	void m_delete_children(int value);
 	void m_delete_parent(int value);
 	void m_delete_sibling(int value);
+	void m_delete_grandchildren(int value);
+	void m_delete_grandparents(int value);
 	//~C_element();
 	virtual ~C_element();
 private:
