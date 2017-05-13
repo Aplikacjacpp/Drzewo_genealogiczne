@@ -13,6 +13,7 @@
 *1.1	 02.05.2015	 Adding a virtual destructor									  Lukasz Witek vel Witkowski
 *1.2	 02.05.2015	 Adding a virtual methods									      Lukasz Witek vel Witkowski
 *1.3	 02.05.2015	 Adding parameter constructors								      Lukasz Witek vel Witkowski
+*1.4	 13.05.2015	 Adding a method "m_set_variable()"							      Lukasz Witek vel Witkowski
 ****************************************************************************************************************/
 
 #ifndef GENDER_H

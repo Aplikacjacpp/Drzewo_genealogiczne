@@ -1,3 +1,18 @@
+/***************************************************************************************************************
+*"grandchildren.h"
+*
+*
+*
+*
+*
+*CONTENTS:
+* "Klasa dziecko po klasie C_relation"
+*HISTORY:
+*version   Date Changes																	 	Author/Programmer
+*1.0     02.04.2017  Orginal design													  Lukasz Witek vel Witkowski
+*1.1	 03.05.2015	 Adding a virtual methods									      Lukasz Witek vel Witkowski
+*1.2	 13.05.2015	 Adding a method "m_set_variable()"							      Lukasz Witek vel Witkowski
+****************************************************************************************************************/
 #ifndef C_GRANDCHILDREN_H
 #define C_GRANDCHILDREN_H
 #include "relation.h"

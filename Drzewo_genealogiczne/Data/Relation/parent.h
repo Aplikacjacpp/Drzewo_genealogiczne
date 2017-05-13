@@ -12,6 +12,7 @@
 *1.0     30.04.2017  Orginal design													  Lukasz Witek vel Witkowski
 *1.1	 02.05.2015	 Adding a virtual destructor									  Lukasz Witek vel Witkowski
 *1.2	 03.05.2015	 Adding a virtual methods									      Lukasz Witek vel Witkowski
+*1.3	 13.05.2015	 Adding a method "m_set_variable()"							      Lukasz Witek vel Witkowski
 ****************************************************************************************************************/
 #ifndef PARENT_H
 #define PARENT_H

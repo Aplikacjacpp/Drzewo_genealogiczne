@@ -13,6 +13,7 @@
 *1.1	 02.05.2015	 Adding a virtual destructor									  Lukasz Witek vel Witkowski
 *1.2	 02.05.2015	 Adding a virtual methods									      Lukasz Witek vel Witkowski
 *1.3     09.05.2017  Adding a overloaded operators									  Mateusz Marchelewicz
+*1.4	 13.05.2015	 Adding a method "m_set_variable()"							      Lukasz Witek vel Witkowski
 ****************************************************************************************************************/
 #ifndef C_LAST_NAME_H
 #define C_LAST_NAME_H

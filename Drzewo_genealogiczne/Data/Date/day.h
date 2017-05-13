@@ -15,6 +15,7 @@
 *1.3	 02.05.2015	 Adding a virtual methods									      Lukasz Witek vel Witkowski
 *1.4	 02.05.2015	 Adding parameter constructors								      Lukasz Witek vel Witkowski
 *1.5	 12.05.2015	 Redbuind m_is_there_contens									  Lukasz Witek vel Witkowski
+*1.6	 13.05.2015	 Adding a method "m_set_variable()"							      Lukasz Witek vel Witkowski
 ****************************************************************************************************************/
 
 #ifndef DAY_H
