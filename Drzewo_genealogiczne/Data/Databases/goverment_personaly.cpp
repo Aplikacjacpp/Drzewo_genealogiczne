@@ -5,20 +5,30 @@ C_goverment_personaly& C_goverment_personaly::operator=(const C_goverment_person
 	if (this == &goverment_personaly) return *this;
 	if (*this == goverment_personaly) return *this;
 	s_goverment_personaly = goverment_personaly.s_goverment_personaly;
+	i_value_id = goverment_personaly.i_value_id;
 	return *this;
 }
 bool C_goverment_personaly::operator==(const C_goverment_personaly& goverment_personaly) {
-	if (s_goverment_personaly == goverment_personaly.s_goverment_personaly) return true;
+	if (s_goverment_personaly == goverment_personaly.s_goverment_personaly&&
+		i_value_id == goverment_personaly.i_value_id) return true;
 	return false;
 }
 bool C_goverment_personaly::operator!=(const C_goverment_personaly& goverment_personaly) {
-	if (s_goverment_personaly != goverment_personaly.s_goverment_personaly) return true;
+	if (s_goverment_personaly != goverment_personaly.s_goverment_personaly&&
+		i_value_id != goverment_personaly.i_value_id) return true;
 	return false;
 }
 C_goverment_personaly::~C_goverment_personaly() {}
-bool C_goverment_personaly::m_wchat_is() { if (this->s_goverment_personaly.m_size() >= 1 || this->s_goverment_personaly != '\0') return true; return false; }
-void C_goverment_personaly::m_get_contens(N_striing &contens) { this->s_goverment_personaly = m_is_there_contens(contens); }
-N_striing C_goverment_personaly::m_set_contens() { return this->s_goverment_personaly; }
+bool C_goverment_personaly::m_wchat_is() { 
+	if (this->s_goverment_personaly.m_size() >= 1 || this->s_goverment_personaly != '\0')
+		return true;
+	return false; 
+}
+void C_goverment_personaly::m_get_contens(N_striing &contens) { 
+	this->s_goverment_personaly = m_is_there_contens(contens);
+	i_value_id = m_id_value();
+}
+N_striing C_goverment_personaly::m_set_contens(void) { return s_goverment_personaly; }
 N_striing C_goverment_personaly::m_is_there_contens(N_striing &Word) {
 	int i, value = 0;
 	int X;
@@ -41,4 +51,29 @@ N_striing C_goverment_personaly::m_is_there_contens(N_striing &Word) {
 	}
 	if (value == 4) return Word;
 	return "\0";
+}
+int C_goverment_personaly::m_id_value() {
+	int i,j;
+	N_striing str;
+	char *data = new char[2];
+	for (i = 1; i < s_goverment_personaly.m_size(); i++) {
+		 data[0] = s_goverment_personaly[i - 1];
+		data[1] = s_goverment_personaly[i];
+		if (n_id_data == data)
+		{
+			for (j = i; j < s_goverment_personaly.m_size(); j++)
+			{
+				if(s_goverment_personaly[j]>=0&&s_goverment_personaly[j]<=9)
+				{
+					str.m_push_back(s_goverment_personaly[j]);
+				}
+				else
+				return str.m_atoi(0, str.m_size() - 1);
+			}
+		}
+	}
+	return 0;
+} //trzeba przetestowac!!
+int C_goverment_personaly::m_set_value_id(){
+	return i_value_id;
 }
