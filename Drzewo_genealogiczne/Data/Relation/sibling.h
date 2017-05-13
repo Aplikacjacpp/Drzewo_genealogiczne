@@ -28,7 +28,7 @@ public:
 	bool operator!=(const C_sibling &sib);
 	virtual void m_get_id(C_id &id);
 	virtual C_id m_set_id();
-	//~C_sibling();
+	virtual int m_set_variable();
 	virtual ~C_sibling();
 private:
 	C_id ID_index;

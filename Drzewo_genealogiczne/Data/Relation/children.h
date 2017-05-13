@@ -28,8 +28,8 @@ public:
 	bool operator!=(const C_children &children);
 	virtual void m_get_id(C_id &id);
 	virtual C_id m_set_id();
-	//~C_children();
 	virtual ~C_children();
+	virtual int m_set_variable();
 private:
 	C_id ID_index;
 	C_id ID_value;

@@ -29,7 +29,7 @@ public:
 	bool operator!=(const C_parent &parent);
 	virtual void m_get_id(C_id &id);
 	virtual C_id m_set_id();
-	//~C_parent();
+	virtual int m_set_variable();
 	virtual ~C_parent();
 private:
 	C_id ID_index;

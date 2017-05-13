@@ -19,3 +19,4 @@ bool C_grandchildren::operator!=(const C_grandchildren& grandchildren) {
 C_grandchildren::~C_grandchildren() {}
 void C_grandchildren::m_get_id(C_id &id) { ID_value = id; }
 C_id C_grandchildren::m_set_id() { return ID_index; }
+int C_grandchildren::m_set_variable() { return t_grandchildren; }

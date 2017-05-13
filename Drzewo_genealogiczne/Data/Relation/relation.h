@@ -31,6 +31,7 @@ public:
 	virtual C_id m_set_id() = 0;	//~C_relation();
 	virtual ~C_relation();
 	N_striing m_what_type();
+	virtual int m_set_variable() = 0;
 private:
 	N_striing S_relation_text;
 };

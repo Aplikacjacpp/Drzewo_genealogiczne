@@ -23,3 +23,4 @@ bool C_parent::operator!=(const C_parent &parent) {
 C_parent::~C_parent(){}
 void C_parent::m_get_id(C_id &id) { ID_value = id; }
 C_id C_parent::m_set_id() { return ID_index; }
+int C_parent::m_set_variable() { return t_parent; }
