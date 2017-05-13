@@ -32,6 +32,7 @@ public:
 	virtual bool m_wchat_is()=0;
 	virtual void m_get_contens(N_striing &contens) = 0;
 	virtual N_striing m_set_contens() = 0;
+	virtual int m_set_variable() = 0;
 //Methods Implementate
 	N_striing m_what_type();
 private:
@@ -39,3 +40,5 @@ private:
 	N_striing s_data_text;
 };
 #endif // !DATA_H
+//dodac metode virtualna zwracajaca wartosc z define.h zaczynajaca sie od 't' np. t_first_name 
+//zwracac pod postacia inta

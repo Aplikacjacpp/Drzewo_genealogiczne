@@ -21,15 +21,17 @@ void C_goverment_date::m_get_contens(N_striing &contens) { this->s_goverment_dat
 N_striing C_goverment_date::m_set_contens() { return this->s_goverment_data; }
 N_striing C_goverment_date::m_is_there_contens(N_striing &Word) {
 	int i,value=0;
-	for (i = 0; i < Word.m_size(); i++)
+	int X;
+	for (i = 1; i < Word.m_size(); i++)
 	{
-		switch (Word[i])
+		X = (int)Word[i] - 48 + 10 * ((int)Word[i - 1] - 48);
+		switch (X)
 		{
-		case '$':
+		case t_day:
 			value++; break;
-		case '&':
+		case t_month:
 			value++; break;
-		case '!':
+		case t_year:
 			value++; break;
 		default:
 			break;
@@ -37,4 +39,4 @@ N_striing C_goverment_date::m_is_there_contens(N_striing &Word) {
 	}
 	if (value == 3) return Word;
 	return "\0";
-}
+} // dokonczyc jak tylko doda sie metody do C_data

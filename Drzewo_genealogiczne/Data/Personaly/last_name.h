@@ -29,11 +29,11 @@ public:
 	friend std::ostream& operator<<(std::ostream& is, C_last_name &last);
 	bool operator<(C_last_name &last);
 	bool operator>(C_last_name &last);
-	//~C_last_name();
 	virtual ~C_last_name();
 	virtual bool m_wchat_is();
 	virtual void m_get_contens(N_striing &contens);
 	virtual N_striing m_set_contens();
+	virtual int m_set_variable();
 protected:
 
 private:

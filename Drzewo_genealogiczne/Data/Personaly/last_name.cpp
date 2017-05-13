@@ -58,3 +58,6 @@ std::ostream& operator<<(std::ostream& is, C_last_name &last)
 	is << "Nazwisko: " << last.m_set_contens();
 	return is;
 }
+int C_last_name::m_set_variable() {
+	return t_last_name;
+}

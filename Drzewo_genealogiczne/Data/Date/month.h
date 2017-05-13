@@ -14,6 +14,7 @@
 *1.2	 02.05.2015	 Adding a virtual destructor									  Lukasz Witek vel Witkowski
 *1.3	 02.05.2015	 Adding a virtual methods									      Lukasz Witek vel Witkowski
 *1.4	 02.05.2015	 Adding parameter constructors								      Lukasz Witek vel Witkowski
+*1.5	 12.05.2015	 Redbuind m_is_there_contens									  Lukasz Witek vel Witkowski
 ****************************************************************************************************************/
 
 #ifndef MONTH_H
@@ -32,6 +33,7 @@ public:
 	virtual ~C_month();
 	virtual bool m_wchat_is();
 	virtual void m_get_contens(N_striing &contens);
+	virtual int m_set_variable();
 	N_striing m_month_set();
 	void m_get_month(N_striing &contens);
 private:

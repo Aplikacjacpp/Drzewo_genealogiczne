@@ -11,6 +11,7 @@
 *version   Date Changes																	 	Author/Programmer
 *1.0     30.04.2017  Orginal design													  Lukasz Witek vel Witkowski
 *1.1	 02.05.2015	 Adding a virtual destructor									  Lukasz Witek vel Witkowski
+*1.2	 12.05.2015  Adding methods													  Lukasz Witek vel Witkowski
 ****************************************************************************************************************/
 #ifndef C_DATE_H
 #define C_DATE_H

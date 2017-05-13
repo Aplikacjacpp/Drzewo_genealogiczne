@@ -34,5 +34,8 @@ std::ostream& operator<<(std::ostream& is,C_gender &gender)
 	is << "Plec: " << gender.m_set_contens();
 	return is;
 }
+int C_gender::m_set_variable() {
+	return t_gender;
+}
 
 

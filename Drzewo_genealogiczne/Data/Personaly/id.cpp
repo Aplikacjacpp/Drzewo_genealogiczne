@@ -46,3 +46,6 @@ N_striing C_id::m_is_there_contens(N_striing &Word) {
 	} while (y != Word.m_size());
 	return Word;
 }
+int C_id::m_set_variable() {
+	return t_id_data;
+}
