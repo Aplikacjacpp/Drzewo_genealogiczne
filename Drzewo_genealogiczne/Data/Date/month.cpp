@@ -23,16 +23,18 @@ bool C_month::m_wchat_is() { if (this->i_data_month != NULL) return true; return
 void C_month::m_get_contens(N_striing &contens) { this->i_data_month = m_is_there_contens(contens).m_atoi(0, contens.m_size()); }
 N_striing C_month::m_set_contens() { N_striing data; data.m_itoa(this->i_data_month); return data; }
 N_striing C_month::m_is_there_contens(N_striing &Word) {
-	int y = 0;
-	do {
-		if (Word[y] >= '0' && Word[y] <= '9') y++;
-		else
-			return "";
-	} while (y != Word.m_size()&&Word.m_size()<=2);
-	return Word;
+		int y = 0;
+		do {
+			if (Word[y] >= '0' && Word[y] <= '9') y++;
+			else
+				return "";
+		} while (y != Word.m_size() && Word.m_size() <= 2);
+		if (Word.m_atoi(0, Word.m_size() - 1) <= 12)
+			return Word;
+		return "";
 }
 N_striing C_month::m_month_set() { return m_set_contens(); }
 void C_month::m_get_month(N_striing &contens) {
-	i_data_month = contens.m_atoi(0, contens.m_size() - 1);
+	i_data_month = m_is_there_contens(contens).m_atoi(0, contens.m_size() - 1);
 }
 

@@ -23,13 +23,13 @@ bool C_year::m_wchat_is() { if (this->i_data_year != NULL) return true; return f
 void C_year::m_get_contens(N_striing &contens) { this->i_data_year = m_is_there_contens(contens).m_atoi(0, contens.m_size()); }
 N_striing C_year::m_set_contens() { N_striing data; data.m_itoa(this->i_data_year); return data; }
 N_striing C_year::m_is_there_contens(N_striing &Word) { 
-	int y = 0;
-	do {
-		if (Word[y] >= '0' && Word[y] <= '9') y++;
-		else
-			return "";
-	} while (y != Word.m_size() && Word.m_size() <= 4);
-	return Word;
+		int y = 0;
+		do {
+			if (Word[y] >= '0' && Word[y] <= '9') y++;
+			else
+				return "";
+		} while (y != Word.m_size() && Word.m_size() <= 4);
+		return Word;
 }
 N_striing C_year::m_year_set() { return m_set_contens(); }
 void C_year::m_get_year(N_striing &contens) {

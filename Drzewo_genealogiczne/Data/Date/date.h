@@ -17,7 +17,7 @@
 #include "day.h"
 #include "month.h"
 #include "year.h"
-class C_date : virtual public C_day, C_month, C_year
+class C_date : virtual public C_day,virtual public C_month,virtual public C_year
 {
 public:
 	C_date();
@@ -34,16 +34,16 @@ public:
 	N_striing  m_set_YYYY_MM_DD();
 	N_striing  m_set_YYYY_DD_MM();
 	void m_get_DD_MM_YYYY(C_day& day, C_month& month, C_year & year);
-	void m_shift_day(C_day &day);
-	void m_shift_day(int &day);
-	void m_shift_day(N_striing &day);
-	/*void m_shift_month(C_month& month);
+	void m_shift_day(C_day day);
+	void m_shift_day(int day);
+	void m_shift_day(N_striing day);
+	void m_shift_month(C_month month);
 	void m_shift_month(int month);
 	void m_shift_month(N_striing month);
-	void m_shift_year(C_year& year);
+	void m_shift_year(C_year year);
 	void m_shift_year(int year);
 	void m_shift_year(N_striing year);
-	/*void m_clear();*/
+	void m_clear();
 	virtual ~C_date();
 private:
 	char c_value;

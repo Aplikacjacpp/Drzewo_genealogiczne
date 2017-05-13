@@ -27,25 +27,46 @@ N_striing  C_date::m_set_YYYY_DD_MM() { return m_year_set() +c_value+ m_day_set(
 void C_date::m_get_DD_MM_YYYY(C_day& day, C_month& month, C_year & year) {
 	m_get_day(day.m_day_set()); m_get_month(month.m_month_set()); m_get_year(year.m_year_set());
 }
-void C_date::m_shift_day(C_day &day)
+void C_date::m_shift_day(C_day day)
 {
 	m_get_day(day.m_day_set());
 }
-void C_date::m_shift_day(int &day) {
+void C_date::m_shift_day(int day) {
 	N_striing data;
 	data.m_itoa(day);
 	m_get_day(data);
 }
-void C_date::m_shift_day(N_striing &day) {
+void C_date::m_shift_day(N_striing day) {
 	m_get_day(day);
 }
-/*void C_date::m_shift_month( C_month& month);
-void C_date::m_shift_month(int month);
-void C_date::m_shift_month(N_striing month);
-void C_date::m_shift_year(C_year& year);
-void C_date::m_shift_year(int year);
-void C_date::m_shift_year(N_striing year);
-/*void m_clear();*/
+void C_date::m_shift_month(C_month month) {
+	m_get_month(month.m_month_set());
+}
+void C_date::m_shift_month(int month) {
+	N_striing data;
+	data.m_itoa(month);
+	m_get_month(data);
+}
+void C_date::m_shift_month(N_striing month) {
+	m_get_month(month);
+}
+void C_date::m_shift_year(C_year year) {
+	m_get_year(year.m_year_set());
+}
+void C_date::m_shift_year(int year) {
+	N_striing data;
+	data.m_itoa(year);
+	m_get_year(data);
+}
+void C_date::m_shift_year(N_striing year) {
+	m_get_year(year);
+}
+void C_date::m_clear() {
+	N_striing data = "";
+	m_get_day(data);
+	m_get_month(data);
+	m_get_year(data);
+}
 N_striing C_date::m_analitic_date(N_striing& day) {
 	int X;
 	int Return=0;

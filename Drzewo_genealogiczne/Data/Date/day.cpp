@@ -20,20 +20,22 @@ bool C_day::operator!=(const C_day &day) {
 }
 C_day::~C_day() {};
 bool C_day::m_wchat_is() { if (this->i_data_day != NULL) return true; return false; }
-void C_day::m_get_contens(N_striing &contens) { this->i_data_day = m_is_there_contens(contens).m_atoi(0, contens.m_size()); }
+void C_day::m_get_contens(N_striing &contens) { this->i_data_day = m_is_there_contens(contens).m_atoi(0, contens.m_size()-1); }
 N_striing C_day::m_set_contens() { N_striing data; data.m_itoa(this->i_data_day); return data; }
 N_striing C_day::m_is_there_contens(N_striing &Word) { 
-	int y = 0;
-	do {
-		if (Word[y] >= '0' && Word[y] <= '9') y++;
-		else
-			return "";
-	} while (y != Word.m_size() && Word.m_size() <= 2);
-	return Word;
+		int y = 0;
+		do {
+			if (Word[y] >= '0' && Word[y] <= '9') y++;
+			else
+				return "";
+		} while (y != Word.m_size() && Word.m_size() <= 2);
+		if(Word.m_atoi(0, Word.m_size() - 1) <= 31)
+		return Word;
+		return "";
 } //do rozwiniecia
 N_striing C_day::m_day_set() { return m_set_contens(); }
 void C_day::m_get_day(N_striing &contens) {
-	i_data_day = contens.m_atoi(0, contens.m_size() - 1);
+	i_data_day = m_is_there_contens(contens).m_atoi(0, contens.m_size() - 1);
 }
 
 

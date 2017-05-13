@@ -64,7 +64,6 @@ public:
 	C_id m_set_id();
 	C_date m_set_date(int value);
 	C_date m_set_date();
-	//~C_human();
 	virtual ~C_human();
 protected:
 

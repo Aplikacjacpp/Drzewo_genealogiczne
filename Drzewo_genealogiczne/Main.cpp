@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Data\Databases\tree.h"
 #include "Data\Interface\aplication_txt.h"
+#include "Data\Date\date.h"
 
 int main()
 {
@@ -73,14 +74,19 @@ C_last_name L1, L2;
 	L2.m_get_contens(data);
 	if (L1 > L2) std::cout << "dobrze\n";else std::cout << "zle\n";
 
-	C_aplication_txt AP;		// test menu w aplikacji - dzia³a!!!
+/*	C_aplication_txt AP;		// test menu w aplikacji - dzia³a!!!
 
 	AP.CreateLogo();
 	AP.MainMenu();
 	
-	/*
-
-	main_szyfrowanie("plik.txt", "dom", 5);
+	*/
+					//test na dzialanie C_date
+	C_date date13('/');
+	date13.m_shift_day(12); 
+	date13.m_shift_month(10);
+	date13.m_shift_year(1991);
+	std::cout << date13.m_set_DD_MM_YYYY()<<'\n';
+	/*main_szyfrowanie("plik.txt", "dom", 5);
 	system("type plik.txt");
 	main_odszyfrowywanie("plik.txt", "dom", 5);*/
 	return 0;
