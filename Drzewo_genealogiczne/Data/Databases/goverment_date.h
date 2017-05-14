@@ -12,7 +12,7 @@
 *1.0     06.05.2017  Orginal design													  Lukasz Witek vel Witkowski
 *1.1     09.05.2017  Pure Virtual Methods Added										  Mateusz Marchelewicz
 *1.2     12.05.2017  redbuild m_is_there_contens							   		  Lukasz Witek vel Witkowski
-*1.3	 12.05.2017  Adding new mothods												  Lukasz Witek vel Witkowsk
+*1.3	 12.05.2017  Adding new mothods												  Lukasz Witek vel Witkowski
 ****************************************************************************************************************/
 #ifndef GOVERMENT_DATE_H
 #define GOVERMENT_DATE_H

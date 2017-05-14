@@ -50,7 +50,7 @@ N_striing C_goverment_personaly::m_is_there_contens(N_striing &Word) {
 		}
 	}
 	if (value == 4) return Word;
-	return "\0";
+	return "";
 }
 int C_goverment_personaly::m_id_value() {
 	int i,j;
@@ -63,15 +63,18 @@ int C_goverment_personaly::m_id_value() {
 		{
 			for (j = i; j < s_goverment_personaly.m_size(); j++)
 			{
-				if(s_goverment_personaly[j]>=0&&s_goverment_personaly[j]<=9)
+				if (s_goverment_personaly[j] >= 0 && s_goverment_personaly[j] <= 9)
 				{
 					str.m_push_back(s_goverment_personaly[j]);
 				}
-				else
-				return str.m_atoi(0, str.m_size() - 1);
+				else {
+					delete[] data;
+					return str.m_atoi(0, str.m_size() - 1);
+				}
 			}
 		}
 	}
+	delete[] data;
 	return 0;
 } //trzeba przetestowac!!
 int C_goverment_personaly::m_set_value_id(){

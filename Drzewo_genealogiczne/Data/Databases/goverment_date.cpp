@@ -48,7 +48,7 @@ N_striing C_goverment_date::m_is_there_contens(N_striing &Word) {
 		}
 	}
 	if (value == 3) return Word;
-	return "\0";
+	return "";
 }
 int C_goverment_date::m_id_value() {
 	int i,j;
@@ -61,15 +61,18 @@ int C_goverment_date::m_id_value() {
 		{
 			for (j = i; j < s_goverment_data.m_size(); j++)
 			{
-				if(s_goverment_data[j]>=0&&s_goverment_data[j]<=9)
+				if (s_goverment_data[j] >= 0 && s_goverment_data[j] <= 9)
 				{
 					str.m_push_back(s_goverment_data[j]);
 				}
-				else
-				return str.m_atoi(0, str.m_size() - 1);
+				else {
+					delete[] data;
+					return str.m_atoi(0, str.m_size() - 1);
+				}
 			}
 		}
 	}
+	delete[] data;
 	return 0;
 } //trzeba przetestowac!!
 int C_goverment_date::m_set_value_id() {
