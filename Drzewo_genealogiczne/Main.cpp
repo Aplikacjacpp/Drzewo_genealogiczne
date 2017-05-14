@@ -86,6 +86,12 @@ C_last_name L1, L2;
 	date13.m_shift_month(10);
 	date13.m_shift_year(1991);
 	std::cout << date13.m_set_DD_MM_YYYY()<<'\n';
+
+	//test na poskie znaki
+	C_first_name test101;
+	N_striing fff = "£ukasz";
+	test101.m_get_contens(fff);
+	std::cout <<"test 101:"<< test101<<"\n\n";
 	/*main_szyfrowanie("plik.txt", "dom", 5);
 	system("type plik.txt");
 	main_odszyfrowywanie("plik.txt", "dom", 5);*/

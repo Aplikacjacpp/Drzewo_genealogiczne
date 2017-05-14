@@ -37,11 +37,15 @@ bool C_first_name::m_wchat_is() { if (this->s_data_first_name.m_size() >= 1) ret
 void C_first_name::m_get_contens(N_striing &contens) { this->s_data_first_name = m_is_there_contens(contens); }
 N_striing C_first_name::m_set_contens() { return this->s_data_first_name; }
 N_striing C_first_name::m_is_there_contens(N_striing &Word) {
-	int y=0;
+	int y=0,i;
 	setlocale(LC_ALL, "");
 	char TCh[18] = { '¹', 'æ', 'ê', '³', 'ñ', 'ó', 'œ', 'Ÿ', '¿', '¥', 'Æ', 'Ê', '£', 'Ñ', 'Ó', 'Œ', '', '¯' };
 	do {
-		if ((Word[y] >= 'A' && Word[y] <= 'Z') || (Word[y] >= 'a' && Word[y] <= 'z') || (Word[y] >= TCh[0] && Word[y] <= TCh[18])) y++;
+		for (i = 0; i < 18; i++)
+		{
+			if (Word[y] == TCh[i])y++;
+		}
+		if ((Word[y] >= 'A' && Word[y] <= 'Z') || (Word[y] >= 'a' && Word[y] <= 'z')) y++;
 		else
 			return "";
 	} while (y != Word.m_size());
