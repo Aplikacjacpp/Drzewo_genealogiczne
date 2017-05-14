@@ -43,7 +43,7 @@ void C_human::m_get_gender(bool gender)
 	G.m_itoa((int)gender);
 	Gender.m_get_contens(G);
 }
-void C_human::m_shift_id(N_striing &id) { C_id I(id); Id = I; }
+void C_human::m_shift_id(N_striing &id) { C_id I(id,1); Id = I; }
 void C_human::m_shift_id(int id) { C_id I(id); Id = I; }
 void C_human::m_shift_id(C_id &id) { Id = id; }
 void C_human::m_get_date(C_date& date) { V_date.m_push_back(date); }
