@@ -4,27 +4,8 @@
 #include "Data\Interface\aplication_txt.h"
 #include "Data\Date\date.h"
 
-void SetWindow(int Width, int Height)
-{
-	_COORD coord;
-	coord.X = Width;
-	coord.Y = Height;
-
-	_SMALL_RECT Rect;
-	Rect.Top = 0;
-	Rect.Left = 0;
-	Rect.Bottom = Height - 1;
-	Rect.Right = Width - 1;
-
-	HANDLE Handle = GetStdHandle(STD_OUTPUT_HANDLE);      // Get Handle 
-	SetConsoleScreenBufferSize(Handle, coord);            // Set Buffer Size 
-	SetConsoleWindowInfo(Handle, TRUE, &Rect);            // Set Window Size 
-}
-
 int main()
 {
-	SetWindow(100, 50);
-
 	//C_data Data;
 	C_day day;		// definicja zmiennej day
 	C_month month;
@@ -95,7 +76,7 @@ C_last_name L1, L2;
 	if (L1 > L2) std::cout << "dobrze\n";else std::cout << "zle\n";
 
 	C_aplication_txt AP;		// test menu w aplikacji - dzia³a!!!
-
+	AP.SetWindow(100, 50);
 	AP.CreateLogo();
 	AP.MainMenu();
 	
