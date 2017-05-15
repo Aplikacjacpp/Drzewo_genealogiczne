@@ -401,11 +401,12 @@ void C_aplication_txt::SubMenu2()
 				{
 				case 0:
 				{
-					/* system("cls");			
+					system("cls");			
 					CreateLogo();
-					system("dir /s H:\TREE_INOP");
-					system("PAUSE");
-					*/
+					//system("dir /s H:\TREE_INOP");
+					//system("tree /f H:\TREE_INOP\\Drzewo_genealogiczne\\Drzewo_genealogiczne\\Data");	//w CodeBlocks dzia³a, tu nie...
+					//system("PAUSE");
+
 				} break;
 
 				case 1:
