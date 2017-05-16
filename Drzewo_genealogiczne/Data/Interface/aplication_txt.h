@@ -11,6 +11,7 @@
 *version   Date Changes																	 	Author/Programmer
 *1.0     06.05.2017  Orginal design													  Lukasz Witek vel Witkowski
 *1.01    09.05.2017  Adding methods for menu										  Mateusz Marchelewicz
+*1.1     15.05.2017  Menu size changed										          Mateusz Marchelewicz
 ****************************************************************************************************************/
 #ifndef APLICATION_TXT_H
 #define APLICATION_TXT_H
@@ -32,6 +33,7 @@ public:
 	bool operator==(const C_aplication_txt& aplication_txt);
 	bool operator!=(const C_aplication_txt& aplication_txt);
 	virtual ~C_aplication_txt();
+	void SetWindow(int Width, int Height);
 	void MainMenu();
 	void Sub1();
 	void SubMenu1();

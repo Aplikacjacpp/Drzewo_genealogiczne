@@ -1,5 +1,6 @@
 #include "aplication_txt.h"
 #include <cstdlib>
+#include <Windows.h>
 
 C_aplication_txt::C_aplication_txt() {}
 C_aplication_txt::C_aplication_txt(const C_aplication_txt & aplication_txt) {}
@@ -19,6 +20,23 @@ bool C_aplication_txt::operator!=(const C_aplication_txt& aplication_txt) {
 }
 C_aplication_txt::~C_aplication_txt() {}
 
+
+void C_aplication_txt::SetWindow(int Width, int Height)
+{
+	_COORD coord;
+	coord.X = Width;
+	coord.Y = Height;
+
+	_SMALL_RECT Rect;
+	Rect.Top = 0;
+	Rect.Left = 0;
+	Rect.Bottom = Height - 1;
+	Rect.Right = Width - 1;
+
+	HANDLE Handle = GetStdHandle(STD_OUTPUT_HANDLE);      // Get Handle 
+	SetConsoleScreenBufferSize(Handle, coord);            // Set Buffer Size 
+	SetConsoleWindowInfo(Handle, TRUE, &Rect);            // Set Window Size 
+}
 
 
 
@@ -401,11 +419,12 @@ void C_aplication_txt::SubMenu2()
 				{
 				case 0:
 				{
-					/* system("cls");			
+					system("cls");			
 					CreateLogo();
-					system("dir /s H:\TREE_INOP");
-					system("PAUSE");
-					*/
+					//system("dir /s H:\TREE_INOP");
+					//system("tree /f H:\TREE_INOP\\Drzewo_genealogiczne\\Drzewo_genealogiczne\\Data");	//w CodeBlocks dzia³a, tu nie...
+					//system("PAUSE");
+
 				} break;
 
 				case 1:
