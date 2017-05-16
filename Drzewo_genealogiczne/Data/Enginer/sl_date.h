@@ -19,13 +19,15 @@
 class C_sl_date :public C_save_load
 {
 public:
-	C_sl_date();
-	C_sl_date(const C_sl_date & sl_date);
-	C_sl_date& operator=(const C_sl_date& sl_date);
-	bool operator==(const C_sl_date& sl_date);
-	bool operator!=(const C_sl_date& sl_date);
-	virtual ~C_sl_date();
-	void m_load_file();
+	C_sl_date(); //konstruktor bezparametrowy
+	C_sl_date(const C_sl_date & sl_date); //konstruktor kopiujacy
+	C_sl_date& operator=(const C_sl_date& sl_date); //operator przypisania
+	bool operator==(const C_sl_date& sl_date); //operator porownania ==
+	bool operator!=(const C_sl_date& sl_date); //operator porownania !=
+	virtual ~C_sl_date(); //wirtualny destruktor
+	void m_file_date(bool what); //czytanie z pliku
+	virtual N_striing m_cypher_on(N_striing data); //odszyfrowywanie
+	virtual N_striing m_cypher_off(N_striing data); //zaszyfrowywanie
 public:
 	N_vektor<C_goverment_date> V_goverment_date;
 };

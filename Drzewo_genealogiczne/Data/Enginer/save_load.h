@@ -16,6 +16,7 @@
 #include "alphabet.h"
 #include "../narzedzia/striing.h"
 #include "../narzedzia/Vektor.h"
+#include "../Helpful/definition.h"
 #include <fstream>
 class C_save_load
 {
@@ -26,6 +27,8 @@ public:
 	bool operator==(const C_save_load& save_load);
 	bool operator!=(const C_save_load& save_load);
 	virtual ~C_save_load();
+	virtual N_striing m_cypher_on(N_striing data)=0; //odszyfrowywanie
+	virtual N_striing m_cypher_off(N_striing data)=0; //zaszyfrowywanie
 	/*void wczytuj_sz(N_striing& slowo, N_vektor<N_striing>& s);
 	void zapis_sz(N_striing a, N_striing& haslo, int* s);
 	N_striing m_encryption_sz(N_vektor<alfabet>& v, N_striing& haslo, N_vektor<N_striing>& s);

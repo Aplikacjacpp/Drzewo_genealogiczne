@@ -55,6 +55,6 @@
 #define t_gender_relation   183 // 
 //definition from file
 #define f_save_data "data.save"
-#define f_save_personaly "personaly.save"
+#define f_save_relation "relation.save"
 #define f_save_date "date.save"
 #endif // !DEFINITON_H
