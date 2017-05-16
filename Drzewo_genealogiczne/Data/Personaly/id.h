@@ -20,7 +20,7 @@
 #ifndef ID_H
 #define ID_H
 #include "data.h"
-class C_id:public C_data
+class C_id:public C_data 
 {
 public:
 	C_id();

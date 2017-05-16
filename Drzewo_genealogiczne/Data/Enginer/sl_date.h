@@ -25,6 +25,7 @@ public:
 	bool operator==(const C_sl_date& sl_date);
 	bool operator!=(const C_sl_date& sl_date);
 	virtual ~C_sl_date();
+	void m_load_file();
 public:
 	N_vektor<C_goverment_date> V_goverment_date;
 };

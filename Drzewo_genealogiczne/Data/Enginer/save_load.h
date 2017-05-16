@@ -16,6 +16,7 @@
 #include "alphabet.h"
 #include "../narzedzia/striing.h"
 #include "../narzedzia/Vektor.h"
+#include <fstream>
 class C_save_load
 {
 public:

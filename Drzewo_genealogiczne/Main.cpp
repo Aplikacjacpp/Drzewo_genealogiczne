@@ -2,7 +2,8 @@
 #include "Data\Databases\tree.h"
 #include "Data\Interface\aplication_txt.h"
 #include "Data\Date\date.h"
-
+#include "Data\narzedzia\Vektor.h"
+#include <string>
 int main()
 {
 	//C_data Data;
@@ -92,6 +93,10 @@ C_last_name L1, L2;
 	N_striing fff = "£ukasz";
 	test101.m_get_contens(fff);
 	std::cout <<"test 101:"<< test101<<"\n\n";
+
+	std::string *dupa = new std::string[100];
+	dupa[1] = "dupa";
+	std::cout << dupa[5];
 	/*main_szyfrowanie("plik.txt", "dom", 5);
 	system("type plik.txt");
 	main_odszyfrowywanie("plik.txt", "dom", 5);*/

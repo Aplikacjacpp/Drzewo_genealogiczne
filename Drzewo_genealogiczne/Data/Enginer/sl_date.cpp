@@ -15,4 +15,7 @@ bool C_sl_date::operator!=(const C_sl_date& sl_date) {
 	if (V_goverment_date != sl_date.V_goverment_date) return true;
 	return false;
 }
+void C_sl_date::m_load_file() {
+	//wczytywanie z pliku
+}
 C_sl_date::~C_sl_date() {}
