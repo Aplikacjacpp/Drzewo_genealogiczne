@@ -36,11 +36,11 @@ public:
 	virtual void m_get_contens(N_striing &contens); //wprowadza striing
 	virtual N_striing m_set_contens(); //zwraca wartosc striinga
 	int m_set_value_id(); //zwraca wyszukana wczesniej wartosc striinga 
-	C_children m_set_value_children(); //wyszukuje i zwraca wartosc dla children
-	C_parent m_set_value_parent(); //wyszukuje i zwraca wartosc dla parent
-	C_grandchildren m_set_value_grandchildren(); //wyszukuje i zwraca wartosc dla grandchildren
-	C_grandparents m_set_value_grandparents(); //wyszukuje i zwraca wartosc dla grandparent
-	C_sibling m_set_value_sibling(); //wyszukuje i zwraca wartosc dla sibling
+	N_vektor<C_children> m_set_value_children(); //wyszukuje i zwraca wartosc dla children
+	N_vektor<C_parent> m_set_value_parent(); //wyszukuje i zwraca wartosc dla parent
+	N_vektor<C_grandchildren> m_set_value_grandchildren(); //wyszukuje i zwraca wartosc dla grandchildren
+	N_vektor<C_grandparents> m_set_value_grandparents(); //wyszukuje i zwraca wartosc dla grandparent
+	N_vektor<C_sibling> m_set_value_sibling(); //wyszukuje i zwraca wartosc dla sibling
 private:
 	virtual N_striing m_is_there_contens(N_striing &Word); //analizuje wprowadzany striing
 	N_striing s_goverment_relation; //zmienna przechowujaca striing

@@ -45,3 +45,6 @@ N_striing C_id::m_is_there_contens(N_striing &Word) {
 int C_id::m_set_variable() {
 	return t_id_data;
 }
+void C_id::m_get_contens(int value) {
+	s_data_id=s_data_id.m_itoa(value);
+}

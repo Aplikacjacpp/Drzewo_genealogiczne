@@ -38,6 +38,7 @@ public:
 	virtual void m_get_contens(N_striing &contens);
 	virtual N_striing m_set_contens();
 	virtual int m_set_variable();
+	void m_get_contens(int value);
 private:
 	virtual N_striing m_is_there_contens(N_striing &Word);
 	N_striing s_data_id;

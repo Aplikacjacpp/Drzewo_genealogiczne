@@ -15,6 +15,7 @@
 #ifndef GOVERMENT_H
 #define GOVERMENT_H
 #include "../narzedzia/striing.h"
+#include "../narzedzia/Vektor.h"
 #include "../Helpful/definition.h"
 class C_goverment
 {

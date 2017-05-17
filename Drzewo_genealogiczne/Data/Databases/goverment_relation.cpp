@@ -70,7 +70,8 @@ int C_goverment_relation::m_id_value() {
 int C_goverment_relation::m_set_value_id() {
 	return i_value_id;
 }
-C_children C_goverment_relation::m_set_value_children() {
+N_vektor<C_children> C_goverment_relation::m_set_value_children() {
+	N_vektor<C_children> Vektor;
 	C_children children;
 	int i, j;
 	N_striing str;
@@ -86,19 +87,22 @@ C_children C_goverment_relation::m_set_value_children() {
 					str.m_push_back(s_goverment_relation[j]);
 				}
 				else {
-					delete[] relation;
-				/*	C_id Id(n_id_relation);
-					Id.m_get_contens(i_value_id)
-					children.m_get_id(str); */ //do zrobienia!!
-					return children;
+					C_id Id, Id_value;
+					Id.m_get_contens(i_value_id);
+					Id_value.m_get_contens(str.m_atoi(0, str.m_size()));
+					children.m_get_complete_content(Id, Id_value);
+					Vektor.m_push_back(children);
+					i = j;
+					break;
 				}
 			}
 		}
 	}
 	delete[] relation;
-	return children;
+	return Vektor;
 } //do przetestowania
-C_parent C_goverment_relation::m_set_value_parent() {
+N_vektor<C_parent> C_goverment_relation::m_set_value_parent() {
+	N_vektor<C_parent> Vektor;
 	C_parent parent;
 	int i, j;
 	N_striing str;
@@ -114,19 +118,22 @@ C_parent C_goverment_relation::m_set_value_parent() {
 					str.m_push_back(s_goverment_relation[j]);
 				}
 				else {
-					delete[] relation;
-					/*	C_id Id(n_id_relation);
-					Id.m_get_contens(i_value_id)
-					parent.m_get_id(str); */ //do zrobienia!!
-					return parent;
+					C_id Id, Id_value;
+					Id.m_get_contens(i_value_id);
+					Id_value.m_get_contens(str.m_atoi(0, str.m_size()));
+					parent.m_get_complete_content(Id, Id_value);
+					Vektor.m_push_back(parent);
+					i = j;
+					break;
 				}
 			}
 		}
 	}
 	delete[] relation;
-	return parent;
+	return Vektor;
 }; //do przetestowania
-C_grandchildren C_goverment_relation::m_set_value_grandchildren() {
+N_vektor<C_grandchildren> C_goverment_relation::m_set_value_grandchildren() {
+	N_vektor<C_grandchildren> Vektor;
 	C_grandchildren grandchildren;
 	int i, j;
 	N_striing str;
@@ -142,19 +149,22 @@ C_grandchildren C_goverment_relation::m_set_value_grandchildren() {
 					str.m_push_back(s_goverment_relation[j]);
 				}
 				else {
-					delete[] relation;
-					/*	C_id Id(n_id_relation);
-					Id.m_get_contens(i_value_id)
-					grandchildren.m_get_id(str); */ //do zrobienia!!
-					return grandchildren;
+						C_id Id, Id_value;
+						Id.m_get_contens(i_value_id);
+						Id_value.m_get_contens(str.m_atoi(0, str.m_size()));
+					grandchildren.m_get_complete_content(Id, Id_value);
+					Vektor.m_push_back(grandchildren);
+					i = j;
+					break;
 				}
 			}
 		}
 	}
 	delete[] relation;
-	return grandchildren;
+	return Vektor;
 }; //do przetestowania
-C_grandparents C_goverment_relation::m_set_value_grandparents() {
+N_vektor<C_grandparents> C_goverment_relation::m_set_value_grandparents() {
+	N_vektor<C_grandparents> Vektor;
 	C_grandparents grandparent;
 	int i, j;
 	N_striing str;
@@ -170,19 +180,22 @@ C_grandparents C_goverment_relation::m_set_value_grandparents() {
 					str.m_push_back(s_goverment_relation[j]);
 				}
 				else {
-					delete[] relation;
-					/*	C_id Id(n_id_relation);
-					Id.m_get_contens(i_value_id)
-					grandparent.m_get_id(str); */ //do zrobienia!!
-					return grandparent;
+					C_id Id, Id_value;
+					Id.m_get_contens(i_value_id);
+					Id_value.m_get_contens(str.m_atoi(0, str.m_size()));
+					grandparent.m_get_complete_content(Id,Id_value);
+					Vektor.m_push_back(grandparent);
+					i = j;
+					break;
 				}
 			}
 		}
 	}
 	delete[] relation;
-	return grandparent;
+	return Vektor;
 } //do przetestowania
-C_sibling C_goverment_relation::m_set_value_sibling() {
+N_vektor<C_sibling> C_goverment_relation::m_set_value_sibling() {
+	N_vektor<C_sibling> Vektor;
 	C_sibling sibling;
 	int i, j;
 	N_striing str;
@@ -198,15 +211,17 @@ C_sibling C_goverment_relation::m_set_value_sibling() {
 					str.m_push_back(s_goverment_relation[j]);
 				}
 				else {
-					delete[] relation;
-					/*	C_id Id(n_id_relation);
-					Id.m_get_contens(i_value_id)
-					sibling.m_get_id(str); */ //do zrobienia!!
-					return sibling;
+						C_id Id, Id_value;
+						Id.m_get_contens(i_value_id);
+						Id_value.m_get_contens(str.m_atoi(0, str.m_size()));
+					sibling.m_get_complete_content(Id, Id_value);
+					Vektor.m_push_back(sibling);
+					i = j;
+					break;
 				}
 			}
 		}
 	}
 	delete[] relation;
-	return sibling;
+	return Vektor;
 }//do przetestowania
