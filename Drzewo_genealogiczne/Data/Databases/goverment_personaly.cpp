@@ -80,3 +80,84 @@ int C_goverment_personaly::m_id_value() {
 int C_goverment_personaly::m_set_value_id(){
 	return i_value_id;
 }
+C_first_name C_goverment_personaly::m_set_value_first_name() {
+	C_first_name First;
+	int i, j;
+	N_striing str;
+	char *data = new char[2];
+	for (i = 1; i < s_goverment_personaly.m_size(); i++) {
+		data[0] = s_goverment_personaly[i - 1];
+		data[1] = s_goverment_personaly[i];
+		if (n_first_name == data)
+		{
+			for (j = i; j < s_goverment_personaly.m_size(); j++)
+			{
+				if (!(s_goverment_personaly[j+1] >= 0&&s_goverment_personaly[j+1] <=9))
+				{
+					str.m_push_back(s_goverment_personaly[j]);
+				}
+				else {
+					delete[] data;
+					First.m_get_contens(str);
+					return First;
+				}
+			}
+		}
+	}
+	delete[] data;
+	return First;
+} //przetestowac czy dziala
+C_last_name C_goverment_personaly::m_set_value_last_name() {
+	C_last_name Last;
+	int i, j;
+	N_striing str;
+	char *data = new char[2];
+	for (i = 1; i < s_goverment_personaly.m_size(); i++) {
+		data[0] = s_goverment_personaly[i - 1];
+		data[1] = s_goverment_personaly[i];
+		if (n_last_name == data)
+		{
+			for (j = i; j < s_goverment_personaly.m_size(); j++)
+			{
+				if (!(s_goverment_personaly[j + 1] >= 0 && s_goverment_personaly[j + 1] <= 9))
+				{
+					str.m_push_back(s_goverment_personaly[j]);
+				}
+				else {
+					delete[] data;
+					Last.m_get_contens(str);
+					return Last;
+				}
+			}
+		}
+	}
+	delete[] data;
+	return Last;
+} //przetestowac czy dziala
+C_gender C_goverment_personaly::m_set_value_gender() {
+	C_gender Gender;
+	int i, j;
+	N_striing str;
+	char *data = new char[2];
+	for (i = 1; i < s_goverment_personaly.m_size(); i++) {
+		data[0] = s_goverment_personaly[i - 1];
+		data[1] = s_goverment_personaly[i];
+		if (n_gender == data)
+		{
+			for (j = i; j < s_goverment_personaly.m_size(); j++)
+			{
+				if (!(s_goverment_personaly[j + 1] >= 0 && s_goverment_personaly[j + 1] <= 9))
+				{
+					str.m_push_back(s_goverment_personaly[j]);
+				}
+				else {
+					delete[] data;
+					Gender.m_get_contens(str);
+					return Gender;
+				}
+			}
+		}
+	}
+	delete[] data;
+	return Gender;
+} //przetestowac czy dziala
