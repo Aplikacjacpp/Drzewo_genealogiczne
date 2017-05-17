@@ -60,9 +60,11 @@ int main()
 	{
 		Return6 += (int)data[X];
 	}
+
+	/*
 	std::cout << "day:\t" <<day.m_what_type()<<"\t"<< Return << "\nmonth:\t" << month.m_what_type() << "\t"<< Return1 << "\nyear:\t" <<year.m_what_type()<<"\t"<< Return2 << "\nId:\t" <<Id.m_what_type()<<"\t"<< Return3 <<
 		"\nFirst_name:\t" <<First.m_what_type()<<"\t"<< Return4 << "\nLast_name:\t" <<Last.m_what_type()<<"\t"<< Return5 << "\nGender:\t" <<gender.m_what_type()<<"\t"<< Return6 << "\n";
-/* test*/
+
 	C_id D1(100), D2(14);
 	if (D1 > D2) std::cout << "dobrze\n";else std::cout << "zle\n";
 	data = "acdd";
@@ -73,10 +75,10 @@ C_last_name L1, L2;
 	L1.m_get_contens(data);
 	data = "abc";
 	L2.m_get_contens(data);
-	if (L1 > L2) std::cout << "dobrze\n";else std::cout << "zle\n";
+	if (L1 > L2) std::cout << "dobrze\n";else std::cout << "zle\n";    */
 
-	/*C_aplication_txt AP;		// test menu w aplikacji - dzia³a!!!
-	AP.SetWindow(100, 50);
+	C_aplication_txt AP;		// test menu w aplikacji - dzia³a!!!
+	AP.SetWindow(100, 45);
 	AP.CreateLogo();
 	AP.MainMenu();
 	

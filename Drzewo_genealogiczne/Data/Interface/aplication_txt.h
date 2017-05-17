@@ -11,7 +11,8 @@
 *version   Date Changes																	 	Author/Programmer
 *1.0     06.05.2017  Orginal design													  Lukasz Witek vel Witkowski
 *1.01    09.05.2017  Adding methods for menu										  Mateusz Marchelewicz
-*1.1     15.05.2017  Menu size changed										          Mateusz Marchelewicz
+*1.1     15.05.2017  Windows size changed										      Mateusz Marchelewicz
+*1.1     17.05.2017  Font size changed										          Mateusz Marchelewicz
 ****************************************************************************************************************/
 #ifndef APLICATION_TXT_H
 #define APLICATION_TXT_H
