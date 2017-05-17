@@ -21,7 +21,7 @@
 #include "../Relation/parent.h"
 #include "../Relation//grandchildren.h"
 #include "../Relation//grandparents.h"
-#include "../Relation/other.h"
+#include "../Relation/partner.h"
 class C_element
 {
 public:
