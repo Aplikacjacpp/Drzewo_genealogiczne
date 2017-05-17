@@ -150,9 +150,6 @@
     <ClCompile Include="Data\Relation\grandchildren.cpp">
       <Filter>Resource Files\Data\Relations</Filter>
     </ClCompile>
-    <ClCompile Include="Data\Relation\other.cpp">
-      <Filter>Resource Files\Data\Relations</Filter>
-    </ClCompile>
     <ClCompile Include="Data\Relation\grandparents.cpp">
       <Filter>Resource Files\Data\Relations</Filter>
     </ClCompile>
@@ -170,6 +167,9 @@
     </ClCompile>
     <ClCompile Include="Data\Databases\goverment_relation.cpp">
       <Filter>Resource Files\Databases</Filter>
+    </ClCompile>
+    <ClCompile Include="Data\Relation\partner.cpp">
+      <Filter>Resource Files\Data\Relations</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -242,9 +242,6 @@
     <ClInclude Include="Data\Relation\grandparents.h">
       <Filter>Header Files\Data\Relations</Filter>
     </ClInclude>
-    <ClInclude Include="Data\Relation\other.h">
-      <Filter>Header Files\Data\Relations</Filter>
-    </ClInclude>
     <ClInclude Include="Data\Enginer\save_load.h">
       <Filter>Header Files\Enginer</Filter>
     </ClInclude>
@@ -274,6 +271,9 @@
     </ClInclude>
     <ClInclude Include="Data\Enginer\alphabet.h">
       <Filter>Header Files\Enginer</Filter>
+    </ClInclude>
+    <ClInclude Include="Data\Relation\partner.h">
+      <Filter>Header Files\Data\Relations</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -13,6 +13,7 @@
 *1.1	 02.05.2015	 Adding a virtual destructor									  Lukasz Witek vel Witkowski
 *1.2	 03.05.2015	 Adding a virtual methods									      Lukasz Witek vel Witkowski
 *1.3	 13.05.2015	 Adding a method "m_set_variable()"							      Lukasz Witek vel Witkowski
+*1.4	 17.05.2017  Adding priority methods										  Lukasz Witek vel Witkowski
 ****************************************************************************************************************/
 #ifndef PARENT_H
 #define PARENT_H
@@ -32,6 +33,8 @@ public:
 	virtual C_id m_set_id();
 	virtual int m_set_variable();
 	virtual ~C_parent();
+	virtual void m_get_complete_content(N_striing data);
+	virtual void m_get_complete_content(C_id index, C_id value);
 private:
 	C_id ID_index;
 	C_id ID_value;

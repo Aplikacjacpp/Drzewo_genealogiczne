@@ -12,6 +12,7 @@
 *1.0     02.04.2017  Orginal design													  Lukasz Witek vel Witkowski
 *1.1	 03.05.2015	 Adding a virtual methods									      Lukasz Witek vel Witkowski
 *1.2	 13.05.2015	 Adding a method "m_set_variable()"							      Lukasz Witek vel Witkowski
+*1.3	 17.05.2017  Adding priority methods										  Lukasz Witek vel Witkowski
 ****************************************************************************************************************/
 #ifndef C_GRANDPARENTS_H
 #define C_GRANDPARENTS_H
@@ -28,6 +29,8 @@ public:
 	virtual void m_get_id(C_id &id);
 	virtual C_id m_set_id();
 	virtual int m_set_variable();
+	virtual void m_get_complete_content(N_striing data);
+	virtual void m_get_complete_content(C_id index, C_id value);
 private:
 	C_id ID_index;
 	C_id ID_value;

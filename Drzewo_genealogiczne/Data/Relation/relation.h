@@ -32,6 +32,8 @@ public:
 	virtual ~C_relation();
 	N_striing m_what_type();
 	virtual int m_set_variable() = 0;
+	virtual void m_get_complete_content(N_striing data) = 0;
+	virtual void m_get_complete_content(C_id index, C_id value) = 0;
 private:
 	N_striing S_relation_text;
 };
