@@ -3,6 +3,7 @@
 #include "Data\Databases\tree.h"
 #include "Data\Interface\aplication_txt.h"
 #include "Data\Date\date.h"
+#include "Data\Relation\relation.h"
 
 int main()
 {
@@ -77,29 +78,89 @@ C_last_name L1, L2;
 	L2.m_get_contens(data);
 	if (L1 > L2) std::cout << "dobrze\n";else std::cout << "zle\n";    */
 
-	C_aplication_txt AP;		// test menu w aplikacji - dzia³a!!!
+	/*C_aplication_txt AP;		// test menu w aplikacji - dzia³a!!!
 	AP.SetWindow(100, 45);
 	AP.CreateLogo();
 	AP.MainMenu();
-	
+	*/
 
 					//test na dzialanie C_date
-	/*C_date date13('/');
-	date13.m_shift_day(12); 
-	date13.m_shift_month(10);
-	date13.m_shift_year(1991);
-	std::cout << date13.m_set_DD_MM_YYYY()<<'\n';
+	C_date date13('/');
+	//date13.m_shift_day(12); 
+	//date13.m_shift_month(10);
+	//date13.m_shift_year(1991);
+	date13.m_shift_day("12");
+	date13.m_shift_month("10");
+	date13.m_shift_year("1991");
+	//std::cout << date13.m_set_DD_MM_YYYY()<<'\n';
+	//std::cout << date13.m_set_MM_DD_YYYY() << "\n";
+	//std::cout << date13.m_set_YYYY_MM_DD() << "\n";
+	std::cout << date13.m_set_YYYY_DD_MM() << "\n";
+	
 
 	//test na poskie znaki
-	C_first_name test101;
+	/*C_first_name test101;
 	N_striing fff = "£ukasz";
 	test101.m_get_contens(fff);
-	std::cout <<"test 101:"<< test101<<"\n\n";
+	std::cout <<"test 101:"<< test101<<"\n";
 
+	C_last_name test102;
+	N_striing fff2 = "Miku³a";
+	test102.m_get_contens(fff2);
+	std::cout << "test 102:" << test102 << "\n";
+
+	C_gender test103;
+	//N_striing fff3 = "Men";
+	//N_striing fff3 = "men";
+	//N_striing fff3 = "1";
+	//N_striing fff3 = "true";
+	N_striing fff3 = "Women";
+	//N_striing fff3 = "women";
+	//N_striing fff3 = "0";
+	//N_striing fff3 = "False";			--> nie dzia³a!!!
+	test103.m_get_contens(fff3);
+	std::cout << "test 103:" << test103 << "\n";
 	*/
+
+	//C_id test104;
+	//test104.m_get_contens(45);
+	//test104.m_get_contens(4543434);
+	//test104.m_get_contens(05);
+	//std::cout << test104.m_set_contens();
+
+
+	/*C_day day2;
+	N_striing ddd = "20";
+
+
+	day2.m_get_day(ddd);
+	std::cout << ddd << "\n";
+
+	C_month month2;
+	N_striing mmm = "10";
+
+
+	month2.m_get_month(mmm);
+	std::cout << mmm << "\n";
+
+	C_year year2;
+	N_striing yyy = "1999";
+
+
+	year2.m_get_year(yyy);
+	std::cout << yyy << "\n";
+	*/
+
+	C_children chil;
+
+	chil.m_get_complete_content(34, 3);
+
 
 	/*main_szyfrowanie("plik.txt", "dom", 5);
 	system("type plik.txt");
 	main_odszyfrowywanie("plik.txt", "dom", 5);*/
+
+
+
 	return 0;
 }

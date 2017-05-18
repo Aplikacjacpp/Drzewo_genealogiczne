@@ -214,6 +214,7 @@
   <ItemGroup>
     <None Include="..\Dokumentacja\Wersja robocza\Nowa_wersja\Dok_Firmy_Programistycznej.doc" />
     <None Include="..\Dokumentacja\Wersja robocza\Nowa_wersja\Dok_Przedsięwzięcia_Prog.doc" />
+    <None Include="..\Dokumentacja\Wersja robocza\Nowa_wersja\Kom_Dok_Przedsięwzięcia_Prog.doc" />
     <None Include="..\Dokumentacja\Wersja robocza\Star_wersja\Dokumentacja.doc" />
     <None Include="ClassDiagram.cd" />
   </ItemGroup>

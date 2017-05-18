@@ -280,12 +280,15 @@
     <None Include="..\Dokumentacja\Wersja robocza\Nowa_wersja\Dok_Firmy_Programistycznej.doc">
       <Filter>Dokumentacja\Nowa</Filter>
     </None>
-    <None Include="..\Dokumentacja\Wersja robocza\Nowa_wersja\Dok_Przedsięwzięcia_Prog.doc">
-      <Filter>Dokumentacja\Nowa</Filter>
-    </None>
     <None Include="..\Dokumentacja\Wersja robocza\Star_wersja\Dokumentacja.doc">
       <Filter>Dokumentacja\Stara</Filter>
     </None>
     <None Include="ClassDiagram.cd" />
+    <None Include="..\Dokumentacja\Wersja robocza\Nowa_wersja\Kom_Dok_Przedsięwzięcia_Prog.doc">
+      <Filter>Dokumentacja\Nowa</Filter>
+    </None>
+    <None Include="..\Dokumentacja\Wersja robocza\Nowa_wersja\Dok_Przedsięwzięcia_Prog.doc">
+      <Filter>Dokumentacja\Stara</Filter>
+    </None>
   </ItemGroup>
 </Project>
