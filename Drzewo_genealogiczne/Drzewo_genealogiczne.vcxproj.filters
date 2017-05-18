@@ -290,5 +290,7 @@
     <None Include="..\Dokumentacja\Wersja robocza\Nowa_wersja\Dok_Przedsięwzięcia_Prog.doc">
       <Filter>Dokumentacja\Stara</Filter>
     </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
   </ItemGroup>
 </Project>
