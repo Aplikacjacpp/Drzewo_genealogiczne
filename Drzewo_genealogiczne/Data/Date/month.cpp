@@ -40,3 +40,10 @@ void C_month::m_get_month(N_striing &contens) {
 int C_month::m_set_variable() {
 	return t_month;
 }
+int C_month::m_set_value_month() {
+	return i_data_month;
+}
+void C_month::m_get_value_month(int value)
+{
+	i_data_month = value;
+}

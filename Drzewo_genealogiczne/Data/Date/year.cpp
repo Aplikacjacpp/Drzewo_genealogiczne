@@ -38,4 +38,10 @@ void C_year::m_get_year(N_striing &contens) {
 int C_year::m_set_variable() {
 	return t_year;
 }
-
+int C_year::m_set_value_year() {
+	return i_data_year;
+}
+void C_year::m_get_value_year(int value)
+{
+	i_data_year = value;
+}

@@ -41,6 +41,9 @@ private:
 	virtual N_striing m_is_there_contens(N_striing &Word);
 	virtual N_striing m_set_contens();
 	int i_data_day = NULL;
+protected:
+	int m_set_value_day();
+	void m_get_value_day(int value);
 };
 #endif // !day_H
 

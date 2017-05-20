@@ -41,6 +41,9 @@ private:
 	virtual N_striing m_is_there_contens(N_striing &Word);
 	int i_data_month;
 	virtual N_striing m_set_contens();
+protected:
+	int m_set_value_month();
+	void m_get_value_month(int value);
 };
 #endif // !month_H
 

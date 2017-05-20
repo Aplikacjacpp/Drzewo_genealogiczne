@@ -40,5 +40,11 @@ void C_day::m_get_day(N_striing &contens) {
 int C_day::m_set_variable() {
 	return t_day;
 }
-
+int C_day::m_set_value_day() {
+	return i_data_day;
+}
+void C_day::m_get_value_day(int value)
+{
+	i_data_day = value;
+}
 
