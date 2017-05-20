@@ -36,7 +36,7 @@ public:
 	virtual N_striing m_set_contens(); //zwraca caly striing bez obrobki
 	int m_set_value_id(); //zwraca wyszukana wczesniej wartosc id
 	C_first_name m_set_value_first_name(); //wyszukuje i zwraca wartosz first_name
-	C_last_name m_set_value_last_name(); //wyszukuje i zwraca wyszukana wartosc last_name
+	N_vektor<C_last_name> m_set_value_last_name(); //wyszukuje i zwraca wyszukana wartosc last_name
 	C_gender m_set_value_gender(); //wyszukuje i zwraca wartosc gender
 private:
 	virtual N_striing m_is_there_contens(N_striing &Word); //analizuje pod wzgledem poprawnosci wprowadzany striing

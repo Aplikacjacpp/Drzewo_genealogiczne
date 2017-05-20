@@ -107,8 +107,9 @@ C_first_name C_goverment_personaly::m_set_value_first_name() {
 	delete[] data;
 	return First;
 } //przetestowac czy dziala
-C_last_name C_goverment_personaly::m_set_value_last_name() {
+N_vektor<C_last_name> C_goverment_personaly::m_set_value_last_name() {
 	C_last_name Last;
+	N_vektor<C_last_name> Vektor;
 	int i, j;
 	N_striing str;
 	char *data = new char[2];
@@ -124,15 +125,15 @@ C_last_name C_goverment_personaly::m_set_value_last_name() {
 					str.m_push_back(s_goverment_personaly[j]);
 				}
 				else {
-					delete[] data;
 					Last.m_get_contens(str);
-					return Last;
+					Vektor.m_push_back(Last);
+					break;
 				}
 			}
 		}
 	}
 	delete[] data;
-	return Last;
+	return Vektor;
 } //przetestowac czy dziala
 C_gender C_goverment_personaly::m_set_value_gender() {
 	C_gender Gender;
