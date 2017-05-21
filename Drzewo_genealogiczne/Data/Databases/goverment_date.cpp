@@ -1,6 +1,8 @@
 #include "goverment_date.h"
 C_goverment_date::C_goverment_date() {}
-C_goverment_date::C_goverment_date(const C_goverment_date & goverment_date) {}
+C_goverment_date::C_goverment_date(const C_goverment_date & goverment_date) {
+	if (this != &goverment_date) *this = goverment_date;
+}
 C_goverment_date& C_goverment_date::operator=(const C_goverment_date& goverment_date) {
 	if (this == &goverment_date) return *this;
 	if (*this == goverment_date) return *this;
@@ -47,7 +49,7 @@ N_striing C_goverment_date::m_is_there_contens(N_striing &Word) {
 			break;
 		}
 	}
-	if (value == 3) return Word;
+	if (value >= 0) return Word; //problem
 	return "";
 }
 int C_goverment_date::m_id_value() {

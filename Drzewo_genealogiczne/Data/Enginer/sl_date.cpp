@@ -60,9 +60,10 @@ void C_sl_date::m_file_date(bool what) {
 			for (i = 0; i < V_goverment_date.m_size(); i++)
 			{
 				s_data+=V_goverment_date[i].m_set_contens();
-				s_data += "\n";
+				//std::cout << s_data << "\n";
+				//s_data += "\n";
 			}
-			s_data = m_cypher_off(s_data);
+			//s_data = m_cypher_off(s_data);
 			File << s_data;
 			File << f_end_file;
 			File.close();
@@ -71,3 +72,30 @@ void C_sl_date::m_file_date(bool what) {
 } //czytanie z pliku
 N_striing C_sl_date::m_cypher_on(N_striing data) { return data; }; //odszyfrowywanie
 N_striing C_sl_date::m_cypher_off(N_striing data) { return data; }; //zaszyfrowywanie
+void C_sl_date::m_get_new_date(C_id id,N_vektor<C_date> V_date) {
+	int i;
+	
+	C_date date;
+	C_goverment_date Gover;
+	N_striing data;
+	for (i = 0; i < V_date.m_size(); i++)
+	{
+		date = V_date[i];
+		data = "<";
+		data += id.m_what_type();
+		data += id.m_set_contens();
+		data += date.m_what_type_date();
+		data += date.m_set_day().m_what_type();
+		data += date.m_day_set();
+		data += date.m_set_month().m_what_type();
+		data += date.m_month_set();
+		data += date.m_set_year().m_what_type();
+		data += date.m_year_set();
+		if (i == V_date.m_size() - 1)
+			data += ">\n";
+		else
+			data += "::";
+	}
+	Gover.m_get_contens(data);
+	V_goverment_date.m_push_back(Gover);
+}

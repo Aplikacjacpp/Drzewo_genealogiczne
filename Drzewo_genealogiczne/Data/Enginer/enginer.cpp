@@ -60,6 +60,8 @@ void C_enginer::m_save_files() {
 }
 void C_enginer::m_new_human(C_human human) {
 	m_add_new_personaly(++i_index,human.m_set_first_name(),human.m_set_last_name(),human.m_set_gender());
+	std::cout<<"w silniku"<< human.m_set_Vdate()[0].m_set_DD_MM_YYYY()<<"\n";
+	m_get_new_date(i_index, human.m_set_Vdate());
 }
 void C_enginer::m_printer(int i) {
 	switch (i)
@@ -72,7 +74,7 @@ void C_enginer::m_printer(int i) {
 	}
 	case 2:
 	{
-		//system("cls");
+	//	system("cls");
 		std::cout << "Zapisywanie danych..\n";
 		break;
 	}

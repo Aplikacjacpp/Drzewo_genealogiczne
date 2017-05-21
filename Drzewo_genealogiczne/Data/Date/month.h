@@ -39,11 +39,11 @@ public:
 	void m_get_month(N_striing &contens);
 private:
 	virtual N_striing m_is_there_contens(N_striing &Word);
-	int i_data_month;
 	virtual N_striing m_set_contens();
 protected:
 	int m_set_value_month();
 	void m_get_value_month(int value);
+	int i_data_month;
 };
 #endif // !month_H
 

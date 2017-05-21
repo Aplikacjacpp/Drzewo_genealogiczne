@@ -24,7 +24,7 @@ public:
 	C_date();  //konstruktor bezparametrowy
 	C_date(char value); //konstruktor parametrowy
 	C_date(const C_date &d); //konstruktor kopiujacy
-	C_date operator=(const C_date &d); //operator przypisania
+	C_date& operator=(const C_date &d); //operator przypisania
 	bool operator==(const C_date &d); //operator poronania ==
 	bool operator!=(const C_date &d); //operator porownania !=
 	C_day m_set_day();  //staw dzien do daty
@@ -47,7 +47,7 @@ public:
 	void m_clear(); //wyczysc wszystkie dane daty
 	N_striing m_what_type_date(); //zwroc typ daty np. malzenstwa, smierci czy urodzenia
 	void m_shift_char(char value);
-	void m_set_type(N_striing value); //wstaw znak podzialki
+	void m_get_type(N_striing value); //wstaw znak podzialki
 	virtual ~C_date(); //destruktor wirtualny
 private:
 	char c_value; //zmienna typu char do podzialki

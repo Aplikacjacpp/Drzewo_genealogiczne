@@ -30,7 +30,7 @@ void C_goverment_personaly::m_get_contens(N_striing &contens) {
 	std::cout << contens;
 	this->s_goverment_personaly = m_is_there_contens(contens);
 	i_value_id = m_id_value();
-	std::cout <<"\n id:"<< i_value_id<<"\n"<<s_goverment_personaly<<"\n";
+//	std::cout <<"\n id:"<< i_value_id<<"\n"<<s_goverment_personaly<<"\n";
 }
 N_striing C_goverment_personaly::m_set_contens(void) { return s_goverment_personaly; }
 N_striing C_goverment_personaly::m_is_there_contens(N_striing &Word) {

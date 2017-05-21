@@ -44,7 +44,7 @@ public:
 	void m_shift_id(N_striing &id);
 	void m_shift_id(int id);
 	void m_shift_id(C_id &id);
-	void m_get_date(C_date& date);
+	void m_get_date(C_date date);
 	void m_delete_first_name();
 	void m_delete_last_name(int value);
 	void m_delete_last_name();
@@ -64,9 +64,8 @@ public:
 	C_id m_set_id();
 	C_date m_set_date(int value);
 	C_date m_set_date();
+	N_vektor<C_date> m_set_Vdate();
 	virtual ~C_human();
-protected:
-
 private:
 	N_vektor<C_date> V_date;
 	C_id Id;

@@ -56,7 +56,7 @@ void C_sl_personalys::m_load_file_personaly(bool what) {
 		File.open(f_save_data);
 		if (File.good())
 		{
-			std::cout <<"\nrozmiar zapisywanego:"<< V_goverment_personaly.m_size() << "\n";
+	//		std::cout <<"\nrozmiar zapisywanego:"<< V_goverment_personaly.m_size() << "\n";
 			for (i = 0; i < V_goverment_personaly.m_size(); i++)
 			{
 				s_data += V_goverment_personaly[i].m_set_contens();
@@ -82,9 +82,9 @@ void C_sl_personalys::m_add_new_personaly(C_id id, C_first_name first, C_last_na
 	data += gender.m_what_type();
 	data += gender.m_set_contens();
 	data += ">\n";
-	std::cout << "test:\n" << data << "\n";
+//	std::cout << "test:\n" << data << "\n";
 	C_goverment_personaly Goverment;
 	Goverment.m_get_contens(data);
 	V_goverment_personaly.m_push_back(Goverment);
-	std::cout <<"\n rozmiar vektora:"<< V_goverment_personaly.m_size() << "\n"<<V_goverment_personaly[0].m_set_contens()<<"\n";
+//	std::cout <<"\n rozmiar vektora:"<< V_goverment_personaly.m_size() << "\n"<<V_goverment_personaly[0].m_set_contens()<<"\n";
 }

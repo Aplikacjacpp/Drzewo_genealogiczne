@@ -46,7 +46,11 @@ void C_human::m_get_gender(bool gender)
 void C_human::m_shift_id(N_striing &id) { C_id I(id,1); Id = I; }
 void C_human::m_shift_id(int id) { C_id I(id); Id = I; }
 void C_human::m_shift_id(C_id &id) { Id = id; }
-void C_human::m_get_date(C_date& date) { V_date.m_push_back(date); }
+void C_human::m_get_date(C_date date) {
+	std::cout << "dodanie\n"<<date.m_set_DD_MM_YYYY()<<"\n";
+	V_date.m_push_back(date); 
+	std::cout << V_date[0].m_set_DD_MM_YYYY() << "\n";
+}
 void C_human::m_delete_first_name() { N_striing data = ""; First.m_get_contens(data); }
 void C_human::m_delete_last_name(int value) { V_last.m_erase(value); }
 void C_human::m_delete_last_name() { V_last.m_pop_front(); }
@@ -66,7 +70,9 @@ C_gender C_human::m_set_gender() { return Gender; }
 C_id C_human::m_set_id() { return Id; }
 C_date C_human::m_set_date(int value) { return V_date[value]; }
 C_date C_human::m_set_date() { return V_date[0]; }
-
+N_vektor<C_date> C_human::m_set_Vdate() {
+	return V_date;
+}
 
 
 

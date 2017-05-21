@@ -40,11 +40,11 @@ public:
 	N_striing m_year_set();
 private:
 	virtual N_striing m_is_there_contens(N_striing &Word);
-	int i_data_year;
 	virtual N_striing m_set_contens();
 protected:
 	int m_set_value_year();
 	void m_get_value_year(int value);
+	int i_data_year;
 };
 #endif // !year_H
 

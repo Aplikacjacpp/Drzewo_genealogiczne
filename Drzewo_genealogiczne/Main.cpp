@@ -28,7 +28,7 @@ int main()
 	human.m_get_first_name(First);
 	human.m_get_last_name(Last);
 	human.m_get_gender(gender);
-	Engin.m_new_human(human);
+	
 	N_vektor<int> V;
 	V.m_push_back(10);
 	V.m_push_back(11);
@@ -114,9 +114,18 @@ C_last_name L1, L2;
 	//std::cout << date13.m_set_DD_MM_YYYY()<<'\n';
 	//std::cout << date13.m_set_MM_DD_YYYY() << "\n";
 	//std::cout << date13.m_set_YYYY_MM_DD() << "\n";
-	std::cout << date13.m_set_YYYY_DD_MM() << "\n";
-	
-
+	data = "#+";
+	C_date date14(date13);
+	C_date *date15 = new C_date;
+	*date15 = date14;
+	//std::cout << date15[0].m_set_YYYY_DD_MM() << "\n";
+	N_vektor<C_date> Vektorek;
+	Vektorek.m_push_back(date15[0]);
+	std::cout <<"z wektora"<< Vektorek[0].m_set_YYYY_DD_MM() << "\n";
+	std::cout <<"oddzielnie: "<< date14.m_day_set() << "/" << date14.m_month_set() <<"/"<< date14.m_year_set() << "\n";
+	date13.m_get_type(data);
+	human.m_get_date(date15[0]);
+	Engin.m_new_human(human);
 	//test na poskie znaki
 	/*C_first_name test101;
 	N_striing fff = "£ukasz";
@@ -180,6 +189,8 @@ C_last_name L1, L2;
 	main_odszyfrowywanie("plik.txt", "dom", 5);*/
 	Engin.m_save_files();
 	system("type data.save");
+	std::cout << "\n";
+	system("type date.save");
 
 	return 0;
 }

@@ -1,19 +1,27 @@
 #include "date.h"
-C_date::C_date() {}
-C_date::C_date(char value) { c_value = value; }
-C_date::C_date(const C_date &d) { if (this != &d) *this = d; }
-C_date C_date::operator=(const C_date &d) {
+C_date::C_date():C_day(),C_month(),C_year() {}
+C_date::C_date(char value):C_day(),C_month(),C_year() { c_value = value; }
+C_date::C_date(const C_date &d) : C_day(d.i_data_day), C_month(d.i_data_month), C_year(d.i_data_year) { if (this != &d) *this = d; }
+C_date& C_date::operator=(const C_date &d) {
 	if (this == &d) return *this;
-	if (*this == d) return *this;
+	if (*this == d) return *this; 
+	i_data_day = d.i_data_day;
+	i_data_month = d.i_data_month;
+	i_data_year = d.i_data_year;
 	c_value = d.c_value;
+	s_value = d.s_value;
 	return *this;
 }
 bool C_date::operator==(const C_date &d) {
-	if (c_value == d.c_value) return true;
+	if (c_value == d.c_value&&s_value == d.s_value&&
+		i_data_day == d.i_data_day&& i_data_month == d.i_data_month&&
+		i_data_year == d.i_data_year) return true;
 	return false;
 }
 bool C_date::operator!=(const C_date &d) {
-	if (c_value != d.c_value) return true;
+	if (c_value != d.c_value&&s_value != d.s_value&&
+		i_data_day != d.i_data_day&& i_data_month != d.i_data_month&&
+		i_data_year != d.i_data_year) return true;
 	return false;
 }
 C_date::~C_date() {}
@@ -177,6 +185,6 @@ N_striing C_date::m_what_type_date() {
 void C_date::m_shift_char(char value) {
 	c_value = value;
 }
-void C_date::m_set_type(N_striing value) {
+void C_date::m_get_type(N_striing value) {
 	s_value = value;
 }
