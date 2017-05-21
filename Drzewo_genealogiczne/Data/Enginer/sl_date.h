@@ -28,7 +28,8 @@ public:
 	void m_file_date(bool what); //czytanie z pliku
 	virtual N_striing m_cypher_on(N_striing data); //odszyfrowywanie
 	virtual N_striing m_cypher_off(N_striing data); //zaszyfrowywanie
-public:
+	//void m_get_new_date();
+private:
 	N_vektor<C_goverment_date> V_goverment_date;
 };
 #endif // !C_SL_DATE_H

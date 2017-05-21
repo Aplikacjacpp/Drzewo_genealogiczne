@@ -1,6 +1,8 @@
 #include "sl_date.h"
-C_sl_date::C_sl_date() {}
-C_sl_date::C_sl_date(const C_sl_date & sl_date) {}
+C_sl_date::C_sl_date():C_save_load() {}
+C_sl_date::C_sl_date(const C_sl_date & sl_date):C_save_load(sl_date) {
+	if (this != &sl_date) *this = sl_date;
+}
 C_sl_date& C_sl_date::operator=(const C_sl_date& sl_date) {
 	if (this == &sl_date) return *this;
 	if (*this == sl_date) return *this;

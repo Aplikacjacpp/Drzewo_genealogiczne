@@ -57,5 +57,6 @@
 #define f_save_data "data.save"
 #define f_save_relation "relation.save"
 #define f_save_date "date.save"
+#define f_init_file "file"
 #define f_end_file "#@#@#@#@#@#@#@#@#@"
 #endif // !DEFINITON_H

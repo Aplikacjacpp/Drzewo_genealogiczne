@@ -1,6 +1,8 @@
 #include "sl_relations.h"
-C_sl_relations::C_sl_relations() {}
-C_sl_relations::C_sl_relations(const C_sl_relations & sl_relations) {}
+C_sl_relations::C_sl_relations():C_save_load() {}
+C_sl_relations::C_sl_relations(const C_sl_relations & sl_relations):C_save_load(sl_relations) {
+	if (this != &sl_relations) *this = sl_relations;
+}
 C_sl_relations& C_sl_relations::operator=(const C_sl_relations& sl_relations) {
 	if (this == &sl_relations) return *this;
 	if (*this == sl_relations) return *this;
@@ -17,7 +19,7 @@ bool C_sl_relations::operator!=(const C_sl_relations& sl_relations) {
 }
 C_sl_relations::~C_sl_relations() {}
 void C_sl_relations::m_load_file_relation(bool what) {
-	N_striing s_data;
+	N_striing s_data,s_inline;
 	int i_multiple, i, i_start, i_stop;
 	if (what)
 	{
@@ -26,11 +28,12 @@ void C_sl_relations::m_load_file_relation(bool what) {
 		File.open(f_save_relation);
 		if (File.good())
 		{
-			File >> i_multiple;
-			for (i = 0; i < i_multiple; i++)
-			{
-				s_data += s_data.m_getline(File); //nie wiem czy bedzie dzialac
-			}
+			do {
+				s_inline.m_getline(File); //nie wiem czy bedzie dzialac
+				if (s_inline == f_end_file) break;
+				s_data += s_inline;
+				s_inline.m_clear();
+			} while (1);
 			File.close();
 		}
 		s_data = m_cypher_on(s_data);
@@ -53,13 +56,13 @@ void C_sl_relations::m_load_file_relation(bool what) {
 		File.open(f_save_relation);
 		if (File.good())
 		{
-			File << V_goverment_relation.m_size();
 			for (i = 0; i < V_goverment_relation.m_size(); i++)
 			{
 				s_data += V_goverment_relation[i].m_set_contens();
 			}
 			s_data = m_cypher_off(s_data);
 			File << s_data;
+			File << f_end_file;
 			File.close();
 		}
 	}

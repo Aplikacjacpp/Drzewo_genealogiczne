@@ -4,19 +4,38 @@
 #include "Data\Interface\aplication_txt.h"
 #include "Data\Date\date.h"
 #include "Data\Relation\relation.h"
+#include "Data\Enginer\enginer.h"
 
 int main()
 {
+	C_sl_personalys personal;
+	
+	C_enginer Engin;
 	//C_data Data;
 	C_day day;		// definicja zmiennej day
 	C_month month;
 	C_year year;
-	C_id Id;
+	C_id Id(102);
 	C_date date;
-	C_last_name Last;
+	
+
 	C_gender gender(true);
-	N_striing data = "Luka sz";
+	N_striing data = "Lukasz";
 	C_first_name First(data);
+	data = "Witek";
+	C_last_name Last(data);
+	C_human human;
+	human.m_get_first_name(First);
+	human.m_get_last_name(Last);
+	human.m_get_gender(gender);
+	Engin.m_new_human(human);
+	N_vektor<int> V;
+	V.m_push_back(10);
+	V.m_push_back(11);
+	N_vektor<int> D;
+	D = V;
+	std::cout << D[0] << D[1] << "\n";
+	//return 0;
 	//date()
 	int X;
 	int Return = 0;
@@ -159,8 +178,8 @@ C_last_name L1, L2;
 	/*main_szyfrowanie("plik.txt", "dom", 5);
 	system("type plik.txt");
 	main_odszyfrowywanie("plik.txt", "dom", 5);*/
-
-
+	Engin.m_save_files();
+	system("type data.save");
 
 	return 0;
 }

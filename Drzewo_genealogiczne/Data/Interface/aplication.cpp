@@ -1,6 +1,8 @@
 #include "aplication.h"
-C_aplication::C_aplication() {}
-C_aplication::C_aplication(const C_aplication & aplication) {}
+C_aplication::C_aplication():C_enginer() {}
+C_aplication::C_aplication(const C_aplication & aplication):C_enginer(aplication) {
+	if (this != &aplication) *this = aplication;
+}
 C_aplication& C_aplication::operator=(const C_aplication& aplication) {
 	if (this == &aplication) return *this;
 	if (*this == aplication) return *this;
