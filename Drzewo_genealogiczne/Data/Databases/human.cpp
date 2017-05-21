@@ -73,6 +73,9 @@ C_date C_human::m_set_date() { return V_date[0]; }
 N_vektor<C_date> C_human::m_set_Vdate() {
 	return V_date;
 }
+N_vektor<C_last_name> C_human::m_set_V_last_name() {
+	return V_last;
+}
 
 
 

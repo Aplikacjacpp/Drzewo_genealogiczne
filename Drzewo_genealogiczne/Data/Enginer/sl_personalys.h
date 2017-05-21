@@ -30,7 +30,7 @@ public:
 	void m_load_file_personaly(bool what); //czytanie z pliku
 	virtual N_striing m_cypher_on(N_striing data); //odszyfrowywanie
 	virtual N_striing m_cypher_off(N_striing data); //zaszyfrowywanie
-	void m_add_new_personaly(C_id id, C_first_name first, C_last_name last, C_gender gender);
+	void m_add_new_personaly(C_id id, C_first_name first, N_vektor<C_last_name> Last, C_gender gender);
 private:
 	N_vektor<C_goverment_personaly> V_goverment_personaly;
 };

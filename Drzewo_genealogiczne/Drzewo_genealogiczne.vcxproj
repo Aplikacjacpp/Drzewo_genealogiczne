@@ -217,8 +217,6 @@
     <None Include="..\Dokumentacja\Wersja robocza\Nowa_wersja\Kom_Dok_Przedsięwzięcia_Prog.doc" />
     <None Include="..\Dokumentacja\Wersja robocza\Star_wersja\Dokumentacja.doc" />
     <None Include="ClassDiagram.cd" />
-    <None Include="ClassDiagram1.cd" />
-    <None Include="ClassDiagram2.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -24,9 +24,12 @@ int main()
 	C_first_name First(data);
 	data = "Witek";
 	C_last_name Last(data);
+	data = "Witkowski";
+	C_last_name Last1(data);
 	C_human human;
 	human.m_get_first_name(First);
 	human.m_get_last_name(Last);
+	human.m_get_last_name(Last1);
 	human.m_get_gender(gender);
 	
 	N_vektor<int> V;

@@ -65,6 +65,7 @@ public:
 	C_date m_set_date(int value);
 	C_date m_set_date();
 	N_vektor<C_date> m_set_Vdate();
+	N_vektor<C_last_name> m_set_V_last_name();
 	virtual ~C_human();
 private:
 	N_vektor<C_date> V_date;

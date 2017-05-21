@@ -93,8 +93,6 @@ void C_sl_date::m_get_new_date(C_id id,N_vektor<C_date> V_date) {
 		data += date.m_year_set();
 		if (i == V_date.m_size() - 1)
 			data += ">\n";
-		else
-			data += "::";
 	}
 	Gover.m_get_contens(data);
 	V_goverment_date.m_push_back(Gover);

@@ -70,18 +70,25 @@ void C_sl_personalys::m_load_file_personaly(bool what) {
 }
 N_striing C_sl_personalys::m_cypher_on(N_striing data) { return data; }; //odszyfrowywanie
 N_striing C_sl_personalys::m_cypher_off(N_striing data) { return data; }; //zaszyfrowywanie
-void C_sl_personalys::m_add_new_personaly(C_id id, C_first_name first, C_last_name last, C_gender gender) {
+void C_sl_personalys::m_add_new_personaly(C_id id, C_first_name first, N_vektor<C_last_name> Last, C_gender gender) {
+	C_last_name last;
+	int i;
 	N_striing data;
 	data = "<";
 	data += id.m_what_type();
 	data += id.m_set_contens();
 	data += first.m_what_type();
 	data += first.m_set_contens();
-	data += last.m_what_type();
-	data += last.m_set_contens();
+	for (i = 0; i < Last.m_size(); i++)
+	{
+		last = Last[i];
+		data += last.m_what_type();
+		data += last.m_set_contens();
+	}
 	data += gender.m_what_type();
 	data += gender.m_set_contens();
 	data += ">\n";
+
 //	std::cout << "test:\n" << data << "\n";
 	C_goverment_personaly Goverment;
 	Goverment.m_get_contens(data);
