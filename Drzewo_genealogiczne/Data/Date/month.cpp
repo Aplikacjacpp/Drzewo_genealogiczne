@@ -20,7 +20,7 @@ bool C_month::operator!=(const C_month &month) {
 }
 C_month::~C_month() {};
 bool C_month::m_wchat_is() { if (this->i_data_month != NULL) return true; return false; }
-void C_month::m_get_contens(N_striing &contens) { this->i_data_month = m_is_there_contens(contens).m_atoi(0, contens.m_size()); }
+void C_month::m_get_contens(N_striing &contens) { this->i_data_month = m_is_there_contens(contens).m_atoi(0, contens.m_size()-1); }
 N_striing C_month::m_set_contens() { N_striing data; data.m_itoa(this->i_data_month); return data; }
 N_striing C_month::m_is_there_contens(N_striing &Word) {
 		int y = 0;

@@ -20,7 +20,7 @@ bool C_year::operator!=(const C_year &year) {
 }
 C_year::~C_year() {};
 bool C_year::m_wchat_is() { if (this->i_data_year != NULL) return true; return false; }
-void C_year::m_get_contens(N_striing &contens) { this->i_data_year = m_is_there_contens(contens).m_atoi(0, contens.m_size()); }
+void C_year::m_get_contens(N_striing &contens) { this->i_data_year = m_is_there_contens(contens).m_atoi(0, contens.m_size()-1); }
 N_striing C_year::m_set_contens() { N_striing data; data.m_itoa(this->i_data_year); return data; }
 N_striing C_year::m_is_there_contens(N_striing &Word) { 
 		int y = 0;

@@ -88,83 +88,76 @@ C_first_name C_goverment_personaly::m_set_value_first_name() {
 	C_first_name First;
 	int i, j;
 	N_striing str,data;
-	for (i = 1; i < s_goverment_personaly.m_size(); i++) { //mienna typu striing jest pusta nie wiem dlaczego!!
+	for (i = 1; i < s_goverment_personaly.m_size(); i++) { //dziala:)
 		data.m_clear();
 		data.m_push_back(s_goverment_personaly[i - 1]);
 		data.m_push_back(s_goverment_personaly[i]);
-		std::cout << "\n" << data << "==" << n_first_name;
 		if (data==n_first_name)
 		{
-			std::cout << "weeeszloo\n";
-			for (j = i; j < s_goverment_personaly.m_size(); j++)
+			for (j = i+1; j < s_goverment_personaly.m_size(); j++)
 			{
-				if (!(s_goverment_personaly[j+1] >= '0'&&s_goverment_personaly[j+1] <='9'))
+				if (!(s_goverment_personaly[j+1] >= '0'&&s_goverment_personaly[j+1] <='9') && s_goverment_personaly[j] != '>')
 				{
-					//std::cout << s_goverment_personaly[j];
 					str.m_push_back(s_goverment_personaly[j]);
+					continue;
 				}
-				else {
 					First.m_get_contens(str);
-					std::cout <<"\nfirst"<< First.m_set_contens()<<"\n";
 					return First;
-				}
 			}
 		}
 	}
 	return First;
 } //przetestowac czy dziala
-N_vektor<C_last_name> C_goverment_personaly::m_set_value_last_name() {
+N_vektor<C_last_name> C_goverment_personaly::m_set_value_last_name() { //dziala :)
 	C_last_name Last;
 	N_vektor<C_last_name> Vektor;
 	int i, j;
-	N_striing str;
-	char *data = new char[2];
+	N_striing str,data;
 	for (i = 1; i < s_goverment_personaly.m_size(); i++) {
-		data[0] = s_goverment_personaly[i - 1];
-		data[1] = s_goverment_personaly[i];
-		if (n_last_name == data)
+		data.m_clear();
+		data.m_push_back(s_goverment_personaly[i - 1]);
+		data.m_push_back(s_goverment_personaly[i]);
+		if (data == n_last_name)
 		{
-			for (j = i; j < s_goverment_personaly.m_size(); j++)
+			std::cout << "wynik: " << i << "\n";
+			str.m_clear();
+			for (j = i+1; j < s_goverment_personaly.m_size(); j++)
 			{
-				if (!(s_goverment_personaly[j + 1] >= 0 && s_goverment_personaly[j + 1] <= 9))
+				if (!(s_goverment_personaly[j + 1] >= '0' && s_goverment_personaly[j + 1] <= '9')&&s_goverment_personaly[j] != '>')
 				{
 					str.m_push_back(s_goverment_personaly[j]);
+					continue;
 				}
-				else {
 					Last.m_get_contens(str);
 					Vektor.m_push_back(Last);
+					i = j;
 					break;
-				}
 			}
 		}
 	}
-	delete[] data;
 	return Vektor;
 } //przetestowac czy dziala
 C_gender C_goverment_personaly::m_set_value_gender() {
 	C_gender Gender;
 	int i, j;
-	N_striing str;
-	char *data = new char[2];
+	N_striing str,data;
 	for (i = 1; i < s_goverment_personaly.m_size(); i++) {
-		data[0] = s_goverment_personaly[i - 1];
-		data[1] = s_goverment_personaly[i];
-		if (n_gender == data)
+		data.m_clear();
+		data.m_push_back(s_goverment_personaly[i - 1]);
+		data.m_push_back(s_goverment_personaly[i]);
+		if (data == n_gender)
 		{
-			for (j = i; j < s_goverment_personaly.m_size(); j++)
+			for (j = i+1; j < s_goverment_personaly.m_size(); j++)
 			{
-				if (!(s_goverment_personaly[j + 1] >= 0 && s_goverment_personaly[j + 1] <= 9))
+				if (!(s_goverment_personaly[j + 1] >= '0' && s_goverment_personaly[j + 1] <= '9')&& s_goverment_personaly[j] != '>')
 				{
 					str.m_push_back(s_goverment_personaly[j]);
+					continue;
 				}
-				else {
-					delete[] data;
 					Gender.m_get_contens(str);
 					return Gender;
 				}
 			}
 		}
-	}
-	delete[] data;
 	return Gender;
 } //przetestowac czy dziala

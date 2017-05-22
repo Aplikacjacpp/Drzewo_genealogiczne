@@ -54,27 +54,24 @@ N_striing C_goverment_date::m_is_there_contens(N_striing &Word) {
 }
 int C_goverment_date::m_id_value() {
 	int i,j;
-	N_striing str;
-	char *data = new char[2];
+	N_striing str,data;
 	for (i = 1; i < s_goverment_data.m_size(); i++) {
-		 data[0] = s_goverment_data[i - 1];
-		data[1] = s_goverment_data[i];
-		if (n_id_data == data)
+		data.m_clear();
+		 data.m_push_back(s_goverment_data[i - 1]);
+		 data.m_push_back(s_goverment_data[i]);
+		if (data==n_id_data)
 		{
-			for (j = i; j < s_goverment_data.m_size(); j++)
+			for (j = i+1; j < s_goverment_data.m_size(); j++)
 			{
-				if (s_goverment_data[j] >= 0 && s_goverment_data[j] <= 9)
+				if (s_goverment_data[j] >= '0' && s_goverment_data[j] <= '9')
 				{
 					str.m_push_back(s_goverment_data[j]);
+					continue;
 				}
-				else {
-					delete[] data;
 					return str.m_atoi(0, str.m_size() - 1);
-				}
 			}
 		}
 	}
-	delete[] data;
 	return 0;
 } //trzeba przetestowac!!
 int C_goverment_date::m_set_value_id() {
@@ -83,82 +80,73 @@ int C_goverment_date::m_set_value_id() {
 C_day C_goverment_date::m_set_value_day() {
 	C_day day;
 	int i, j;
-	N_striing str;
-	char *data = new char[2];
+	N_striing str, data;
 	for (i = 1; i < s_goverment_data.m_size(); i++) {
-		data[0] = s_goverment_data[i - 1];
-		data[1] = s_goverment_data[i];
-		if (n_day == data)
+		data.m_clear();
+		data.m_push_back(s_goverment_data[i - 1]);
+		data.m_push_back(s_goverment_data[i]);
+		if (data == n_day)
 		{
-			for (j = i; j < s_goverment_data.m_size(); j++)
+			for (j = i+1; j < s_goverment_data.m_size(); j++)
 			{
-				if (s_goverment_data[j] >= 0 && s_goverment_data[j] <= 9)
+				if (s_goverment_data[j] >= '0' && s_goverment_data[j] <= '9')
 				{
 					str.m_push_back(s_goverment_data[j]);
+					continue;
 				}
-				else {
-					delete[] data;
 					day.m_get_contens(str);
 					return day;
-				}
 			}
 		}
 	}
-	delete[] data;
 	return day;
 }; //przetestowac czy dziala
 C_month C_goverment_date::m_set_value_month() {
 	C_month month;
 	int i, j;
-	N_striing str;
-	char *data = new char[2];
+	N_striing str, data;
 	for (i = 1; i < s_goverment_data.m_size(); i++) {
-		data[0] = s_goverment_data[i - 1];
-		data[1] = s_goverment_data[i];
-		if (n_month == data)
+		data.m_clear();
+		data.m_push_back(s_goverment_data[i - 1]);
+		data.m_push_back(s_goverment_data[i]);
+		if (data == n_month)
 		{
-			for (j = i; j < s_goverment_data.m_size(); j++)
+			for (j = i+1; j < s_goverment_data.m_size(); j++)
 			{
-				if (s_goverment_data[j] >= 0 && s_goverment_data[j] <= 9)
+				if (s_goverment_data[j] >= '0' && s_goverment_data[j] <= '9')
 				{
 					str.m_push_back(s_goverment_data[j]);
+					continue;
 				}
-				else {
-					delete[] data;
 					month.m_get_contens(str);
 					return month;
-				}
 			}
 		}
 	}
-	delete[] data;
 	return month;
 }; //przetestowac czy dziala
 C_year C_goverment_date::m_set_value_year() {
 	C_year year;
 	int i, j;
-	N_striing str;
-	char *data = new char[2];
+	N_striing str, data;
 	for (i = 1; i < s_goverment_data.m_size(); i++) {
-		data[0] = s_goverment_data[i - 1];
-		data[1] = s_goverment_data[i];
-		if (n_year == data)
+		data.m_clear();
+		data.m_push_back(s_goverment_data[i - 1]);
+		data.m_push_back(s_goverment_data[i]);
+		if (data == n_year)
 		{
-			for (j = i; j < s_goverment_data.m_size(); j++)
+			for (j = i+1; j < s_goverment_data.m_size(); j++)
 			{
-				if (s_goverment_data[j] >= 0 && s_goverment_data[j] <= 9)
+				if (s_goverment_data[j] >= '0' && s_goverment_data[j] <= '9')
 				{
 					str.m_push_back(s_goverment_data[j]);
+					continue;
 				}
-				else {
-					delete[] data;
 					year.m_get_contens(str);
 					return year;
-				}
 			}
 		}
 	}
-	delete[] data;
 	return year;
 }; //przetestowac czy dziala
 N_vektor<C_date> C_goverment_date::m_set_value_V_date() {
@@ -178,87 +166,87 @@ N_vektor<C_date> C_goverment_date::m_set_value_V_date() {
 	}
 	return Vektor;
 }
-N_vektor<C_day> C_goverment_date::m_set_value_V_day() {
+N_vektor<C_day> C_goverment_date::m_set_value_V_day() { //dziala
 	N_vektor<C_day> Vektor;
 	C_day day;
 	int i, j;
-	N_striing str;
-	char *data = new char[2];
+	N_striing str, data;
 	for (i = 1; i < s_goverment_data.m_size(); i++) {
-		data[0] = s_goverment_data[i - 1];
-		data[1] = s_goverment_data[i];
-		if (n_day == data)
+		data.m_clear();
+		data.m_push_back(s_goverment_data[i - 1]);
+		data.m_push_back(s_goverment_data[i]);
+		if (data == n_day)
 		{
-			for (j = i; j < s_goverment_data.m_size(); j++)
+			for (j = i+1; j < s_goverment_data.m_size(); j++)
 			{
-				if (s_goverment_data[j] >= 0 && s_goverment_data[j] <= 9)
+				if (s_goverment_data[j] >= '0' && s_goverment_data[j] <= '9')
 				{
 					str.m_push_back(s_goverment_data[j]);
+					continue;
 				}
-				else {
 					day.m_get_contens(str);
+					std::cout <<"dzien: "<< day.m_day_set() << "\n";
 					Vektor.m_push_back(day);
+					i = j;
 					break;
-				}
 			}
 		}
 	}
-	delete[] data;
 	return Vektor;
 }
-N_vektor<C_month> C_goverment_date::m_set_value_V_month() {
+N_vektor<C_month> C_goverment_date::m_set_value_V_month() { //dziala
 	N_vektor<C_month> Vektor;
 	C_month month;
 	int i, j;
-	N_striing str;
-	char *data = new char[2];
+	N_striing str, data;
 	for (i = 1; i < s_goverment_data.m_size(); i++) {
-		data[0] = s_goverment_data[i - 1];
-		data[1] = s_goverment_data[i];
-		if (n_month == data)
+		data.m_clear();
+		data.m_push_back(s_goverment_data[i - 1]);
+		data.m_push_back(s_goverment_data[i]);
+		if (data == n_month)
 		{
-			for (j = i; j < s_goverment_data.m_size(); j++)
+			for (j = i+1; j < s_goverment_data.m_size(); j++)
 			{
-				if (s_goverment_data[j] >= 0 && s_goverment_data[j] <= 9)
+				if (s_goverment_data[j] >= '0' && s_goverment_data[j] <= '9')
 				{
-					str.m_push_back(s_goverment_data[j]);
+					str.m_push_back(s_goverment_data[j]);;
+					continue;
 				}
-				else {
 					month.m_get_contens(str);
+					std::cout <<"miesiac: "<< month.m_month_set() << "\n";
 					Vektor.m_push_back(month);
+					i = j;
 					break;
-				}
 			}
 		}
 	}
-	delete[] data;
 	return Vektor;
 }
-N_vektor<C_year> C_goverment_date::m_set_value_V_year() {
+N_vektor<C_year> C_goverment_date::m_set_value_V_year() { //dziala
 	N_vektor<C_year> Vektor;
 	C_year year;
 	int i, j;
-	N_striing str;
-	char *data = new char[2];
+	N_striing str,data;
 	for (i = 1; i < s_goverment_data.m_size(); i++) {
-		data[0] = s_goverment_data[i - 1];
-		data[1] = s_goverment_data[i];
-		if (n_year == data)
+		data.m_clear();
+		data.m_push_back(s_goverment_data[i - 1]);
+		data.m_push_back(s_goverment_data[i]);
+		if (data==n_year)
 		{
-			for (j = i; j < s_goverment_data.m_size(); j++)
+			for (j = i+1; j < s_goverment_data.m_size(); j++)
 			{
-				if (s_goverment_data[j] >= 0 && s_goverment_data[j] <= 9)
+				if (s_goverment_data[j] >= '0' && s_goverment_data[j] <= '9')
 				{
 					str.m_push_back(s_goverment_data[j]);
+					continue;
 				}
-				else {
 						year.m_get_contens(str);
+						std::cout <<"rok: "<< year.m_year_set()<<"\n";
 						Vektor.m_push_back(year);
+						i = j;
 						break;
-				}
 			}
 		}
 	}
-	delete[] data;
 	return Vektor;
 }
