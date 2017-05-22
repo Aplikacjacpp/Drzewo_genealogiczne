@@ -129,6 +129,7 @@ C_last_name L1, L2;
 	date13.m_get_type(data);
 	human.m_get_date(date15[0]);
 	Engin.m_new_human(human);
+	Engin.m_create_human(0);
 	//test na poskie znaki
 	/*C_first_name test101;
 	N_striing fff = "£ukasz";

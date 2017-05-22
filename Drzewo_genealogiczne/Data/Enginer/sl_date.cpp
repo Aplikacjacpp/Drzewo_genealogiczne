@@ -108,3 +108,12 @@ void C_sl_date::m_get_new_date(C_id id,N_vektor<C_date> V_date) {
 	Gover.m_get_contens(data);
 	V_goverment_date.m_push_back(Gover);
 }
+C_goverment_date& C_sl_date::operator[](int i) {
+	return V_goverment_date[i];
+}
+C_goverment_date C_sl_date::m_set_gover_date(int i) {
+	return V_goverment_date[i];
+}
+N_vektor<C_date> C_sl_date::m_set_V_date(int i) {
+return V_goverment_date[i].m_set_value_V_date();
+}

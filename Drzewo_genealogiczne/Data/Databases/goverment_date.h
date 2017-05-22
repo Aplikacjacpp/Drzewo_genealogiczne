@@ -36,6 +36,10 @@ public:
 	C_day m_set_value_day(); //wyszukuje i zwraca wartosc day
 	C_month m_set_value_month(); //wyszukuje i zwraca wartosc month
 	C_year m_set_value_year(); //wyszukuje i zwraca wartosc year
+	N_vektor<C_date> m_set_value_V_date(); // zwraca wektor obiektow C_date
+	N_vektor<C_day> m_set_value_V_day(); //wyszukuje i zwraca wartosc day
+	N_vektor<C_month> m_set_value_V_month(); //wyszukuje i zwraca wartosc month
+	N_vektor<C_year> m_set_value_V_year(); //wyszukuje i zwraca wartosc year
 private:
 	virtual N_striing m_is_there_contens(N_striing &Word); //analizuje wprowadzany striing pod wzgledem poprawnej zawartosci
 	N_striing s_goverment_data; //zmienna przechowujaca striing

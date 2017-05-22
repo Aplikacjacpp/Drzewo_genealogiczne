@@ -161,3 +161,104 @@ C_year C_goverment_date::m_set_value_year() {
 	delete[] data;
 	return year;
 }; //przetestowac czy dziala
+N_vektor<C_date> C_goverment_date::m_set_value_V_date() {
+	N_vektor<C_date> Vektor;
+	N_vektor<C_day> day(m_set_value_V_day());
+	N_vektor<C_month> month(m_set_value_V_month());
+	N_vektor<C_year> year(m_set_value_V_year());
+	int i;
+	C_date date;
+	for (i = 0; i < day.m_size(); i++)
+	{
+		date.m_get_day(day[i].m_day_set());
+		date.m_get_month(month[i].m_month_set());
+		date.m_get_year(year[i].m_year_set());
+		int x;
+		Vektor.m_push_back(date);
+	}
+	return Vektor;
+}
+N_vektor<C_day> C_goverment_date::m_set_value_V_day() {
+	N_vektor<C_day> Vektor;
+	C_day day;
+	int i, j;
+	N_striing str;
+	char *data = new char[2];
+	for (i = 1; i < s_goverment_data.m_size(); i++) {
+		data[0] = s_goverment_data[i - 1];
+		data[1] = s_goverment_data[i];
+		if (n_day == data)
+		{
+			for (j = i; j < s_goverment_data.m_size(); j++)
+			{
+				if (s_goverment_data[j] >= 0 && s_goverment_data[j] <= 9)
+				{
+					str.m_push_back(s_goverment_data[j]);
+				}
+				else {
+					day.m_get_contens(str);
+					Vektor.m_push_back(day);
+					break;
+				}
+			}
+		}
+	}
+	delete[] data;
+	return Vektor;
+}
+N_vektor<C_month> C_goverment_date::m_set_value_V_month() {
+	N_vektor<C_month> Vektor;
+	C_month month;
+	int i, j;
+	N_striing str;
+	char *data = new char[2];
+	for (i = 1; i < s_goverment_data.m_size(); i++) {
+		data[0] = s_goverment_data[i - 1];
+		data[1] = s_goverment_data[i];
+		if (n_month == data)
+		{
+			for (j = i; j < s_goverment_data.m_size(); j++)
+			{
+				if (s_goverment_data[j] >= 0 && s_goverment_data[j] <= 9)
+				{
+					str.m_push_back(s_goverment_data[j]);
+				}
+				else {
+					month.m_get_contens(str);
+					Vektor.m_push_back(month);
+					break;
+				}
+			}
+		}
+	}
+	delete[] data;
+	return Vektor;
+}
+N_vektor<C_year> C_goverment_date::m_set_value_V_year() {
+	N_vektor<C_year> Vektor;
+	C_year year;
+	int i, j;
+	N_striing str;
+	char *data = new char[2];
+	for (i = 1; i < s_goverment_data.m_size(); i++) {
+		data[0] = s_goverment_data[i - 1];
+		data[1] = s_goverment_data[i];
+		if (n_year == data)
+		{
+			for (j = i; j < s_goverment_data.m_size(); j++)
+			{
+				if (s_goverment_data[j] >= 0 && s_goverment_data[j] <= 9)
+				{
+					str.m_push_back(s_goverment_data[j]);
+				}
+				else {
+						year.m_get_contens(str);
+						Vektor.m_push_back(year);
+						break;
+				}
+			}
+		}
+	}
+	delete[] data;
+	return Vektor;
+}

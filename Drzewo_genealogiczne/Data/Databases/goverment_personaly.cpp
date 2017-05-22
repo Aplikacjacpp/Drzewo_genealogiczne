@@ -53,7 +53,7 @@ N_striing C_goverment_personaly::m_is_there_contens(N_striing &Word) {
 			break;
 		}
 	}
-	if (value >= 0) return Word; //problem!!
+	if (value == 4) return Word; //problem!!
 	return "";
 }
 int C_goverment_personaly::m_id_value() {
@@ -89,7 +89,7 @@ C_first_name C_goverment_personaly::m_set_value_first_name() {
 	int i, j;
 	N_striing str;
 	char *data = new char[2];
-	for (i = 1; i < s_goverment_personaly.m_size(); i++) {
+	for (i = 1; i < s_goverment_personaly.m_size(); i++) { //mienna typu striing jest pusta nie wiem dlaczego!!
 		data[0] = s_goverment_personaly[i - 1];
 		data[1] = s_goverment_personaly[i];
 		if (n_first_name == data)
@@ -103,6 +103,7 @@ C_first_name C_goverment_personaly::m_set_value_first_name() {
 				else {
 					delete[] data;
 					First.m_get_contens(str);
+					std::cout <<"\nfirst"<< First<<"\n";
 					return First;
 				}
 			}
