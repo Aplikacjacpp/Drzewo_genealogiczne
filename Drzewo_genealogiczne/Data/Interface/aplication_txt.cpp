@@ -1,4 +1,5 @@
 #include "aplication_txt.h"
+// #include "Data\Enginer\enginer.h"     nie widzi tego!
 #include <cstdlib>
 #include <Windows.h>
 
@@ -323,6 +324,7 @@ void C_aplication_txt::EditTree()
 				case 0:
 				{
 					Sleep(1500);    // sleepy musza byc, by uniknac "podwojnego" ENTERA!!!
+					// tutaj powinna byc metoda dolaczenia nowej osoby
 
 				} break;
 
