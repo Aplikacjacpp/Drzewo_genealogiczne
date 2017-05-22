@@ -14,7 +14,7 @@
 *1.1     15.05.2017  Windows size changed										      Mateusz Marchelewicz
 *1.1     17.05.2017  Font size changed										          Mateusz Marchelewicz
 *1.2     21.05.2017  Menu modified, new methods added								  Mateusz Marchelewicz
-*1.2     21.05.2017  Descriptions of menu modified								      Mateusz Marchelewicz
+*1.2     22.05.2017  Menu modified								                      Mateusz Marchelewicz
 ****************************************************************************************************************/
 #ifndef APLICATION_TXT_H
 #define APLICATION_TXT_H
@@ -23,8 +23,6 @@
 
 using std::cout;
 using std::endl;
-
-
 
 class C_aplication_txt :
 	public C_aplication
@@ -39,11 +37,11 @@ public:
 	void SetWindow(int Width, int Height);
 	void MainMenu();
 	void Sub1();
-	void SubMenu1();
 	void SubMenu2();
-	void SubMenu3();
 	void ImportTree();
-	void SubMenuPerson();
+	void EditTree();
+	void DisplayTree();
+	void SearchTree();
 	void CreateLogo();
 };
 #endif // !APLICATION_TXT_H
