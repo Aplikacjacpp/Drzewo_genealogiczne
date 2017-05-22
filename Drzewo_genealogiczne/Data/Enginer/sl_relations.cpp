@@ -40,12 +40,14 @@ void C_sl_relations::m_load_file_relation(bool what) {
 		i_start = 0;
 		for (i = 0; i < s_data.m_size(); i++)
 		{
-			if (s_data[i] == '\n')
+			if (s_data[i] == '>')
 			{
-				i_stop = i - 1;
-				Gover.m_get_contens(s_data.m_cut(i_start, i_stop));
+				i_stop = i;
+				N_striing s_help_data = s_data.m_cut(i_start, i_stop);
+				s_help_data += '>';
+				Gover.m_get_contens(s_help_data);
 				V_goverment_relation.m_push_back(Gover);
-				i_start = i_stop;
+				i_start = i_stop+1;
 			}
 		}
 	}

@@ -33,7 +33,7 @@ void C_sl_date::m_file_date(bool what) {
 				s_inline.m_getline(File); //nie wiem czy bedzie dzialac
 				if (s_inline == f_end_file) break;
 				s_data += s_inline;
-				std::cout << s_data << "\n";
+				std::cout << s_inline << "\n";
 				s_inline.m_clear();
 			} while (1);
 			File.close();
@@ -50,11 +50,12 @@ void C_sl_date::m_file_date(bool what) {
 				//std::cout << "wartosc" << s_data << "\n";
 				i_stop = i;
 				N_striing s_help_data = s_data.m_cut(i_start, i_stop);
+				//if(s_help_data.m_size()>=5)
 				s_help_data += '>';
 				Gover.m_get_contens(s_help_data);
 				V_goverment_date.m_push_back(Gover);
 				std::cout <<"rozmiar: "<< V_goverment_date.m_size() << "\n"<< s_data.m_cut(i_start, i_stop);
-				i_start = i_stop;
+				i_start = i_stop+1;
 			}
 		}
 	}
@@ -68,8 +69,8 @@ void C_sl_date::m_file_date(bool what) {
 			for (i = 0; i < V_goverment_date.m_size(); i++)
 			{
 				s_data+=V_goverment_date[i].m_set_contens();
-				if (s_data.m_pop_back() != '>'&&s_data.m_pop_back()!='\n')
-					s_data += '>';
+			/*	if (s_data.m_pop_back() != '>'&&s_data.m_pop_back()!='\n')
+					s_data += '>';*/
 				//std::cout << s_data << "\n";
 				s_data += "\n";
 			}
@@ -102,7 +103,7 @@ void C_sl_date::m_get_new_date(C_id id,N_vektor<C_date> V_date) {
 		data += date.m_set_year().m_what_type();
 		data += date.m_year_set();
 		if (i == V_date.m_size() - 1)
-			data += ">\n";
+			data += ">";
 	}
 	Gover.m_get_contens(data);
 	V_goverment_date.m_push_back(Gover);
