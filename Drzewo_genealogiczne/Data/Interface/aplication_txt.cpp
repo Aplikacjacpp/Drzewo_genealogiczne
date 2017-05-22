@@ -325,7 +325,8 @@ void C_aplication_txt::EditTree()
 				{
 					Sleep(1500);    // sleepy musza byc, by uniknac "podwojnego" ENTERA!!!
 					// tutaj powinna byc metoda dolaczenia nowej osoby
-					C_human human;
+					int i;
+					C_human human; //id dodaje sie dopiero w silniku
 					C_first_name first;
 					C_gender gender;
 					N_vektor<C_last_name> V_last;
@@ -334,6 +335,12 @@ void C_aplication_txt::EditTree()
 					C_date date;
 					//dalsza instrukcja do wstawiania odpowiednich wartosci
 					//gdy poda wartosci trzeba je zaladowac do obiektu human i przeslac jako argument ponizszej metody!
+					human.m_get_first_name(first);
+					human.m_get_gender(gender);
+					for(i=0; i<V_last.m_size();i++)
+						human.m_get_last_name(V_last[i].m_set_contens());
+					for (i = 0; i < V_date.m_size(); i++)
+						human.m_get_date(V_date[i]);
 					m_new_human(human); //ta metoda prosto z silnika :d
 
 				} break;
