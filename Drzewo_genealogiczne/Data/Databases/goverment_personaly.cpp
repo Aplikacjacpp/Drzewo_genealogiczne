@@ -53,7 +53,7 @@ N_striing C_goverment_personaly::m_is_there_contens(N_striing &Word) {
 			break;
 		}
 	}
-	if (value == 4) return Word; //problem!!
+	if (value >= 0) return Word; //problem!!
 	return "";
 }
 int C_goverment_personaly::m_id_value() {
@@ -87,29 +87,30 @@ int C_goverment_personaly::m_set_value_id(){
 C_first_name C_goverment_personaly::m_set_value_first_name() {
 	C_first_name First;
 	int i, j;
-	N_striing str;
-	char *data = new char[2];
+	N_striing str,data;
 	for (i = 1; i < s_goverment_personaly.m_size(); i++) { //mienna typu striing jest pusta nie wiem dlaczego!!
-		data[0] = s_goverment_personaly[i - 1];
-		data[1] = s_goverment_personaly[i];
-		if (n_first_name == data)
+		data.m_clear();
+		data.m_push_back(s_goverment_personaly[i - 1]);
+		data.m_push_back(s_goverment_personaly[i]);
+		std::cout << "\n" << data << "==" << n_first_name;
+		if (data==n_first_name)
 		{
+			std::cout << "weeeszloo\n";
 			for (j = i; j < s_goverment_personaly.m_size(); j++)
 			{
-				if (!(s_goverment_personaly[j+1] >= 0&&s_goverment_personaly[j+1] <=9))
+				if (!(s_goverment_personaly[j+1] >= '0'&&s_goverment_personaly[j+1] <='9'))
 				{
+					//std::cout << s_goverment_personaly[j];
 					str.m_push_back(s_goverment_personaly[j]);
 				}
 				else {
-					delete[] data;
 					First.m_get_contens(str);
-					std::cout <<"\nfirst"<< First<<"\n";
+					std::cout <<"\nfirst"<< First.m_set_contens()<<"\n";
 					return First;
 				}
 			}
 		}
 	}
-	delete[] data;
 	return First;
 } //przetestowac czy dziala
 N_vektor<C_last_name> C_goverment_personaly::m_set_value_last_name() {
