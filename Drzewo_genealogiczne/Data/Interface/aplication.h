@@ -23,6 +23,7 @@ public:
 	C_aplication& operator=(const C_aplication& aplication);
 	bool operator==(const C_aplication& aplication);
 	bool operator!=(const C_aplication& aplication);
+	//void m_add_human(C_human human);
 	virtual ~C_aplication();
 };
 #endif // !APLICATION_H
