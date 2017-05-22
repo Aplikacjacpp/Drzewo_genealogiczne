@@ -13,6 +13,8 @@
 *1.01    09.05.2017  Adding methods for menu										  Mateusz Marchelewicz
 *1.1     15.05.2017  Windows size changed										      Mateusz Marchelewicz
 *1.1     17.05.2017  Font size changed										          Mateusz Marchelewicz
+*1.2     21.05.2017  Menu modified, new methods added								  Mateusz Marchelewicz
+*1.2     21.05.2017  Descriptions of menu modified								      Mateusz Marchelewicz
 ****************************************************************************************************************/
 #ifndef APLICATION_TXT_H
 #define APLICATION_TXT_H
@@ -39,6 +41,9 @@ public:
 	void Sub1();
 	void SubMenu1();
 	void SubMenu2();
+	void SubMenu3();
+	void ImportTree();
+	void SubMenuPerson();
 	void CreateLogo();
 };
 #endif // !APLICATION_TXT_H
