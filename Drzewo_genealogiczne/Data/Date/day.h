@@ -24,13 +24,13 @@
 class C_day: public C_data
 {
 public:
-	C_day();
-	C_day(N_striing &day);
-	C_day(int day);
-	C_day(const C_day &C);
-	C_day& operator=(const C_day &C);
-	bool operator==(const C_day &C);
-	bool operator!=(const C_day &C);
+	C_day(); //konstruktor bezparametrowy
+	C_day(N_striing &day); //kostruktor parametrowy przyjmujacy stringa
+	C_day(int day); //konstruktor parametrowy przyjmujacy inta
+	C_day(const C_day &C); //konstruktor kopiujacy
+	C_day& operator=(const C_day &C); //operator przypisania
+	bool operator==(const C_day &C); //operator porownania ==
+	bool operator!=(const C_day &C); //operator porownania !=
 	virtual ~C_day();
 	virtual bool m_wchat_is();
 	virtual void m_get_contens(N_striing &contens);
