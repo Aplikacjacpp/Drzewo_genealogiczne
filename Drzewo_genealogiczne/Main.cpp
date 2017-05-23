@@ -12,7 +12,7 @@ int main()
 	
 	C_enginer Engin;
 	//C_data Data;
-	C_day day;		// definicja zmiennej day
+	C_day day;		// definicja zmiennej day hmm
 	C_month month;
 	C_year year;
 	C_id Id(102);
