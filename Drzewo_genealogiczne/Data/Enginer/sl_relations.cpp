@@ -61,8 +61,9 @@ void C_sl_relations::m_load_file_relation(bool what) {
 			for (i = 0; i < V_goverment_relation.m_size(); i++)
 			{
 				s_data += V_goverment_relation[i].m_set_contens();
+				s_data += '\n';
 			}
-			s_data = m_cypher_off(s_data);
+		//	s_data = m_cypher_off(s_data);
 			File << s_data;
 			File << f_end_file;
 			File.close();
@@ -71,3 +72,58 @@ void C_sl_relations::m_load_file_relation(bool what) {
 }
 N_striing C_sl_relations::m_cypher_on(N_striing data) { return data; }; //odszyfrowywanie
 N_striing C_sl_relations::m_cypher_off(N_striing data) { return data; }; //zaszyfrowywanie
+void C_sl_relations::m_add_new_relations(C_id id,N_vektor<C_children> V_children,
+	N_vektor<C_parent> V_parent, N_vektor<C_sibling> V_sibling,
+	N_vektor<C_grandchildren> V_grandchildren, N_vektor <C_grandparents> V_grandparents, N_vektor<C_partner> V_partner) {
+	C_children children;
+	C_parent parent;
+	C_grandchildren grandchildren;
+	C_grandparents grandparents;
+	C_sibling sibling;
+	C_partner partner;
+	int i;
+	N_striing data;
+	data = "<";
+	data = id.m_what_type();
+	data += id.m_set_contens();
+	for (i = 0; i < V_grandparents.m_size(); i++)
+	{
+		grandparents = V_grandparents[i];
+		data += grandparents.m_what_type();
+		data += grandparents.m_get_contens();
+	}
+	for (i = 0; i < V_parent.m_size(); i++)
+	{
+		parent = V_parent[i];
+		data += parent.m_what_type();
+		data += parent.m_get_contens();
+	}
+	for (i = 0; i < V_sibling.m_size(); i++)
+	{
+		sibling = V_sibling[i];
+		data += sibling.m_what_type();
+		data += sibling.m_get_contens();
+	}
+	for (i = 0; i < V_partner.m_size(); i++)
+	{
+		partner = V_partner[i];
+		data += partner.m_what_type();
+		data += partner.m_get_contens();
+	}
+	for (i = 0; i < V_children.m_size(); i++)
+	{
+		children = V_children[i];
+		data += children.m_what_type();
+		data += children.m_get_contens();
+	}
+	for (i = 0; i < V_grandchildren.m_size(); i++)
+	{
+		grandchildren = V_grandchildren[i];
+		data += grandchildren.m_what_type();
+		data += grandchildren.m_get_contens();
+	}
+	data += '>';
+	C_goverment_relation Gover;
+	Gover.m_get_contens(data);
+	V_goverment_relation.m_push_back(Gover);
+}

@@ -34,6 +34,7 @@ public:
 	virtual ~C_sibling(); //wirtualny destruktor
 	virtual void m_get_complete_content(N_striing data); //analizuje i podstawia wyluskane dane pod dane prywatne
 	virtual void m_get_complete_content(C_id index, C_id value); //wstawia argumenty do danych prywatnych
+	N_striing m_get_contens();
 private:
 	C_id ID_index; //Id humana wskaznikowego
 	C_id ID_value; //Id humana na drugim koncu relacji

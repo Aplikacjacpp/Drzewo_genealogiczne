@@ -195,6 +195,8 @@ C_last_name L1, L2;
 	system("type data.save");
 	std::cout << "\n";
 	system("type date.save");
+	std::cout << "\n";
+	system("type relation.save");
 
 	return 0;
 }

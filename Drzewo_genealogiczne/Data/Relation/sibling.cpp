@@ -65,3 +65,6 @@ void C_sibling::m_get_complete_content(C_id index, C_id value) {
 	ID_index = index;
 	ID_value = value;
 }
+N_striing C_sibling::m_get_contens() {
+	return ID_value.m_set_contens();
+}
