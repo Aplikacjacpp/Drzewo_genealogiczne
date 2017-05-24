@@ -21,13 +21,9 @@ bool C_human::operator!=(const C_human &human) {
 	return false;
 }
 
-
-std::ostream& operator<<(std::ostream& is, C_human &human)
-{
-
-	is << "Human: ";		//is << "Human: " << human.m_get_first_name(&f_name);
+std::ostream& operator<<(std::ostream& is, C_human &human){
+	is << human.m_set_gender() << std::endl << human.m_set_first_name() << " " << human.m_set_last_name() << std::endl;
 	return is;
-
 }
 
 C_human::~C_human() {}
@@ -77,5 +73,438 @@ N_vektor<C_last_name> C_human::m_set_V_last_name() {
 	return V_last;
 }
 
+void C_human::interf_cut(N_striing &first, N_striing &last, C_human &human, int cut)
+{
+	int f = first.m_size();
+	int l = last.m_size();
+	N_striing firstname;
+	N_striing lastname;
 
+	int sum, ss;
+	sum = f + l;
+	ss = sum;
+	if (sum < cut)
+	{
+		firstname = first;
+		lastname = last;
 
+	}
+	else if (sum == cut)
+	{
+		firstname = first.m_cut(0, 1);
+		lastname = last.m_erase_ray(l);
+	}
+	else if (sum > cut)
+	{
+		if (l < cut-4)
+		{
+			firstname = first.m_cut(0, 1);
+			lastname = last.m_erase_ray(l);
+		}
+		else
+		{
+			firstname = first.m_cut(0, 1);
+			lastname = last.m_erase_ray(cut -4);
+		}
+	}
+	human.m_get_first_name(firstname);
+	human.m_get_last_name(lastname);
+}
+
+void C_human::interf_m(C_human &human, C_date &d, C_date ds)
+{
+	std::cout << human;
+	std::cout << "ur." << d.m_set_DD_MM_YYYY() << "\n";
+	if (ds.m_day_set() != '0')
+		std::cout << "zm." << ds.m_set_DD_MM_YYYY() << "\n";
+}
+
+void C_human::interf_mb(N_striing firstnamee, N_striing lastnamee, C_date &du, C_date ds, char poz, char pion)
+{
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
+
+	bool zm;
+	if (ds.m_day_set() == '0') zm = false;
+	else zm = true;
+
+	int f = firstnamee.m_size();
+	int l = lastnamee.m_size();
+	N_striing firstname = firstnamee;
+	N_striing lastname = lastnamee;
+
+	int sum, ss;
+	sum = f + l;
+	ss = sum;
+	if (sum == 13)
+	{	
+		firstname = firstnamee.m_cut(0, 1) + '.';
+		lastname = lastnamee.m_erase_ray(l);
+		ss = firstname.m_size() + lastname.m_size();
+	}
+	else if (sum > 13)
+	{
+		if (l < 11)
+		{
+			firstname = firstnamee.m_cut(0, 1) + '.';
+			lastname = lastnamee.m_erase_ray(l);
+		ss = firstname.m_size() + lastname.m_size();
+		}
+		else
+		{
+		firstname = firstnamee.m_cut(0, 1) + '.';
+		lastname = lastnamee.m_erase_ray(10);
+		ss = firstname.m_size() + lastname.m_size();
+		}
+	}
+	
+	for (int i = 0; i<17; i++)
+	{
+		std::cout << poz;
+	}
+
+	std::cout << std::endl << pion;
+	for (int i = 0; i<15; i++)
+	{
+		std::cout << " ";
+	}
+	std::cout << pion << std::endl;
+
+	std::cout << pion << " " << firstname << " " << lastname;
+	for (int i = 0; i<(11 -(ss)+2); i++)
+	{
+		std::cout << " ";
+	}
+	std::cout << pion << std::endl;
+
+	std::cout << pion;
+	for (int i = 0; i<15; i++)
+	{
+		std::cout << " ";
+	}
+	std::cout << pion << std::endl;
+
+	std::cout << pion << " " << "ur." << du.m_day_set() << "." << du.m_month_set() << "." << du.m_year_set();
+	if (((du.m_day_set() == '9') || (du.m_day_set() == '8') || (du.m_day_set() == '7') || (du.m_day_set() == '6') || (du.m_day_set() == '5')
+		|| (du.m_day_set() == '4') || (du.m_day_set() == '3') || (du.m_day_set() == '2') || (du.m_day_set() == '1'))
+		&& ((du.m_month_set() == '9') || (du.m_month_set() == '8') || (du.m_month_set() == '7') || (du.m_month_set() == '6') || (du.m_month_set() == '5')
+			|| (du.m_month_set() == '4') || (du.m_month_set() == '3') || (du.m_month_set() == '2') || (du.m_month_set() == '1')))
+	{
+		for (int i = 0; i < 3; i++)
+		{
+			std::cout << " ";
+		}
+		std::cout << pion << std::endl;
+	}
+	else if ((du.m_day_set() == '9') || (du.m_day_set() == '8') || (du.m_day_set() == '7') || (du.m_day_set() == '6') || (du.m_day_set() == '5')
+		|| (du.m_day_set() == '4') || (du.m_day_set() == '3') || (du.m_day_set() == '2') || (du.m_day_set() == '1'))
+	{
+		for (int i = 0; i < 2; i++)
+		{
+			std::cout << " ";
+		}
+		std::cout << pion << std::endl;
+	}
+	else if ((du.m_month_set() == '9') || (du.m_month_set() == '8') || (du.m_month_set() == '7') || (du.m_month_set() == '6') || (du.m_month_set() == '5')
+		|| (du.m_month_set() == '4') || (du.m_month_set() == '3') || (du.m_month_set() == '2') || (du.m_month_set() == '1'))
+	{
+		for (int i = 0; i < 2; i++)
+		{
+			std::cout << " ";
+		}
+		std::cout << pion << std::endl;
+	}
+	else
+	{
+		for (int i = 0; i < 1; i++)
+		{
+			std::cout << " ";
+		}
+		std::cout << pion << std::endl;
+	}
+
+	if (zm)
+	{
+		std::cout << pion;
+		for (int i = 0; i<15; i++)
+		{
+			std::cout << " ";
+		}
+		std::cout << pion;
+
+		std::cout << std::endl << pion << " " << "zm." << ds.m_day_set() << "." << ds.m_month_set() << "." << ds.m_year_set();
+		if (((ds.m_day_set() == '9') || (ds.m_day_set() == '8') || (ds.m_day_set() == '7') || (ds.m_day_set() == '6') || (ds.m_day_set() == '5')
+			|| (ds.m_day_set() == '4') || (ds.m_day_set() == '3') || (ds.m_day_set() == '2') || (ds.m_day_set() == '1'))
+			&& ((ds.m_month_set() == '9') || (ds.m_month_set() == '8') || (ds.m_month_set() == '7') || (ds.m_month_set() == '6') || (ds.m_month_set() == '5')
+				|| (ds.m_month_set() == '4') || (ds.m_month_set() == '3') || (ds.m_month_set() == '2') || (ds.m_month_set() == '1')))
+		{
+			for (int i = 0; i < 3; i++)
+			{
+				std::cout << " ";
+			}
+			std::cout << pion << std::endl;
+		}
+		else if ((ds.m_day_set() == '9') || (ds.m_day_set() == '8') || (ds.m_day_set() == '7') || (ds.m_day_set() == '6') || (ds.m_day_set() == '5')
+			|| (ds.m_day_set() == '4') || (ds.m_day_set() == '3') || (ds.m_day_set() == '2') || (ds.m_day_set() == '1'))
+		{
+			for (int i = 0; i < 2; i++)
+			{
+				std::cout << " ";
+			}
+			std::cout << pion << std::endl;
+		}
+		else if ((ds.m_month_set() == '9') || (ds.m_month_set() == '8') || (ds.m_month_set() == '7') || (ds.m_month_set() == '6') || (ds.m_month_set() == '5')
+			|| (ds.m_month_set() == '4') || (ds.m_month_set() == '3') || (ds.m_month_set() == '2') || (ds.m_month_set() == '1'))
+		{
+			for (int i = 0; i < 2; i++)
+			{
+				std::cout << " ";
+			}
+			std::cout << pion << std::endl;
+		}
+		else
+		{
+			for (int i = 0; i < 1; i++)
+			{
+				std::cout << " ";
+			}
+			std::cout << pion << std::endl;
+		}
+	}
+
+	std::cout << pion;
+	for (int i = 0; i<15; i++)
+	{
+		std::cout << " ";
+	}
+	std::cout << pion << std::endl;
+
+	for (int i = 0; i<17; i++)
+	{
+		std::cout << poz;
+	}
+}
+
+void C_human::interf_mbd(N_striing firstname, N_striing lastname, C_date &du, C_date ds, char poz, char pion)
+{
+
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
+
+	bool zm;
+	if (ds.m_day_set() == '0') zm = false;
+	else zm = true;
+
+	int sum = firstname.m_size() + lastname.m_size();
+	if ((firstname.m_size() + lastname.m_size() >= 13))
+	{
+		for (int i = 0; i<(sum)+5; i++)
+		{
+			std::cout << poz;
+		}
+
+		std::cout << std::endl << pion;
+		for (int i = 0; i<(sum)+3; i++)
+		{
+			std::cout << " ";
+		}
+		std::cout << pion << std::endl;
+
+		std::cout << pion << " " << firstname << " " << lastname << " " << pion << std::endl;
+
+		std::cout << pion;
+		for (int i = 0; i<(sum)+3; i++)
+		{
+			std::cout << " ";
+		}
+		std::cout << pion << std::endl;
+
+		std::cout << pion << " " << "ur." << du.m_day_set() << "." << du.m_month_set() << "." << du.m_year_set();
+		if ((du.m_day_set() == '9') || (du.m_day_set() == '8') || (du.m_day_set() == '7') || (du.m_day_set() == '6') || (du.m_day_set() == '5')
+			|| (du.m_day_set() == '4') || (du.m_day_set() == '3') || (du.m_day_set() == '2') || (du.m_day_set() == '1')
+			|| (du.m_month_set() == '9') || (du.m_month_set() == '8') || (du.m_month_set() == '7') || (du.m_month_set() == '6') || (du.m_month_set() == '5')
+			|| (du.m_month_set() == '4') || (du.m_month_set() == '3') || (du.m_month_set() == '2') || (du.m_month_set() == '1'))
+		{
+			for (int i = 0; i < ((sum)+5) - 15; i++)
+			{
+				std::cout << " ";
+			}
+			std::cout << pion << std::endl;
+		}
+		else
+		{
+			for (int i = 0; i < ((sum)+4) - 15; i++)
+			{
+				std::cout << " ";
+			}
+			std::cout << pion << std::endl;
+		}
+
+		if (zm)
+		{
+			std::cout << pion;
+			for (int i = 0; i<(sum)+3; i++)
+			{
+				std::cout << " ";
+			}
+			std::cout << pion << std::endl;
+
+			std::cout << pion << " " << "zm." << ds.m_day_set() << "." << ds.m_month_set() << "." << ds.m_year_set();
+			if ((du.m_day_set() == '9') || (du.m_month_set() == '8') || (du.m_month_set() == '7') || (du.m_month_set() == '6') || (du.m_month_set() == '5')
+				|| (du.m_month_set() == '4') || (du.m_month_set() == '3') || (du.m_month_set() == '2') || (du.m_month_set() == '1'))
+			{
+				for (int i = 0; i < ((sum)+5) - 15; i++)
+				{
+					std::cout << " ";
+				}
+				std::cout << pion << std::endl;
+			}
+			else
+			{
+				for (int i = 0; i < ((sum)+4) - 15; i++)
+				{
+					std::cout << " ";
+				}
+				std::cout << pion << std::endl;
+			}
+		}
+
+		std::cout << pion;
+		for (int i = 0; i<(sum)+3; i++)
+		{
+			std::cout << " ";
+		}
+		std::cout << pion << std::endl;
+
+		for (int i = 0; i<(sum)+5; i++)
+		{
+			std::cout << poz;
+		}
+	}
+	else
+	{
+		for (int i = 0; i<17; i++)
+		{
+			std::cout << poz;
+		}
+
+		std::cout << std::endl << pion;
+		for (int i = 0; i<15; i++)
+		{
+			std::cout << " ";
+		}
+		std::cout << pion << std::endl;
+
+		std::cout << pion << " " << firstname << " " << lastname;
+		for (int i = 0; i<(12 - (sum)+1); i++)
+		{
+			std::cout << " ";
+		}
+		std::cout << pion << std::endl;
+
+		std::cout << pion;
+		for (int i = 0; i<15; i++)
+		{
+			std::cout << " ";
+		}
+		std::cout << pion << std::endl;
+
+		std::cout << pion << " " << "ur." << du.m_day_set() << "." << du.m_month_set() << "." << du.m_year_set();
+		if (((du.m_day_set() == '9') || (du.m_day_set() == '8') || (du.m_day_set() == '7') || (du.m_day_set() == '6') || (du.m_day_set() == '5')
+			|| (du.m_day_set() == '4') || (du.m_day_set() == '3') || (du.m_day_set() == '2') || (du.m_day_set() == '1'))
+			&& ((du.m_month_set() == '9') || (du.m_month_set() == '8') || (du.m_month_set() == '7') || (du.m_month_set() == '6') || (du.m_month_set() == '5')
+				|| (du.m_month_set() == '4') || (du.m_month_set() == '3') || (du.m_month_set() == '2') || (du.m_month_set() == '1')))
+		{
+			for (int i = 0; i < ((sum)+8) - 15; i++)
+			{
+				std::cout << " ";
+			}
+			std::cout << pion << std::endl;
+		}
+		else if ((du.m_day_set() == '9') || (du.m_day_set() == '8') || (du.m_day_set() == '7') || (du.m_day_set() == '6') || (du.m_day_set() == '5')
+			|| (du.m_day_set() == '4') || (du.m_day_set() == '3') || (du.m_day_set() == '2') || (du.m_day_set() == '1'))
+		{
+			for (int i = 0; i < ((sum)+7) - 15; i++)
+			{
+				std::cout << " ";
+			}
+			std::cout << pion << std::endl;
+		}
+		else if ((du.m_month_set() == '9') || (du.m_month_set() == '8') || (du.m_month_set() == '7') || (du.m_month_set() == '6') || (du.m_month_set() == '5')
+			|| (du.m_month_set() == '4') || (du.m_month_set() == '3') || (du.m_month_set() == '2') || (du.m_month_set() == '1'))
+		{
+			for (int i = 0; i < ((sum)+7) - 15; i++)
+			{
+				std::cout << " ";
+			}
+			std::cout << pion << std::endl;
+		}
+		else
+		{
+			for (int i = 0; i < ((sum)+6) - 15; i++)
+			{
+				std::cout << " ";
+			}
+			std::cout << pion << std::endl;
+		}
+
+		if (zm)
+		{
+			std::cout << pion;
+			for (int i = 0; i<15; i++)
+			{
+				std::cout << " ";
+			}
+			std::cout << pion << std::endl;
+
+			std::cout << pion << " " << "zm." << ds.m_day_set() << "." << ds.m_month_set() << "." << ds.m_year_set();
+			if (((ds.m_day_set() == '9') || (ds.m_day_set() == '8') || (ds.m_day_set() == '7') || (ds.m_day_set() == '6') || (ds.m_day_set() == '5')
+				|| (ds.m_day_set() == '4') || (ds.m_day_set() == '3') || (ds.m_day_set() == '2') || (ds.m_day_set() == '1'))
+				&& ((ds.m_month_set() == '9') || (ds.m_month_set() == '8') || (ds.m_month_set() == '7') || (ds.m_month_set() == '6') || (ds.m_month_set() == '5')
+					|| (ds.m_month_set() == '4') || (ds.m_month_set() == '3') || (ds.m_month_set() == '2') || (ds.m_month_set() == '1')))
+			{
+				for (int i = 0; i < ((sum)+8) - 15; i++)
+				{
+					std::cout << " ";
+				}
+				std::cout << pion << std::endl;
+			}
+			else if ((ds.m_day_set() == '9') || (ds.m_day_set() == '8') || (ds.m_day_set() == '7') || (ds.m_day_set() == '6') || (ds.m_day_set() == '5')
+				|| (ds.m_day_set() == '4') || (ds.m_day_set() == '3') || (ds.m_day_set() == '2') || (ds.m_day_set() == '1'))
+			{
+				for (int i = 0; i < ((sum)+7) - 15; i++)
+				{
+					std::cout << " ";
+				}
+				std::cout << pion << std::endl;
+			}
+			else if ((ds.m_month_set() == '9') || (ds.m_month_set() == '8') || (ds.m_month_set() == '7') || (ds.m_month_set() == '6') || (ds.m_month_set() == '5')
+				|| (ds.m_month_set() == '4') || (ds.m_month_set() == '3') || (ds.m_month_set() == '2') || (ds.m_month_set() == '1'))
+			{
+				for (int i = 0; i < ((sum)+7) - 15; i++)
+				{
+					std::cout << " ";
+				}
+				std::cout << pion << std::endl;
+			}
+			else
+			{
+				for (int i = 0; i < ((sum)+6) - 15; i++)
+				{
+					std::cout << " ";
+				}
+				std::cout << pion << std::endl;
+			}
+		}
+
+		std::cout << pion;
+		for (int i = 0; i<15; i++)
+		{
+			std::cout << " ";
+		}
+		std::cout << pion << std::endl;
+
+		for (int i = 0; i<17; i++)
+		{
+			std::cout << poz;
+		}
+	}
+}

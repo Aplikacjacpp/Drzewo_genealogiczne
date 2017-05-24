@@ -15,6 +15,7 @@ C_date"
 *1.2	 02.05.2015	 adding parameter constructor								      Lukasz Witek vel Witkowski
 *1.3	 03.05.2015	 adding methods												      Lukasz Witek vel Witkowski
 *1.3     09.05.2017  Adding a overloaded operator                                     Mateusz Marchelewicz
+*1.3	 23.05.2017	 Adding methods interface										  Bartosz Bukowski
 ****************************************************************************************************************/
 #ifndef C_HUMAN_H
 #define C_HUMAN_H
@@ -24,6 +25,7 @@ C_date"
 #include "../date/date.h"
 #include "../Personaly/gender.h"
 #include "../narzedzia/Vektor.h"
+#include <windows.h>
 class C_human
 {
 public:
@@ -54,6 +56,10 @@ public:
 	void m_update_date(int value, C_date& date);
 	void m_update_last_name(int value, C_last_name& l_name);
 	void m_update_last_name(int value, N_striing& l_name);
+	void interf_cut(N_striing &first, N_striing &last, C_human &human, int cut);
+	void interf_m(C_human &human, C_date &d, C_date ds = NULL);
+	void interf_mb(N_striing firstnamee, N_striing lastnamee, C_date &du, C_date ds = NULL, char poz = '*', char pion = '|');
+	void interf_mbd(N_striing firstname, N_striing lastname, C_date &du, C_date ds = NULL, char poz = '*', char pion = '|');
 	C_human& m_clear();
 	C_human& m_clear_date();
 	C_human& m_clear_last_name();

@@ -12,25 +12,62 @@ int main()
 	
 	C_enginer Engin;
 	//C_data Data;
-	C_day day;		// definicja zmiennej day
+	C_day day;		// definicja zmiennej day hmm
 	C_month month;
 	C_year year;
 	C_id Id(102);
-	C_date date;
-	
+	C_date date('.');
+	C_date date_s('.');
 
-	C_gender gender(true);
-	N_striing data = "Lukasz";
-	C_first_name First(data);
+	date.m_shift_day("21");
+	date.m_shift_month("10");
+	date.m_shift_year("1945");
+	date.m_set_DD_MM_YYYY();
+
+	date_s.m_shift_day("11");
+	date_s.m_shift_month("10");
+	date_s.m_shift_year("1995");
+	date_s.m_set_DD_MM_YYYY();
+
+	N_striing data, datak;
 	data = "Witek";
+	C_first_name First(data);
 	C_last_name Last(data);
-	data = "Witkowski";
-	C_last_name Last1(data);
+	datak = "Witkowski";
+	C_last_name Last1(datak);
+
 	C_human human;
+	C_gender gender(true);
+
+	/*ponizsza metoda ucina stringi do podanej liczby bedacej suma imienia i nazwiska - tutaj podobnie musialem zastosowac stigni (2 pierwsze arg) bo by nie dzialaly meody
+	size cut i erase - znowu human pobiera siebie w argumencie - byc moze nie tak sie robi ale jeszcze nie opanowalem dobrze programowania - pewnie beda poprawki:P*/
+	human.interf_cut(datak, data, human, 13);
+
 	human.m_get_first_name(First);
 	human.m_get_last_name(Last);
 	human.m_get_last_name(Last1);
 	human.m_get_gender(gender);
+
+	std::cout << std::endl << std::endl;
+
+	/*ponizsza metoda wyswietlajaca dane humana- niestety musialem date zrobic drugim argumentem gdyz operator ostream nie toleruje intow i mimo ze kombinowalem
+	z przeciazeniami operatora to nie udalo mi sie zroibc tak zeby je tolerowal - argument daty smierci jest domniemany wiec mozna go usunac jesli ktos zyje
+	- i nie wiem czy dodanie obiektu humana do wlasnej metody jest zgodne ze sztuka programowania ale dziala :P - pewnie beda jeszcze poprawki bo zamotalem :P */
+	human.interf_m(human, date, date_s);
+
+	std::cout << std::endl;
+
+	/*tutaj z data podobnie bo ostream nie toleruje intow - niestety musialem zmienic poki co na recznie wstawianego striinga bo z danych humana nie mozna
+	uzywac metody stringowej m_size() jak rowniez m_erase_ray() wiec tez pewno beda jeszcze poprawki*/
+	human.interf_mb("Rick", "Grimes", date, date_s);
+	
+	std::cout << std::endl;
+
+	/*ponizej to samo co wyzej ale jakby obramowanie dynamiczne poszerzajace sie wraz z imieniem i naziwksiem, ale pewnie nie bedzie uzywane */
+	human.interf_mbd("Tywin", "Lannisterrrr", date, date_s);
+
+	std::cout << std::endl << std::endl;
+
 	
 	N_vektor<int> V;
 	V.m_push_back(10);
@@ -197,6 +234,8 @@ C_last_name L1, L2;
 	system("type date.save");
 	std::cout << "\n";
 	system("type relation.save");
+
+	system("PAUSE");
 
 	return 0;
 }
