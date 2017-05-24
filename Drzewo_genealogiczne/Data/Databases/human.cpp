@@ -184,10 +184,8 @@ void C_human::interf_mb(N_striing firstnamee, N_striing lastnamee, C_date &du, C
 	std::cout << pion << std::endl;
 
 	std::cout << pion << " " << "ur." << du.m_day_set() << "." << du.m_month_set() << "." << du.m_year_set();
-	if (((du.m_day_set() == '9') || (du.m_day_set() == '8') || (du.m_day_set() == '7') || (du.m_day_set() == '6') || (du.m_day_set() == '5')
-		|| (du.m_day_set() == '4') || (du.m_day_set() == '3') || (du.m_day_set() == '2') || (du.m_day_set() == '1'))
-		&& ((du.m_month_set() == '9') || (du.m_month_set() == '8') || (du.m_month_set() == '7') || (du.m_month_set() == '6') || (du.m_month_set() == '5')
-			|| (du.m_month_set() == '4') || (du.m_month_set() == '3') || (du.m_month_set() == '2') || (du.m_month_set() == '1')))
+	if ((ds.m_day_set().m_c_str() >= "1") && (ds.m_day_set().m_c_str() <= "9") &&
+		(ds.m_month_set().m_c_str() >= "1") && (ds.m_month_set().m_c_str() <= "9"))
 	{
 		for (int i = 0; i < 3; i++)
 		{
@@ -195,8 +193,7 @@ void C_human::interf_mb(N_striing firstnamee, N_striing lastnamee, C_date &du, C
 		}
 		std::cout << pion << std::endl;
 	}
-	else if ((du.m_day_set() == '9') || (du.m_day_set() == '8') || (du.m_day_set() == '7') || (du.m_day_set() == '6') || (du.m_day_set() == '5')
-		|| (du.m_day_set() == '4') || (du.m_day_set() == '3') || (du.m_day_set() == '2') || (du.m_day_set() == '1'))
+	else if ((ds.m_day_set().m_c_str() >= "1") && (ds.m_day_set().m_c_str() <= "9"))
 	{
 		for (int i = 0; i < 2; i++)
 		{
@@ -204,8 +201,7 @@ void C_human::interf_mb(N_striing firstnamee, N_striing lastnamee, C_date &du, C
 		}
 		std::cout << pion << std::endl;
 	}
-	else if ((du.m_month_set() == '9') || (du.m_month_set() == '8') || (du.m_month_set() == '7') || (du.m_month_set() == '6') || (du.m_month_set() == '5')
-		|| (du.m_month_set() == '4') || (du.m_month_set() == '3') || (du.m_month_set() == '2') || (du.m_month_set() == '1'))
+	else if ((ds.m_month_set().m_c_str() >= "1") && (ds.m_month_set().m_c_str() <= "9"))
 	{
 		for (int i = 0; i < 2; i++)
 		{
@@ -232,10 +228,8 @@ void C_human::interf_mb(N_striing firstnamee, N_striing lastnamee, C_date &du, C
 		std::cout << pion;
 
 		std::cout << std::endl << pion << " " << "zm." << ds.m_day_set() << "." << ds.m_month_set() << "." << ds.m_year_set();
-		if (((ds.m_day_set() == '9') || (ds.m_day_set() == '8') || (ds.m_day_set() == '7') || (ds.m_day_set() == '6') || (ds.m_day_set() == '5')
-			|| (ds.m_day_set() == '4') || (ds.m_day_set() == '3') || (ds.m_day_set() == '2') || (ds.m_day_set() == '1'))
-			&& ((ds.m_month_set() == '9') || (ds.m_month_set() == '8') || (ds.m_month_set() == '7') || (ds.m_month_set() == '6') || (ds.m_month_set() == '5')
-				|| (ds.m_month_set() == '4') || (ds.m_month_set() == '3') || (ds.m_month_set() == '2') || (ds.m_month_set() == '1')))
+		if ((ds.m_day_set().m_c_str() >= "1") && (ds.m_day_set().m_c_str() <= "9") &&
+			(ds.m_month_set().m_c_str() >= "1") && (ds.m_month_set().m_c_str() <= "9"))
 		{
 			for (int i = 0; i < 3; i++)
 			{
@@ -243,8 +237,7 @@ void C_human::interf_mb(N_striing firstnamee, N_striing lastnamee, C_date &du, C
 			}
 			std::cout << pion << std::endl;
 		}
-		else if ((ds.m_day_set() == '9') || (ds.m_day_set() == '8') || (ds.m_day_set() == '7') || (ds.m_day_set() == '6') || (ds.m_day_set() == '5')
-			|| (ds.m_day_set() == '4') || (ds.m_day_set() == '3') || (ds.m_day_set() == '2') || (ds.m_day_set() == '1'))
+		else if ((ds.m_day_set().m_c_str() >= "1") && (ds.m_day_set().m_c_str() <= "9"))
 		{
 			for (int i = 0; i < 2; i++)
 			{
@@ -252,8 +245,7 @@ void C_human::interf_mb(N_striing firstnamee, N_striing lastnamee, C_date &du, C
 			}
 			std::cout << pion << std::endl;
 		}
-		else if ((ds.m_month_set() == '9') || (ds.m_month_set() == '8') || (ds.m_month_set() == '7') || (ds.m_month_set() == '6') || (ds.m_month_set() == '5')
-			|| (ds.m_month_set() == '4') || (ds.m_month_set() == '3') || (ds.m_month_set() == '2') || (ds.m_month_set() == '1'))
+		else if ((ds.m_month_set().m_c_str() >= "1") && (ds.m_month_set().m_c_str() <= "9"))
 		{
 			for (int i = 0; i < 2; i++)
 			{
@@ -318,10 +310,8 @@ void C_human::interf_mbd(N_striing firstname, N_striing lastname, C_date &du, C_
 		std::cout << pion << std::endl;
 
 		std::cout << pion << " " << "ur." << du.m_day_set() << "." << du.m_month_set() << "." << du.m_year_set();
-		if ((du.m_day_set() == '9') || (du.m_day_set() == '8') || (du.m_day_set() == '7') || (du.m_day_set() == '6') || (du.m_day_set() == '5')
-			|| (du.m_day_set() == '4') || (du.m_day_set() == '3') || (du.m_day_set() == '2') || (du.m_day_set() == '1')
-			|| (du.m_month_set() == '9') || (du.m_month_set() == '8') || (du.m_month_set() == '7') || (du.m_month_set() == '6') || (du.m_month_set() == '5')
-			|| (du.m_month_set() == '4') || (du.m_month_set() == '3') || (du.m_month_set() == '2') || (du.m_month_set() == '1'))
+		if ((ds.m_day_set().m_c_str() >= "1") && (ds.m_day_set().m_c_str() <= "9") ||
+			(ds.m_month_set().m_c_str() >= "1") && (ds.m_month_set().m_c_str() <= "9"))
 		{
 			for (int i = 0; i < ((sum)+5) - 15; i++)
 			{
@@ -348,8 +338,7 @@ void C_human::interf_mbd(N_striing firstname, N_striing lastname, C_date &du, C_
 			std::cout << pion << std::endl;
 
 			std::cout << pion << " " << "zm." << ds.m_day_set() << "." << ds.m_month_set() << "." << ds.m_year_set();
-			if ((du.m_day_set() == '9') || (du.m_month_set() == '8') || (du.m_month_set() == '7') || (du.m_month_set() == '6') || (du.m_month_set() == '5')
-				|| (du.m_month_set() == '4') || (du.m_month_set() == '3') || (du.m_month_set() == '2') || (du.m_month_set() == '1'))
+			if ((du.m_day_set() == '9') || (ds.m_month_set().m_c_str() >= "1") && (ds.m_month_set().m_c_str() <= "8"))
 			{
 				for (int i = 0; i < ((sum)+5) - 15; i++)
 				{
@@ -408,10 +397,8 @@ void C_human::interf_mbd(N_striing firstname, N_striing lastname, C_date &du, C_
 		std::cout << pion << std::endl;
 
 		std::cout << pion << " " << "ur." << du.m_day_set() << "." << du.m_month_set() << "." << du.m_year_set();
-		if (((du.m_day_set() == '9') || (du.m_day_set() == '8') || (du.m_day_set() == '7') || (du.m_day_set() == '6') || (du.m_day_set() == '5')
-			|| (du.m_day_set() == '4') || (du.m_day_set() == '3') || (du.m_day_set() == '2') || (du.m_day_set() == '1'))
-			&& ((du.m_month_set() == '9') || (du.m_month_set() == '8') || (du.m_month_set() == '7') || (du.m_month_set() == '6') || (du.m_month_set() == '5')
-				|| (du.m_month_set() == '4') || (du.m_month_set() == '3') || (du.m_month_set() == '2') || (du.m_month_set() == '1')))
+		if ((ds.m_day_set().m_c_str() >= "1") && (ds.m_day_set().m_c_str() <= "9") &&
+			(ds.m_month_set().m_c_str() >= "1") && (ds.m_month_set().m_c_str() <= "9"))
 		{
 			for (int i = 0; i < ((sum)+8) - 15; i++)
 			{
@@ -419,8 +406,7 @@ void C_human::interf_mbd(N_striing firstname, N_striing lastname, C_date &du, C_
 			}
 			std::cout << pion << std::endl;
 		}
-		else if ((du.m_day_set() == '9') || (du.m_day_set() == '8') || (du.m_day_set() == '7') || (du.m_day_set() == '6') || (du.m_day_set() == '5')
-			|| (du.m_day_set() == '4') || (du.m_day_set() == '3') || (du.m_day_set() == '2') || (du.m_day_set() == '1'))
+		else if ((ds.m_day_set().m_c_str() >= "1") && (ds.m_day_set().m_c_str() <= "9"))
 		{
 			for (int i = 0; i < ((sum)+7) - 15; i++)
 			{
@@ -428,8 +414,7 @@ void C_human::interf_mbd(N_striing firstname, N_striing lastname, C_date &du, C_
 			}
 			std::cout << pion << std::endl;
 		}
-		else if ((du.m_month_set() == '9') || (du.m_month_set() == '8') || (du.m_month_set() == '7') || (du.m_month_set() == '6') || (du.m_month_set() == '5')
-			|| (du.m_month_set() == '4') || (du.m_month_set() == '3') || (du.m_month_set() == '2') || (du.m_month_set() == '1'))
+		else if ((ds.m_month_set().m_c_str() >= "1") && (ds.m_month_set().m_c_str() <= "9"))
 		{
 			for (int i = 0; i < ((sum)+7) - 15; i++)
 			{
@@ -456,10 +441,8 @@ void C_human::interf_mbd(N_striing firstname, N_striing lastname, C_date &du, C_
 			std::cout << pion << std::endl;
 
 			std::cout << pion << " " << "zm." << ds.m_day_set() << "." << ds.m_month_set() << "." << ds.m_year_set();
-			if (((ds.m_day_set() == '9') || (ds.m_day_set() == '8') || (ds.m_day_set() == '7') || (ds.m_day_set() == '6') || (ds.m_day_set() == '5')
-				|| (ds.m_day_set() == '4') || (ds.m_day_set() == '3') || (ds.m_day_set() == '2') || (ds.m_day_set() == '1'))
-				&& ((ds.m_month_set() == '9') || (ds.m_month_set() == '8') || (ds.m_month_set() == '7') || (ds.m_month_set() == '6') || (ds.m_month_set() == '5')
-					|| (ds.m_month_set() == '4') || (ds.m_month_set() == '3') || (ds.m_month_set() == '2') || (ds.m_month_set() == '1')))
+			if ((ds.m_day_set().m_c_str() >= "1") && (ds.m_day_set().m_c_str() <= "9") &&
+				(ds.m_month_set().m_c_str() >= "1") && (ds.m_month_set().m_c_str() <= "9"))
 			{
 				for (int i = 0; i < ((sum)+8) - 15; i++)
 				{
@@ -467,8 +450,7 @@ void C_human::interf_mbd(N_striing firstname, N_striing lastname, C_date &du, C_
 				}
 				std::cout << pion << std::endl;
 			}
-			else if ((ds.m_day_set() == '9') || (ds.m_day_set() == '8') || (ds.m_day_set() == '7') || (ds.m_day_set() == '6') || (ds.m_day_set() == '5')
-				|| (ds.m_day_set() == '4') || (ds.m_day_set() == '3') || (ds.m_day_set() == '2') || (ds.m_day_set() == '1'))
+			else if ((ds.m_day_set().m_c_str() >= "1") && (ds.m_day_set().m_c_str() <= "9"))
 			{
 				for (int i = 0; i < ((sum)+7) - 15; i++)
 				{
@@ -476,8 +458,7 @@ void C_human::interf_mbd(N_striing firstname, N_striing lastname, C_date &du, C_
 				}
 				std::cout << pion << std::endl;
 			}
-			else if ((ds.m_month_set() == '9') || (ds.m_month_set() == '8') || (ds.m_month_set() == '7') || (ds.m_month_set() == '6') || (ds.m_month_set() == '5')
-				|| (ds.m_month_set() == '4') || (ds.m_month_set() == '3') || (ds.m_month_set() == '2') || (ds.m_month_set() == '1'))
+			else if ((ds.m_month_set().m_c_str() >= "1") && (ds.m_month_set().m_c_str() <= "9"))
 			{
 				for (int i = 0; i < ((sum)+7) - 15; i++)
 				{
