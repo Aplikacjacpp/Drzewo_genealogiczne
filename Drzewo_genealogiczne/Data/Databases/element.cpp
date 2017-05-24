@@ -80,4 +80,9 @@ void C_element::m_delete_sibling(int value) { V_sibling.m_erase(value); }
 void C_element::m_delete_grandchildren(int value) { V_grandchildren.m_erase(value); }
 void C_element::m_delete_grandparents(int value) { V_grandparents.m_erase(value); }
 void C_element::m_delete_partner(int value) { V_partner.m_erase(value); }
-
+N_vektor<C_grandparents> C_element::m_set_v_grandparents() { return V_grandparents; }
+N_vektor<C_grandchildren> C_element::m_set_v_grandchildren() { return V_grandchildren; }
+N_vektor<C_parent> C_element::m_set_v_parent() { return V_parent; }
+N_vektor<C_children> C_element::m_set_v_children() { return V_children; }
+N_vektor <C_partner> C_element::m_set_v_partner() { return V_partner; }
+N_vektor<C_sibling> C_element::m_set_v_sibling() { return V_sibling; }

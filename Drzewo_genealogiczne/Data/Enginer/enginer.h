@@ -31,6 +31,8 @@ public:
 	void m_load_files();
 	void m_save_files();
 	void m_new_human(C_human human);
+	void m_new_element(C_element element, bool b_what);
+	C_element m_create_element(C_id id_finter);
 	C_human& m_create_human(C_id id_finter);
 private:
 	void m_printer(int i);

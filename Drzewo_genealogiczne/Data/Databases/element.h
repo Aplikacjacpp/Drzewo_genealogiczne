@@ -74,6 +74,12 @@ public:
 	void m_delete_grandchildren(int value);
 	void m_delete_grandparents(int value);
 	void m_delete_partner(int value);
+	N_vektor<C_grandparents> m_set_v_grandparents();
+	N_vektor<C_grandchildren> m_set_v_grandchildren();
+	N_vektor<C_parent> m_set_v_parent();
+	N_vektor<C_children> m_set_v_children();
+	N_vektor <C_partner> m_set_v_partner();
+	N_vektor<C_sibling> m_set_v_sibling();
 	//~C_element();
 	virtual ~C_element();
 private:
