@@ -18,7 +18,6 @@
 #ifndef PARENT_H
 #define PARENT_H
 #include "relation.h"
-#include "../Personaly/id.h"
 class C_parent :public C_relation
 {
 public:

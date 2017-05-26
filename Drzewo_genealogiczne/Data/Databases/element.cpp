@@ -2,25 +2,26 @@
 C_element::C_element() {}
 C_element::C_element(const C_element &element) { if (this != &element) *this = element; }
 C_element& C_element::operator=(const C_element &element) {
-	if (this != &element) return *this;
+	if (this == &element) return *this;
 	if (*this == element) return *this;
 	V_children = element.V_children;
 	V_parent = element.V_parent;
 	V_sibling = element.V_sibling;
 	V_grandchildren = element.V_grandchildren;
 	V_grandparents = element.V_grandparents;
+	V_partner = element.V_partner;
 	return *this;
 }
 bool C_element::operator==(const C_element &element) {
 	if (V_children == element.V_children&&V_parent==element.V_parent&&
 		V_sibling==element.V_sibling&&V_grandchildren==element.V_grandchildren&&
-		V_grandparents == element.V_grandparents) return true;
+		V_grandparents == element.V_grandparents&&V_partner==element.V_partner) return true;
 	return false;
 }
 bool C_element::operator!=(const C_element &element) {
 	if (V_children != element.V_children&&V_parent != element.V_parent&&
 		V_sibling != element.V_sibling&&V_grandchildren != element.V_grandchildren&&
-		V_grandparents != element.V_grandparents) return true;
+		V_grandparents != element.V_grandparents&&V_partner != element.V_partner) return true;
 	return false;
 }
 C_element::~C_element() {}

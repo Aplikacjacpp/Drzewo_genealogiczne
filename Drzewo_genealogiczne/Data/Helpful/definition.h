@@ -24,14 +24,14 @@
 #define n_month   "D1"
 #define n_year   "D2"
 #define n_id_personaly "d0"
-#define n_id_data   "d1"
-#define n_id_relation   "d2"
+#define n_id_data   "d0"
+#define n_id_relation   "d0"
 #define n_children   "r1"
 #define n_sibling   "r2"
 #define n_grandparent   "r3"
 #define n_grandchildren   "r4"
-#define n_order   "r5"
-#define n_partner "r6"
+#define n_partner "r5"
+#define n_order   "r6"
 #define n_gender_personaly   "~0"
 #define n_gender_date   "~1"
 #define n_gender_relation "~2"
@@ -50,8 +50,8 @@
 #define t_sibling   164
 #define t_grandparent   165
 #define t_grandchildren   166
-#define t_order   167
-#define t_partner 168
+#define t_partner 167
+#define t_order   168
 #define t_gender_personaly   174
 #define t_gender_date   175
 #define t_gender_relation   183 // 

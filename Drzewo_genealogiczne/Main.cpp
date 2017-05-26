@@ -42,7 +42,7 @@ int main()
 	/*ponizsza metoda ucina stringi do podanej liczby bedacej suma imienia i nazwiska - tutaj podobnie musialem zastosowac stigni (2 pierwsze arg) bo by nie dzialaly meody
 	size cut i erase - znowu human pobiera siebie w argumencie - byc moze nie tak sie robi ale jeszcze nie opanowalem dobrze programowania - pewnie beda poprawki:P*/
 	human.interf_cut(datak, data, human, 13);
-
+	human.m_shift_id(8);
 	human.m_get_first_name(First);
 	human.m_get_last_name(Last);
 	human.m_get_last_name(Last1);
@@ -165,8 +165,38 @@ C_last_name L1, L2;
 	std::cout <<"oddzielnie: "<< date14.m_day_set() << "/" << date14.m_month_set() <<"/"<< date14.m_year_set() << "\n";
 	date13.m_get_type(data);
 	human.m_get_date(date15[0]);
-	Engin.m_new_human(human);
-	Engin.m_create_human(0);
+	//Engin.m_new_human(human);
+	C_element element(human);
+	C_children children(human.m_set_id());
+	C_id id(10055);
+	C_grandchildren gchildren(human.m_set_id());
+	C_grandparents gparents(human.m_set_id());
+	C_parent parent(human.m_set_id());
+	C_partner partner(human.m_set_id());
+	C_sibling sibling(human.m_set_id());
+	children.m_get_id(id);
+	gchildren.m_get_id(id);
+	gparents.m_get_id(id);
+	parent.m_get_id(id);
+	partner.m_get_id(id);
+	sibling.m_get_id(id);
+	element.m_get_children(children);
+	element.m_get_grandchildren(gchildren);
+	element.m_get_grandparents(gparents);
+	element.m_get_parent(parent);
+	element.m_get_partner(partner);
+	element.m_get_sibling(sibling);
+	Engin.m_new_element(element,1);
+	std::cout << "przed wczytaniem: " << human.m_set_id().m_set_contens() << "\n";
+	C_human HHH(Engin.m_create_human(1));
+	C_element EEE(Engin.m_create_element(1));
+	if (human == HHH) std::cout << "\nPrawidlowa stworzony human:)\n";
+	else std::cout << "\nblad z humanem:(\n";
+	if (element == EEE) std::cout << "\nPrawidlowa stworzony element:)\n";
+	else std::cout << "\nblad z elementem:(\n";
+	int q=(int)'a';
+	//
+	//Engin.m_create_human(0);
 	//test na poskie znaki
 	/*C_first_name test101;
 	N_striing fff = "£ukasz";
@@ -228,7 +258,9 @@ C_last_name L1, L2;
 	/*main_szyfrowanie("plik.txt", "dom", 5);
 	system("type plik.txt");
 	main_odszyfrowywanie("plik.txt", "dom", 5);*/
-	//Engin.m_save_files();
+	
+	Engin.m_save_files();
+	std::cout << "pliki:\n\n";
 	system("type data.save");
 	std::cout << "\n";
 	system("type date.save");

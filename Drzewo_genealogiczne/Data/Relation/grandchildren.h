@@ -17,10 +17,16 @@
 #ifndef C_GRANDCHILDREN_H
 #define C_GRANDCHILDREN_H
 #include "relation.h"
+#include "parent.h"
+#include "children.h"
+#include "partner.h"
+#include "sibling.h"
+#include "grandparents.h"
 class C_grandchildren :	public C_relation
 {
 public:
 	C_grandchildren();
+	C_grandchildren(C_id& id);
 	C_grandchildren(const C_grandchildren & grandchildren);
 	C_grandchildren& operator=(const C_grandchildren& grandchildren);
 	bool operator==(const C_grandchildren& grandchildren);

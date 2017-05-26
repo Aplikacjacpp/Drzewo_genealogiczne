@@ -1,5 +1,5 @@
 #include "id.h"
-C_id::C_id() :C_data(n_id_data) { s_data_id = ""; }
+C_id::C_id() :C_data(n_id_data) { s_data_id = "0"; }
 C_id::C_id(char* id):C_data(id) {}
 C_id::C_id(N_striing &id, bool t) : C_data(n_id_data) { s_data_id = m_is_there_contens(id); }
 C_id::C_id(int id) : C_data(n_id_data) { s_data_id.m_itoa(id); }
@@ -7,6 +7,7 @@ C_id::C_id(const C_id &id):C_data(id) {
 	if (this != &id) *this = id;
 }
 C_id& C_id::operator=(const C_id &id) {
+	if (this == &id) return *this;
 	if (*this == id) return *this;
 	s_data_id = id.s_data_id;
 	return *this;

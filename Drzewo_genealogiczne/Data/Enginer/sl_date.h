@@ -26,14 +26,13 @@ public:
 	bool operator==(const C_sl_date& sl_date); //operator porownania ==
 	bool operator!=(const C_sl_date& sl_date); //operator porownania !=
 	virtual ~C_sl_date(); //wirtualny destruktor
+protected:
 	void m_file_date(bool what); //czytanie z pliku
 	virtual N_striing m_cypher_on(N_striing data); //odszyfrowywanie
 	virtual N_striing m_cypher_off(N_striing data); //zaszyfrowywanie
 	void m_get_new_date(C_id id, N_vektor<C_date> V_date); //dodawanie nowych dat
 	C_goverment_date& operator[](int i);
 	C_goverment_date m_set_gover_date(int i);
-	N_vektor<C_date> m_set_V_date(int i);
-private:
 	N_vektor<C_goverment_date> V_goverment_date;
 };
 #endif // !C_SL_DATE_H

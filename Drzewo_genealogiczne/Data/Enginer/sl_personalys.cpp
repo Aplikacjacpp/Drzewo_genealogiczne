@@ -101,6 +101,3 @@ void C_sl_personalys::m_add_new_personaly(C_id id, C_first_name first, N_vektor<
 C_goverment_personaly& C_sl_personalys::operator[](int i) {
 	return V_goverment_personaly[i];
 }
-C_goverment_personaly C_sl_personalys::m_set_gover_personaly(int i) {
-	return V_goverment_personaly[i];
-}

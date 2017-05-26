@@ -1,23 +1,31 @@
 #include "goverment_relation.h"
 C_goverment_relation::C_goverment_relation() {}
-C_goverment_relation::C_goverment_relation(const C_goverment_relation & goverment_relation) {}
+C_goverment_relation::C_goverment_relation(const C_goverment_relation & goverment_relation) {
+	if (this != &goverment_relation) *this = goverment_relation;
+}
 C_goverment_relation& C_goverment_relation::operator=(const C_goverment_relation& goverment_relation) {
 	if (this == &goverment_relation) return *this;
 	if (*this == goverment_relation) return *this;
 	s_goverment_relation = goverment_relation.s_goverment_relation;
+	i_value_id = goverment_relation.i_value_id;
 	return *this;
 }
 bool C_goverment_relation::operator==(const C_goverment_relation& goverment_relation) {
-	if (s_goverment_relation == goverment_relation.s_goverment_relation) return true;
+	if (s_goverment_relation == goverment_relation.s_goverment_relation&&
+		i_value_id==goverment_relation.i_value_id) return true;
 	return false;
 }
 bool C_goverment_relation::operator!=(const C_goverment_relation& goverment_relation) {
-	if (s_goverment_relation != goverment_relation.s_goverment_relation) return true;
+	if (s_goverment_relation != goverment_relation.s_goverment_relation&&
+		i_value_id != goverment_relation.i_value_id) return true;
 	return false;
 }
 C_goverment_relation::~C_goverment_relation() {}
 bool C_goverment_relation::m_wchat_is() { if (this->s_goverment_relation.m_size() >= 1 || this->s_goverment_relation != '\0') return true; return false; }
-void C_goverment_relation::m_get_contens(N_striing &contens) { this->s_goverment_relation = m_is_there_contens(contens); }
+void C_goverment_relation::m_get_contens(N_striing &contens) { 
+	this->s_goverment_relation = m_is_there_contens(contens); 
+	i_value_id=m_id_value(); 
+}
 N_striing C_goverment_relation::m_set_contens() { return this->s_goverment_relation; }
 N_striing C_goverment_relation::m_is_there_contens(N_striing &Word) {
 	int i, value = 0,X;
@@ -40,13 +48,14 @@ N_striing C_goverment_relation::m_is_there_contens(N_striing &Word) {
 			break;
 		}
 	}
-	if (value == 5) return Word;
+	if (value >= 0) return Word;
 	return "";
 }
 int C_goverment_relation::m_id_value() {
 	int i, j;
 	N_striing str, relation;
 	for (i = 1; i < s_goverment_relation.m_size(); i++) {
+		relation.m_clear();
 		relation.m_push_back(s_goverment_relation[i - 1]);
 		relation.m_push_back(s_goverment_relation[i]);
 		if (relation == n_id_relation)
@@ -72,6 +81,7 @@ N_vektor<C_children> C_goverment_relation::m_set_value_children() {
 	int i, j;
 	N_striing str, relation;
 	for (i = 1; i < s_goverment_relation.m_size(); i++) {
+		relation.m_clear();
 		relation.m_push_back(s_goverment_relation[i - 1]);
 		relation.m_push_back(s_goverment_relation[i]);
 		if (relation == n_children)
@@ -84,7 +94,7 @@ N_vektor<C_children> C_goverment_relation::m_set_value_children() {
 				}
 					C_id Id, Id_value;
 					Id.m_get_contens(i_value_id);
-					Id_value.m_get_contens(str.m_atoi(0, str.m_size()));
+					Id_value.m_get_contens(str);
 					children.m_get_complete_content(Id, Id_value);
 					Vektor.m_push_back(children);
 					i = j;
@@ -100,6 +110,7 @@ N_vektor<C_parent> C_goverment_relation::m_set_value_parent() {
 	int i, j;
 	N_striing str, relation;
 	for (i = 1; i < s_goverment_relation.m_size(); i++) {
+		relation.m_clear();
 		relation.m_push_back(s_goverment_relation[i - 1]);
 		relation.m_push_back(s_goverment_relation[i]);
 		if (relation == n_parent)
@@ -112,7 +123,7 @@ N_vektor<C_parent> C_goverment_relation::m_set_value_parent() {
 				}
 					C_id Id, Id_value;
 					Id.m_get_contens(i_value_id);
-					Id_value.m_get_contens(str.m_atoi(0, str.m_size()));
+					Id_value.m_get_contens(str);
 					parent.m_get_complete_content(Id, Id_value);
 					Vektor.m_push_back(parent);
 					i = j;
@@ -128,6 +139,7 @@ N_vektor<C_grandchildren> C_goverment_relation::m_set_value_grandchildren() {
 	int i, j;
 	N_striing str, relation;
 	for (i = 1; i < s_goverment_relation.m_size(); i++) {
+		relation.m_clear();
 		relation.m_push_back(s_goverment_relation[i - 1]);
 		relation.m_push_back(s_goverment_relation[i]);
 		if (relation == n_grandchildren)
@@ -140,7 +152,7 @@ N_vektor<C_grandchildren> C_goverment_relation::m_set_value_grandchildren() {
 				}
 						C_id Id, Id_value;
 						Id.m_get_contens(i_value_id);
-						Id_value.m_get_contens(str.m_atoi(0, str.m_size()));
+						Id_value.m_get_contens(str);
 					grandchildren.m_get_complete_content(Id, Id_value);
 					Vektor.m_push_back(grandchildren);
 					i = j;
@@ -156,6 +168,7 @@ N_vektor<C_grandparents> C_goverment_relation::m_set_value_grandparents() {
 	int i, j;
 	N_striing str, relation;
 	for (i = 1; i < s_goverment_relation.m_size(); i++) {
+		relation.m_clear();
 		relation.m_push_back(s_goverment_relation[i - 1]);
 		relation.m_push_back(s_goverment_relation[i]);
 		if (relation == n_grandparent)
@@ -168,7 +181,7 @@ N_vektor<C_grandparents> C_goverment_relation::m_set_value_grandparents() {
 				}
 				C_id Id, Id_value;
 				Id.m_get_contens(i_value_id);
-				Id_value.m_get_contens(str.m_atoi(0, str.m_size()));
+				Id_value.m_get_contens(str);
 				grandparent.m_get_complete_content(Id, Id_value);
 				Vektor.m_push_back(grandparent);
 				i = j;
@@ -184,6 +197,7 @@ N_vektor<C_sibling> C_goverment_relation::m_set_value_sibling() {
 	int i, j;
 	N_striing str, relation;
 	for (i = 1; i < s_goverment_relation.m_size(); i++) {
+		relation.m_clear();
 		relation.m_push_back(s_goverment_relation[i - 1]);
 		relation.m_push_back(s_goverment_relation[i]);
 		if (relation == n_sibling)
@@ -196,7 +210,8 @@ N_vektor<C_sibling> C_goverment_relation::m_set_value_sibling() {
 				}
 						C_id Id, Id_value;
 						Id.m_get_contens(i_value_id);
-						Id_value.m_get_contens(str.m_atoi(0, str.m_size()));
+						Id_value.m_get_contens(str);
+					std::cout <<"\n"<< str << " == " << i_value_id << "\n";
 					sibling.m_get_complete_content(Id, Id_value);
 					Vektor.m_push_back(sibling);
 					i = j;
@@ -212,6 +227,7 @@ N_vektor<C_partner> C_goverment_relation::m_set_value_patner() {
 	int i, j;
 	N_striing str,relation;
 	for (i = 1; i < s_goverment_relation.m_size(); i++) {
+		relation.m_clear();
 		relation.m_push_back(s_goverment_relation[i - 1]);
 		relation.m_push_back(s_goverment_relation[i]);
 		if (relation == n_partner)
@@ -224,7 +240,7 @@ N_vektor<C_partner> C_goverment_relation::m_set_value_patner() {
 				}
 					C_id Id, Id_value;
 					Id.m_get_contens(i_value_id);
-					Id_value.m_get_contens(str.m_atoi(0, str.m_size()));
+					Id_value.m_get_contens(str);
 					sibling.m_get_complete_content(Id, Id_value);
 					Vektor.m_push_back(sibling);
 					i = j;

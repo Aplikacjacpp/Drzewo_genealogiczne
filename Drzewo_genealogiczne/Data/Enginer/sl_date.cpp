@@ -114,6 +114,3 @@ C_goverment_date& C_sl_date::operator[](int i) {
 C_goverment_date C_sl_date::m_set_gover_date(int i) {
 	return V_goverment_date[i];
 }
-N_vektor<C_date> C_sl_date::m_set_V_date(int i) {
-return V_goverment_date[i].m_set_value_V_date();
-}

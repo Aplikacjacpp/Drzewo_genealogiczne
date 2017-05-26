@@ -21,6 +21,7 @@ class C_grandparents :	public C_relation
 {
 public:
 	C_grandparents();
+	C_grandparents(C_id& id);
 	C_grandparents(const C_grandparents & grandparents);
 	C_grandparents& operator=(const C_grandparents& grandparents);
 	bool operator==(const C_grandparents& grandparents);
