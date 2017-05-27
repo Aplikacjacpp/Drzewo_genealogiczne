@@ -14,7 +14,7 @@
 *1.2	 12.05.2015  Adding methods													  Lukasz Witek vel Witkowski
 ****************************************************************************************************************/
 #ifndef C_DATE_H
-#define C_DATE_H
+#define C_DATE_H 
 #include "day.h"
 #include "month.h"
 #include "year.h"
