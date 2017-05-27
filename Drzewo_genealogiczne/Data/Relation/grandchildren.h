@@ -35,7 +35,7 @@ public:
 	virtual void m_get_complete_content(N_striing data);
 	virtual void m_get_complete_content(C_id index, C_id value);
 	void m_set_bGrandC(bool bGrandCm);
-
+	N_striing m_get_content();
 private:
 	C_id ID_index;
 	C_id ID_value;

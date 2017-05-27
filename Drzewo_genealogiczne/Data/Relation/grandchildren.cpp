@@ -68,3 +68,7 @@ void C_grandchildren::m_get_complete_content(N_striing Data) {
 	delete[] data;
 	return;
 }//do przetestowania
+N_striing C_grandchildren::m_get_content()
+{
+	return ID_value.m_set_contens();
+}

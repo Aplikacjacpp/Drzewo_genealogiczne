@@ -68,3 +68,7 @@ void C_grandparents::m_set_bGrandP(bool bGrandPm)
 {
 	bGrandP = bGrandPm;
 }
+N_striing C_grandparents::m_get_content()
+{
+	return ID_value.m_set_contens();
+}

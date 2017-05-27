@@ -91,37 +91,37 @@ void C_sl_relations::m_add_new_relations(C_id id,N_vektor<C_children> V_children
 	{
 		parent = V_parent[i];
 		data += parent.m_what_type();
-		data += parent.m_get_contens();
+		data += parent.m_get_content();
 	}
 	for (i = 0; i < V_children.m_size(); i++)
 	{
 		children = V_children[i];
 		data += children.m_what_type();
-		data += children.m_get_contens();
+		data += children.m_get_content();
 	}
 	for (i = 0; i < V_sibling.m_size(); i++)
 	{
 		sibling = V_sibling[i];
 		data += sibling.m_what_type();
-		data += sibling.m_get_contens();
+		data += sibling.m_get_content();
 	}
 	for (i = 0; i < V_grandparents.m_size(); i++)
 	{
 		grandparents = V_grandparents[i];
 		data += grandparents.m_what_type();
-		data += grandparents.m_get_contens();
+		data += grandparents.m_get_content();
 	}
 	for (i = 0; i < V_grandchildren.m_size(); i++)
 	{
 		grandchildren = V_grandchildren[i];
 		data += grandchildren.m_what_type();
-		data += grandchildren.m_get_contens();
+		data += grandchildren.m_get_content();
 	}
 	for (i = 0; i < V_partner.m_size(); i++)
 	{
 		partner = V_partner[i];
 		data += partner.m_what_type();
-		data += partner.m_get_contens();
+		data += partner.m_get_content();
 	}
 	data += '>';
 	std::cout << "\ntest:\n\n\ndata: " << data << "\n";

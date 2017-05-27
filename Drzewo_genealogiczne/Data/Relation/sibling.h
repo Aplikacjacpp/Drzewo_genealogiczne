@@ -36,6 +36,7 @@ public:
 	virtual void m_get_complete_content(N_striing data); //analizuje i podstawia wyluskane dane pod dane prywatne
 	virtual void m_get_complete_content(C_id index, C_id value); //wstawia argumenty do danych prywatnych
 	void m_set_bSib(bool bSibm); //metoda dostêpu do zmiennej prywatnej bSib
+	N_striing m_get_content();
 private:
 	C_id ID_index; //Id humana wskaznikowego
 	C_id ID_value; //Id humana na drugim koncu relacji

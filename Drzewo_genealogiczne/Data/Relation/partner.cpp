@@ -69,3 +69,7 @@ void C_partner::m_get_complete_content(N_striing Data) {
 void C_partner::m_set_bPart(bool bPartm) {
 	this->bPart = bPartm;
 }
+N_striing C_partner::m_get_content()
+{
+	return ID_value.m_set_contens();
+}

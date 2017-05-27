@@ -70,3 +70,7 @@ void C_sibling::m_set_bSib(bool bSibm)
 {
 	bSib = bSibm;
 }
+N_striing C_sibling::m_get_content()
+{
+	return ID_value.m_set_contens();
+}

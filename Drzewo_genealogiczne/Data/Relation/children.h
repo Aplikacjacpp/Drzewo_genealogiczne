@@ -36,11 +36,10 @@ public:
 	virtual void m_get_complete_content(N_striing data);
 	void m_set_bChild(bool bChildm);
 	virtual void m_get_complete_content(C_id index, C_id value);
-	
+	N_striing m_get_content();
 private:
 	C_id ID_index;
 	C_id ID_value;
-
 	bool bChild;
 };
 #endif // !CHILDREN_H

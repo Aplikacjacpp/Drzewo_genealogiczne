@@ -69,3 +69,7 @@ void  C_children::m_set_bChild(bool bChildm)
 {
 	bChild = bChildm; //o taka metode chodzi?
 }
+N_striing C_children::m_get_content()
+{
+	return ID_value.m_set_contens();
+}
