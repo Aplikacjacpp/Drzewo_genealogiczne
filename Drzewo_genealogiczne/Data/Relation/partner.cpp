@@ -10,14 +10,15 @@ C_partner& C_partner::operator=(const C_partner &partner) {
 	if (*this == partner) return *this;
 	ID_index = partner.ID_index;
 	ID_value = partner.ID_value;
+	bPart = partner.bPart;
 	return *this;
 }
 bool C_partner::operator==(const C_partner &partner) {
-	if (ID_index == partner.ID_index && ID_value == partner.ID_value) return true;
+	if (ID_index == partner.ID_index && ID_value == partner.ID_value && bPart == partner.bPart) return true;
 	return false;
 }
 bool C_partner::operator!=(const C_partner &partner) {
-	if (ID_index != partner.ID_index && ID_value != partner.ID_value) return true;
+	if (ID_index != partner.ID_index && ID_value != partner.ID_value && bPart != partner.bPart) return true;
 	return false;
 }
 C_partner::~C_partner() {}

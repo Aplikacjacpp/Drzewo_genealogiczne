@@ -42,7 +42,7 @@ int main()
 	/*ponizsza metoda ucina stringi do podanej liczby bedacej suma imienia i nazwiska - tutaj podobnie musialem zastosowac stigni (2 pierwsze arg) bo by nie dzialaly meody
 	size cut i erase - znowu human pobiera siebie w argumencie - byc moze nie tak sie robi ale jeszcze nie opanowalem dobrze programowania - pewnie beda poprawki:P*/
 	human.interf_cut(datak, data, human, 13);
-	human.m_shift_id(8);
+	human.m_shift_id(2);
 	human.m_get_first_name(First);
 	human.m_get_last_name(Last);
 	human.m_get_last_name(Last1);
@@ -186,7 +186,7 @@ C_last_name L1, L2;
 	element.m_get_parent(parent);
 	element.m_get_partner(partner);
 	element.m_get_sibling(sibling);
-	Engin.m_new_element(element,1);
+	Engin.m_new_element(element,0);
 	std::cout << "przed wczytaniem: " << human.m_set_id().m_set_contens() << "\n";
 	C_human HHH(Engin.m_create_human(1));
 	C_element EEE(Engin.m_create_element(1));

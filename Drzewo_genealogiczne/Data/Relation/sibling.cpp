@@ -9,14 +9,15 @@ C_sibling& C_sibling::operator=(const C_sibling &sib) {
 	if (*this == sib) return *this;
 	ID_index = sib.ID_index;
 	ID_value = sib.ID_value;
+	bSib = sib.bSib;
 	return *this;
 }
 bool C_sibling::operator==(const C_sibling &sib) {
-	if (ID_index == sib.ID_index && ID_value == sib.ID_value) return true;
+	if (ID_index == sib.ID_index && ID_value == sib.ID_value&&bSib == sib.bSib) return true;
 	return false;
 }
 bool C_sibling::operator!=(const C_sibling &sib) {
-	if (ID_index != sib.ID_index && ID_value != sib.ID_value) return true;
+	if (ID_index != sib.ID_index && ID_value != sib.ID_value&&bSib != sib.bSib) return true;
 	return false;
 }
 C_sibling::~C_sibling() {}

@@ -8,14 +8,15 @@ C_grandchildren& C_grandchildren::operator=(const C_grandchildren& grandchildren
 	if (*this == grandchildren) return *this;
 	ID_index = grandchildren.ID_index;
 	ID_value = grandchildren.ID_value;
+	bGrandC = grandchildren.bGrandC;
 	return *this;
 }
 bool C_grandchildren::operator==(const C_grandchildren& grandchildren) {
-	if (ID_index == grandchildren.ID_index&&ID_value == grandchildren.ID_value) return true;
+	if (ID_index == grandchildren.ID_index&&ID_value == grandchildren.ID_value&& bGrandC == grandchildren.bGrandC) return true;
 	return false;
 }
 bool C_grandchildren::operator!=(const C_grandchildren& grandchildren) {
-	if (ID_index == grandchildren.ID_index&&ID_value != grandchildren.ID_value) return true;
+	if (ID_index == grandchildren.ID_index&&ID_value != grandchildren.ID_value&& bGrandC != grandchildren.bGrandC) return true;
 	return false;
 }
 C_grandchildren::~C_grandchildren() {}

@@ -9,14 +9,15 @@ C_children& C_children::operator=(const C_children &children){
 	if (*this == children) return *this;
 	ID_index = children.ID_index;
 	ID_value = children.ID_value;
+	bChild = children.bChild;
 	return *this;
 }
 bool C_children::operator==(const C_children &children) {
-	if (ID_index == children.ID_index && ID_value == children.ID_value) return true;
+	if (ID_index == children.ID_index && ID_value == children.ID_value&&bChild == children.bChild) return true;
 	return false;
 }
 bool C_children::operator!=(const C_children &children) {
-	if (ID_index != children.ID_index && ID_value != children.ID_value) return true;
+	if (ID_index != children.ID_index && ID_value != children.ID_value&&bChild == children.bChild) return true;
 	return false;
 }
 C_children::~C_children() {}
