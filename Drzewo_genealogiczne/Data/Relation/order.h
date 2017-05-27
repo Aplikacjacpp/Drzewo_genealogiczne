@@ -9,35 +9,42 @@
 * "Klasa dziecko po klasie C_relation"
 *HISTORY:
 *version   Date Changes																	 	Author/Programmer
-*1.0     23.05.2017  Orginal design																	Lukasz Janus
-*1.1	 .05.2017								  
+*1.0     30.04.2017  Orginal design													  Lukasz Witek vel Witkowski
+*1.1	 02.05.2015	 Adding a virtual destructor									  Lukasz Witek vel Witkowski
+*1.2	 03.05.2015	 Adding a virtual methods									      Lukasz Witek vel Witkowski
+*1.3	 13.05.2015	 Adding a method "m_set_variable()"							      Lukasz Witek vel Witkowski
+*1.4	 17.05.2017  Adding priority methods										  Lukasz Witek vel Witkowski
+*1.5	 25.05.2017  Adding private bool variable and method "m_set_bSib()"			  Lukasz Janus
 ****************************************************************************************************************/
-#ifndef C_ORDER_H
-#define C_ORDER_H
+#ifndef ORDER_H
+#define _H
 #include "relation.h"
-
 class C_order :public C_relation
 {
 public:
-	C_order();
-	C_order(C_id &id);
-	C_order(const C_id &id);
-	C_order(const C_order &parent);
-	C_order &operator=(const C_order &parent);
-	bool operator==(const C_order &parent);
-	bool operator!=(const C_order &parent);
-	virtual void m_get_id(C_id &id);
-	virtual C_id m_set_id();
-	virtual int m_set_variable();
-	virtual ~C_order();
-	virtual void m_get_complete_content(N_striing data);
-	virtual void m_get_complete_content(C_id index, C_id value);
-
-	void m_set_sOrd(N_striing sOrdm);
-
+	C_order(); //konstruktor bezparametrowy
+	C_order(C_id &id); //konstruktor parametrowy
+	C_order(const C_id &id);  //konstruktor parametrowy ??
+	C_order(const C_order &sib); //konstruktor kopiujacy
+	C_order& operator=(const C_order &sib); //operator przypisania
+	bool operator==(const C_order &sib); //operator porownania ==
+	bool operator!=(const C_order &sib); //operator porownania !=
+	virtual void m_get_id(C_id &id); //wstawia id do ID_value
+	virtual C_id m_set_id(); //zwraca ID_value
+	virtual int m_set_variable(); //zwraca wartosc w t_order
+	virtual ~C_order(); //wirtualny destruktor
+	virtual void m_get_complete_content(N_striing data); //analizuje i podstawia wyluskane dane pod dane prywatne
+	virtual void m_get_complete_content(C_id index, C_id value); //wstawia argumenty do danych prywatnych
+	void m_set_bSib(bool bSibm); //metoda dostêpu do zmiennej prywatnej bSib
+	N_striing m_get_content(); // wsylanie zawartosci id
+	void m_get_atribut(N_striing atribut); //wstawianie atrybutu
 private:
-	N_striing  sOrd;
-	C_id ID_index;
-	C_id ID_value;
+	C_id ID_index; //Id humana wskaznikowego
+	C_id ID_value; //Id humana na drugim koncu relacji
+	bool bSib;	//zmienna bool
+	N_striing satribut; //zmienna z wlasna nazwa relacji
 };
-#endif // !C_ORDER_H
+#endif // !order_H
+
+
+

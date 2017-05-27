@@ -61,4 +61,5 @@
 #define f_save_date "date.save"
 #define f_init_file "file"
 #define f_end_file "#@#@#@#@#@#@#@#@#@"
+#define k_atribut_order '/'
 #endif // !DEFINITON_H

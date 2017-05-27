@@ -171,6 +171,9 @@
     <ClCompile Include="Data\Relation\partner.cpp">
       <Filter>Resource Files\Data\Relations</Filter>
     </ClCompile>
+    <ClCompile Include="Data\Relation\order.cpp">
+      <Filter>Resource Files\Data\Relations</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Data\Personaly\data.h">
@@ -273,6 +276,9 @@
       <Filter>Header Files\Enginer</Filter>
     </ClInclude>
     <ClInclude Include="Data\Relation\partner.h">
+      <Filter>Header Files\Data\Relations</Filter>
+    </ClInclude>
+    <ClInclude Include="Data\Relation\order.h">
       <Filter>Header Files\Data\Relations</Filter>
     </ClInclude>
   </ItemGroup>

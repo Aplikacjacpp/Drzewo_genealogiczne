@@ -169,6 +169,7 @@
     <ClCompile Include="Data\Relation\children.cpp" />
     <ClCompile Include="Data\Relation\grandchildren.cpp" />
     <ClCompile Include="Data\Relation\grandparents.cpp" />
+    <ClCompile Include="Data\Relation\order.cpp" />
     <ClCompile Include="Data\Relation\partner.cpp" />
     <ClCompile Include="Data\Relation\parents.cpp" />
     <ClCompile Include="Data\Relation\relation.cpp" />
@@ -206,6 +207,7 @@
     <ClInclude Include="Data\Relation\children.h" />
     <ClInclude Include="Data\Relation\grandchildren.h" />
     <ClInclude Include="Data\Relation\grandparents.h" />
+    <ClInclude Include="Data\Relation\order.h" />
     <ClInclude Include="Data\Relation\partner.h" />
     <ClInclude Include="Data\Relation\parent.h" />
     <ClInclude Include="Data\Relation\relation.h" />

@@ -22,6 +22,7 @@
 #include "../Relation//grandchildren.h"
 #include "../Relation//grandparents.h"
 #include "../Relation/partner.h"
+#include "../Relation/order.h"
 class C_element
 {
 public:
@@ -90,7 +91,7 @@ private:
 	N_vektor<C_grandchildren> V_grandchildren;
 	N_vektor <C_grandparents> V_grandparents;
 	N_vektor <C_partner> V_partner;
-
+	N_vektor <C_order> V_order;
 };
 #endif // !ELEMENT_H
 
