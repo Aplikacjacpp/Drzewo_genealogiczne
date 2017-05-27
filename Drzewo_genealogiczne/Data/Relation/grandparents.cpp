@@ -30,12 +30,12 @@ void C_grandparents::m_get_complete_content(N_striing Data) {
 	int i, j;
 	bool what = false;
 	C_id Id(n_id_personaly);
-	N_striing str;
-	char *data = new char[2];
+	N_striing str,data;
 	for (i = 1; i < Data.m_size(); i++) {
-		data[0] = Data[i - 1];
-		data[1] = Data[i];
-		if (n_id_personaly == data)
+		data.m_clear();
+		data.m_push_back(Data[i - 1]);
+		data.m_push_back(Data[i - 1]);
+		if (data == n_id_personaly)
 		{
 			for (j = i; j < Data.m_size(); j++)
 			{
@@ -44,7 +44,6 @@ void C_grandparents::m_get_complete_content(N_striing Data) {
 					str.m_push_back(Data[j]);
 				}
 				else {
-					delete[] data;
 					Id.m_get_contens(str);
 					if (what)
 					{
@@ -61,7 +60,6 @@ void C_grandparents::m_get_complete_content(N_striing Data) {
 			}
 		}
 	}
-	delete[] data;
 	return;
 }//do przetestowania
 void C_grandparents::m_set_bGrandP(bool bGrandPm)
