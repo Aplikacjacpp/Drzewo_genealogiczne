@@ -14,12 +14,10 @@
 *1.2	 03.05.2015	 Adding a virtual methods									      Lukasz Witek vel Witkowski
 *1.3	 13.05.2015	 Adding a method "m_set_variable()"							      Lukasz Witek vel Witkowski
 *1.4	 17.05.2017  Adding priority methods										  Lukasz Witek vel Witkowski
-*1.4	 25.05.2017  Adding private bool variable and method "m_set_bParent()"		  Lukasz Janus
 ****************************************************************************************************************/
 #ifndef PARENT_H
 #define PARENT_H
 #include "relation.h"
-#include "../Personaly/id.h"
 class C_parent :public C_relation
 {
 public:
@@ -36,11 +34,10 @@ public:
 	virtual ~C_parent();
 	virtual void m_get_complete_content(N_striing data);
 	virtual void m_get_complete_content(C_id index, C_id value);
-	void m_set_bParent(bool bParentm);
+	N_striing m_get_contens();
 private:
 	C_id ID_index;
 	C_id ID_value;
-	bool bParent;
 };
 #endif // !PARENT_H
 

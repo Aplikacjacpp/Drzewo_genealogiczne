@@ -1,5 +1,5 @@
 /***************************************************************************************************************
-*"grandchildren.h"
+*"order.h"
 *
 *
 *
@@ -9,35 +9,35 @@
 * "Klasa dziecko po klasie C_relation"
 *HISTORY:
 *version   Date Changes																	 	Author/Programmer
-*1.0     02.05.2017  Orginal design													  Lukasz Witek vel Witkowski
-*1.2	 25.05.2017  Adding private bool variable and method "m_set_bPart()"		  Lukasz Janus
+*1.0     23.05.2017  Orginal design																	Lukasz Janus
+*1.1	 .05.2017								  
 ****************************************************************************************************************/
-#ifndef C_partner_H
-#define C_partner_H
+#ifndef C_ORDER_H
+#define C_ORDER_H
 #include "relation.h"
-class C_partner :public C_relation
+
+class C_order :public C_relation
 {
 public:
-	C_partner();
-	C_partner(C_id &id);
-	C_partner(const C_id &id);
-	C_partner(const C_partner & partner);
-	C_partner& operator=(const C_partner& partner);
-	bool operator==(const C_partner& partner);
-	bool operator!=(const C_partner& partner);
-	virtual ~C_partner();
-	void m_set_bPart(bool bPartm);
+	C_order();
+	C_order(C_id &id);
+	C_order(const C_id &id);
+	C_order(const C_order &parent);
+	C_order &operator=(const C_order &parent);
+	bool operator==(const C_order &parent);
+	bool operator!=(const C_order &parent);
 	virtual void m_get_id(C_id &id);
 	virtual C_id m_set_id();
 	virtual int m_set_variable();
+	virtual ~C_order();
 	virtual void m_get_complete_content(N_striing data);
 	virtual void m_get_complete_content(C_id index, C_id value);
+
+	void m_set_sOrd(N_striing sOrdm);
+
 private:
+	N_striing  sOrd;
 	C_id ID_index;
 	C_id ID_value;
-	bool bPart;
 };
-#endif // !C_partner_H
-
-
-
+#endif // !C_ORDER_H

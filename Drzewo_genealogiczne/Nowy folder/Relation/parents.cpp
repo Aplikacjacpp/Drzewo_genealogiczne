@@ -28,10 +28,6 @@ void C_parent::m_get_complete_content(C_id index, C_id value) {
 	ID_index = index;
 	ID_value = value;
 }
-void C_parent::m_set_bParent(bool bParentm)
-{
-	bParent = bParentm;
-}
 void C_parent::m_get_complete_content(N_striing Data) {
 	int i, j;
 	bool what = false;
@@ -70,3 +66,6 @@ void C_parent::m_get_complete_content(N_striing Data) {
 	delete[] data;
 	return;
 }//do przetestowania
+N_striing C_parent::m_get_contens() {
+	return ID_value.m_set_contens();
+}

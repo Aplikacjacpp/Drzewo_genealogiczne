@@ -1,38 +1,34 @@
-#include "parent.h"
-C_parent::C_parent():C_relation(n_parent){}
-C_parent::C_parent(C_id &id) : C_relation(n_parent) { ID_index = id; }
-C_parent::C_parent(const C_id &id) : C_relation(n_parent) { ID_index = id; }
-C_parent::C_parent(const C_parent &parent):C_relation(parent) {
+#include "order.h"
+C_order::C_order() :C_relation(n_parent) {}
+C_order::C_order(C_id &id) : C_relation(n_parent) { ID_index = id; }
+C_order::C_order(const C_id &id) : C_relation(n_parent) { ID_index = id; }
+C_order::C_order(const C_order &parent) : C_relation(parent) {
 	if (this != &parent) *this = parent;
 }
-C_parent& C_parent::operator=(const C_parent &parent) {
+C_order& C_order::operator=(const C_order &parent) {
 	if (this == &parent) return *this;
 	if (*this == parent) return *this;
 	ID_index = parent.ID_index;
 	ID_value = parent.ID_value;
 	return *this;
 }
-bool C_parent::operator==(const C_parent &parent) {
+bool C_order::operator==(const C_order &parent) {
 	if (ID_index == parent.ID_index && ID_value == parent.ID_value) return true;
 	return false;
 }
-bool C_parent::operator!=(const C_parent &parent) {
+bool C_order::operator!=(const C_order &parent) {
 	if (ID_index != parent.ID_index && ID_value != parent.ID_value) return true;
 	return false;
 }
-C_parent::~C_parent(){}
-void C_parent::m_get_id(C_id &id) { ID_value = id; }
-C_id C_parent::m_set_id() { return ID_index; }
-int C_parent::m_set_variable() { return t_parent; }
-void C_parent::m_get_complete_content(C_id index, C_id value) {
+C_order::~C_order() {}
+void C_order::m_get_id(C_id &id) { ID_value = id; }
+C_id C_order::m_set_id() { return ID_index; }
+int C_order::m_set_variable() { return t_parent; }
+void C_order::m_get_complete_content(C_id index, C_id value) {
 	ID_index = index;
 	ID_value = value;
 }
-void C_parent::m_set_bParent(bool bParentm)
-{
-	bParent = bParentm;
-}
-void C_parent::m_get_complete_content(N_striing Data) {
+void C_order::m_get_complete_content(N_striing Data) {
 	int i, j;
 	bool what = false;
 	C_id Id(n_id_personaly);
@@ -69,4 +65,9 @@ void C_parent::m_get_complete_content(N_striing Data) {
 	}
 	delete[] data;
 	return;
-}//do przetestowania
+}
+void  C_order::m_set_sOrd(N_striing sOrdm)
+{
+	sOrd = sOrdm; //o taka metode chodzi?
+}
+//do przetestowania

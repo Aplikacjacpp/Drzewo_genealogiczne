@@ -1,8 +1,9 @@
 #include "grandchildren.h"
 C_grandchildren::C_grandchildren():C_relation(n_grandchildren) {}
-C_grandchildren::C_grandchildren(C_id &id) : C_relation(n_grandchildren) { ID_index = id; }
-C_grandchildren::C_grandchildren(const C_id &id) : C_relation(n_grandchildren) { ID_index = id; }
-C_grandchildren::C_grandchildren(const C_grandchildren & grandchildren):C_relation() {}
+C_grandchildren::C_grandchildren(C_id& id) : C_relation(n_grandchildren) { ID_index = id; }
+C_grandchildren::C_grandchildren(const C_grandchildren & grandchildren):C_relation() {
+	if (this != &grandchildren) *this = grandchildren;
+}
 C_grandchildren& C_grandchildren::operator=(const C_grandchildren& grandchildren) {
 	if (this == &grandchildren) return *this;
 	if (*this == grandchildren) return *this;
@@ -25,10 +26,6 @@ int C_grandchildren::m_set_variable() { return t_grandchildren; }
 void C_grandchildren::m_get_complete_content(C_id index, C_id value) {
 	ID_index = index;
 	ID_value = value;
-}
-void C_grandchildren::m_set_bGrandC(bool bGrandCm)
-{
-	bGrandC = bGrandCm;
 }
 void C_grandchildren::m_get_complete_content(N_striing Data) {
 	int i, j;
@@ -68,3 +65,6 @@ void C_grandchildren::m_get_complete_content(N_striing Data) {
 	delete[] data;
 	return;
 }//do przetestowania
+N_striing C_grandchildren::m_get_contens() {
+	return ID_value.m_set_contens();
+}
