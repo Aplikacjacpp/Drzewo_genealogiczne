@@ -1,9 +1,6 @@
 #include "grandparents.h"
 C_grandparents::C_grandparents():C_relation(n_grandparent) {}
-C_grandparents::C_grandparents(C_id& id):C_relation(n_grandparent) { ID_index = id; }
-C_grandparents::C_grandparents(const C_grandparents & grandparents):C_relation() {
-	if (this != &grandparents) *this = grandparents;
-}
+C_grandparents::C_grandparents(const C_grandparents & grandparents):C_relation() {}
 C_grandparents& C_grandparents::operator=(const C_grandparents& grandparents) {
 	if (this == &grandparents) return *this;
 	if (*this == grandparents) return *this;
@@ -65,6 +62,7 @@ void C_grandparents::m_get_complete_content(N_striing Data) {
 	delete[] data;
 	return;
 }//do przetestowania
-N_striing C_grandparents::m_get_contens() {
-	return ID_value.m_set_contens();
+void C_grandparents::m_set_bGrandP(bool bGrandPm)
+{
+	bGrandP = bGrandPm;
 }

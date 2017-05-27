@@ -65,6 +65,7 @@ void C_children::m_get_complete_content(N_striing Data) {
 	delete[] data;
 	return;
 } //do przetestowania
-N_striing C_children::m_get_contens() {
-	return ID_value.m_set_contens();
+void  C_children::m_set_bChild(bool bChildm)
+{
+	bChild = bChildm; //o taka metode chodzi?
 }

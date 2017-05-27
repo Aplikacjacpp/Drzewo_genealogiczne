@@ -14,6 +14,7 @@
 *1.2	 03.05.2015	 Adding a virtual methods									      Lukasz Witek vel Witkowski
 *1.3	 13.05.2015	 Adding a method "m_set_variable()"							      Lukasz Witek vel Witkowski
 *1.4	 17.05.2017  Adding priority methods										  Lukasz Witek vel Witkowski
+*1.5	 25.05.2017  Adding private bool variable and method "m_set_bSib()"			  Lukasz Janus
 ****************************************************************************************************************/
 #ifndef SIBLING_H
 #define SIBLING_H
@@ -34,10 +35,11 @@ public:
 	virtual ~C_sibling(); //wirtualny destruktor
 	virtual void m_get_complete_content(N_striing data); //analizuje i podstawia wyluskane dane pod dane prywatne
 	virtual void m_get_complete_content(C_id index, C_id value); //wstawia argumenty do danych prywatnych
-	N_striing m_get_contens();
+	void m_set_bSib(bool bSibm); //metoda dostêpu do zmiennej prywatnej bSib
 private:
 	C_id ID_index; //Id humana wskaznikowego
 	C_id ID_value; //Id humana na drugim koncu relacji
+	bool bSib;	//zmienna bool
 };
 #endif // !SIBLING_H
 
