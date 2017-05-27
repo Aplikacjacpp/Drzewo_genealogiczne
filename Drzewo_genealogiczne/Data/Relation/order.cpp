@@ -72,7 +72,7 @@ N_striing C_order::m_get_content()
 {
 	return ID_value.m_set_contens();
 }
-void; C_order::m_get_atribut(N_striing atribut) {
+void C_order::m_get_atribut(N_striing atribut) {
 	satribut = atribut;
 	satribut += k_atribut_order;
 }
