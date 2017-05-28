@@ -183,6 +183,7 @@ C_last_name L1, L2;
 	parent.m_get_id(id);
 	partner.m_get_id(id);
 	sibling.m_get_id(id);
+	order.m_get_id(id);
 	element.m_get_children(children);
 	element.m_get_grandchildren(gchildren);
 	element.m_get_grandparents(gparents);
@@ -193,12 +194,15 @@ C_last_name L1, L2;
 	Engin.m_new_element(element,0);
 	std::cout << "przed wczytaniem: " << human.m_set_id().m_set_contens() << "\n";
 	C_human HHH(Engin.m_create_human(1));
-	C_element EEE(Engin.m_create_element(1));
+	C_element EEE(Engin.m_create_element(1)), TT(element);
+	std::cout << "koniowanie: " << TT.m_set_Human() << "\n";
 	if (human == HHH) std::cout << "\nPrawidlowa stworzony human:)\n";
 	else std::cout << "\nblad z humanem:(\n";
 	if (element == EEE) std::cout << "\nPrawidlowa stworzony element:)\n";
 	else std::cout << "\nblad z elementem:(\n";
-	std::cout << HHH << "\t==\t" << human << "\n";
+	std::cout << "po wczytaniu\n" << HHH << "\t==\t" << "przed wczytaniem\n" << human << "\nprzedwczytaniem\n"
+		<< element.m_set_Human() << "\npowczytaniu:\n" << EEE.m_set_Human() << "\n";
+
 	//
 	//Engin.m_create_human(0);
 	//test na poskie znaki
@@ -263,7 +267,7 @@ C_last_name L1, L2;
 	system("type plik.txt");
 	main_odszyfrowywanie("plik.txt", "dom", 5);*/
 	
-	Engin.m_save_files();
+	//Engin.m_save_files();
 	std::cout << "pliki:\n\n";
 	system("type data.save");
 	std::cout << "\n";
@@ -271,7 +275,7 @@ C_last_name L1, L2;
 	std::cout << "\n";
 	system("type relation.save");
 
-	system("PAUSE");
+	//system("call plik.bat");
 
 	return 0;
 }

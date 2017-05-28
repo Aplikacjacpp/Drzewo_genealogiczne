@@ -33,7 +33,7 @@ void C_sl_date::m_file_date(bool what) {
 				s_inline.m_getline(File); //nie wiem czy bedzie dzialac
 				if (s_inline == f_end_file) break;
 				s_data += s_inline;
-				std::cout << s_inline << "\n";
+				//std::cout << s_inline << "\n";
 				s_inline.m_clear();
 			} while (1);
 			File.close();
@@ -54,7 +54,7 @@ void C_sl_date::m_file_date(bool what) {
 				s_help_data += '>';
 				Gover.m_get_contens(s_help_data);
 				V_goverment_date.m_push_back(Gover);
-				std::cout <<"rozmiar: "<< V_goverment_date.m_size() << "\n"<< s_data.m_cut(i_start, i_stop);
+				//std::cout <<"rozmiar: "<< V_goverment_date.m_size() << "\n"<< s_data.m_cut(i_start, i_stop);
 				i_start = i_stop+1;
 			}
 		}

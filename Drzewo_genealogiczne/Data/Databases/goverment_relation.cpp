@@ -190,6 +190,7 @@ N_vektor<C_grandparents> C_goverment_relation::m_set_value_grandparents() {
 		}
 	}
 	return Vektor;
+	//dobrze dziala :)
 } //do przetestowania
 N_vektor<C_sibling> C_goverment_relation::m_set_value_sibling() {
 	N_vektor<C_sibling> Vektor;
@@ -211,7 +212,6 @@ N_vektor<C_sibling> C_goverment_relation::m_set_value_sibling() {
 						C_id Id, Id_value;
 						Id.m_get_contens(i_value_id);
 						Id_value.m_get_contens(str);
-					std::cout <<"\n"<< str << " == " << i_value_id << "\n";
 					sibling.m_get_complete_content(Id, Id_value);
 					Vektor.m_push_back(sibling);
 					i = j;

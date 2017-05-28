@@ -48,7 +48,7 @@ void C_sl_relations::m_load_file_relation(bool what) {
 				Gover.m_get_contens(s_help_data);
 				V_goverment_relation.m_push_back(Gover);
 				i_start = i_stop+1;
-			}
+			} //dobrze wczytuje:)
 		}
 	}
 	else
@@ -58,7 +58,7 @@ void C_sl_relations::m_load_file_relation(bool what) {
 		File.open(f_save_relation);
 		if (File.good())
 		{
-			std::cout <<"zawartosc: "<< V_goverment_relation[0].m_set_contens()<<"\n";
+		//	std::cout <<"zawartosc: "<< V_goverment_relation[0].m_set_contens()<<"\n";
 			for (i = 0; i < V_goverment_relation.m_size(); i++)
 			{
 				s_data += V_goverment_relation[i].m_set_contens();
@@ -134,10 +134,8 @@ void C_sl_relations::m_add_new_relations(C_id id,N_vektor<C_children> V_children
 		data += order.m_get_atribut();
 	}
 	data += '>';
-	std::cout << "\ntest:\n\n\ndata: " << data << "\n";
 	C_goverment_relation Gover;
 	Gover.m_get_contens(data);
-	std::cout << "\n\n\nGover: " << Gover.m_set_contens() << "\n";
 	if (m_what(Gover.m_set_value_id()))
 	{
 		int i;
@@ -154,7 +152,7 @@ void C_sl_relations::m_add_new_relations(C_id id,N_vektor<C_children> V_children
 		}
 			V_goverment_relation.m_push_back(Gover);
 	}
-	std::cout << "\n\n\nVector: " << V_goverment_relation[0].m_set_contens() << "\nkoniec testu\n";
+	//std::cout << "\n\n\nVector: " << V_goverment_relation[0].m_set_contens() << "\nkoniec testu\n";
 }
 C_goverment_relation C_sl_relations::m_set_gover_relation(int i) {
 	int j;

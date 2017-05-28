@@ -4,6 +4,7 @@ C_element::C_element(const C_element &element) { if (this != &element) *this = e
 C_element& C_element::operator=(const C_element &element) {
 	if (this == &element) return *this;
 	if (*this == element) return *this;
+	Human = element.Human;
 	V_children = element.V_children;
 	V_parent = element.V_parent;
 	V_sibling = element.V_sibling;

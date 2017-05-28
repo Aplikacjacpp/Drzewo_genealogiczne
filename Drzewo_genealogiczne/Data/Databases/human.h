@@ -35,7 +35,7 @@ public:
 	C_human& operator=(const C_human &human);
 	bool operator==(const C_human &human);
 	bool operator!=(const C_human &human);
-	friend std::ostream& operator<<(std::ostream& is, C_human &human);
+	//friend std::ostream& operator<<(std::ostream& is, C_human &human);
 	void m_get_first_name(C_first_name &f_name);
 	void m_get_first_name(N_striing &f_name);
 	void m_get_last_name(C_last_name &l_name);

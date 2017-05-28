@@ -89,19 +89,17 @@ C_human C_enginer::m_create_human(C_id id_finter) {
 	i = id_finter.m_set_contens().m_atoi(0, id_finter.m_set_contens().m_size() - 1);
 	if (i > 0) i--;
 	C_human human(id_finter);
-	if (i > V_goverment_personaly.m_size() && i > V_goverment_date.m_size() && i > V_goverment_relation.m_size())
+	if (i > V_goverment_personaly.m_size() && i > V_goverment_date.m_size() && i > V_goverment_relation.m_size()) {
 		return human;
+	}
 	human.m_get_first_name(V_goverment_personaly[i].m_set_value_first_name());
-
 	human.m_get_gender(V_goverment_personaly[i].m_set_value_gender());
-	
 		N_vektor<C_last_name> V_last = V_goverment_personaly[i].m_set_value_last_name();
 		for (j = 0; j < V_last.m_size(); j++)
-				human.m_get_last_name(V_last[j].m_set_contens());
+				human.m_get_last_name(V_last[j]);
 		N_vektor<C_date> V_date = V_goverment_date[i].m_set_value_V_date();
 	for (j = 0; j<V_date.m_size(); j++)
 		human.m_get_date(V_date[j]);
-	std::cout << "po wczytaniu: " << human.m_set_id().m_set_contens() << "\n";
 	return human;
 }
 void C_enginer::m_new_element(C_element &element, bool b_what) {
@@ -125,7 +123,9 @@ C_element C_enginer::m_create_element(C_id id_finter) {
 	C_element element;
 	if (i > V_goverment_personaly.m_size() && i > V_goverment_date.m_size() && i > V_goverment_relation.m_size())
 		return element;
-	element.m_update_human(m_create_human(i+1));
+	C_human human = m_create_human(i + 1);
+	//std::cout << human << "\n";
+	element.m_update_human(human);
 	C_goverment_relation gover(this->V_goverment_relation[i]);
 	N_vektor<C_children> children(gover.m_set_value_children());
 	N_vektor<C_parent> parent(gover.m_set_value_parent());
@@ -133,6 +133,7 @@ C_element C_enginer::m_create_element(C_id id_finter) {
 	N_vektor<C_grandchildren> grandc(gover.m_set_value_grandchildren());
 	N_vektor<C_grandparents> grandp(gover.m_set_value_grandparents());
 	N_vektor<C_sibling> sibling(gover.m_set_value_sibling());
+	N_vektor<C_order> order(gover.m_set_value_order());
 	for (j = 0; j < children.m_size(); j++) {
 		element.m_get_children(children[j]);
 	}
@@ -151,6 +152,10 @@ C_element C_enginer::m_create_element(C_id id_finter) {
 	for (j = 0; j < sibling.m_size(); j++) {
 		element.m_get_sibling(sibling[j]);
 	}
+	for (j = 0; j < order.m_size(); j++) {
+		element.m_get_order(order[j]);
+	}
 	//dzis bede pisac!
+	//std::cout << element.m_set_Human() << "test\n";
 	return element;
 }

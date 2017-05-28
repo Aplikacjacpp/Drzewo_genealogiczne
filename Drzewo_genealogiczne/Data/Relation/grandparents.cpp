@@ -2,7 +2,9 @@
 C_grandparents::C_grandparents():C_relation(n_grandparent) {}
 C_grandparents::C_grandparents(C_id &id) : C_relation(n_grandparent) { ID_index = id; }
 C_grandparents::C_grandparents(const C_id &id) : C_relation(n_grandparent) { ID_index = id; }
-C_grandparents::C_grandparents(const C_grandparents & grandparents):C_relation() {}
+C_grandparents::C_grandparents(const C_grandparents & grandparents):C_relation() {
+	if (this != &grandparents) *this = grandparents;
+}
 C_grandparents& C_grandparents::operator=(const C_grandparents& grandparents) {
 	if (this == &grandparents) return *this;
 	if (*this == grandparents) return *this;

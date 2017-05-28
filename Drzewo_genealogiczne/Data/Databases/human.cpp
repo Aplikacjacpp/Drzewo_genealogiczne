@@ -20,12 +20,6 @@ bool C_human::operator!=(const C_human &human) {
 	if (V_date != human.V_date && Id != human.Id && First != human.First && V_last != human.V_last) return true;
 	return false;
 }
-
-std::ostream& operator<<(std::ostream& is, C_human &human){
-	is << human.m_set_gender() << std::endl << human.m_set_first_name() << " " << human.m_set_last_name() << std::endl;
-	return is;
-}
-
 C_human::~C_human() {}
 void C_human::m_get_first_name(C_first_name &f_name) { First = f_name; }
 void C_human::m_get_first_name(N_striing &f_name) { C_first_name F(f_name); First = F; }
@@ -492,16 +486,15 @@ void C_human::interf_mbd(N_striing firstname, N_striing lastname, C_date &du, C_
 std::ostream& operator<<(std::ostream &is,const C_human &h) {
 	int i;
 	//na razie bez ramki...
-	is << h.First << '\n';
+	is << h.First;
 	N_vektor<C_last_name> Last = h.V_last;
 	N_vektor<C_date> date = h.V_date;
 	for (i = 0; i < Last.m_size(); i++) {
-		is << Last[i] << "\t";
+		is <<"i: "<<i<<"   "<< Last[i] << "\t";
 	}
-	is << h.Gender << "n";
+	is << "\n"<<h.Gender << "\n";
 	for (i = 0; i < date.m_size(); i++) {
 		is << date[i] << "\t";
 	}
 	return is;
-
 }
