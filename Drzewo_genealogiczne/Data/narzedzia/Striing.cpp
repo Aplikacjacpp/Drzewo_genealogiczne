@@ -189,10 +189,11 @@ int N_striing::m_size()
 {
 	return this->size;
 }
-std::ostream& operator<<(std::ostream &is, N_striing &C)
+std::ostream& operator<<(std::ostream &is,const N_striing &C)
 {
-	for (int i = 0; i<C.m_size(); i++)
-		is << C.Table[i];
+	N_striing str = C;
+	for (int i = 0; i<str.m_size(); i++)
+		is << str.Table[i];
 	return is;
 }
 N_striing N_striing::operator+(const char &c)

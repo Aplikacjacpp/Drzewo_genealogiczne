@@ -49,6 +49,7 @@ public:
 	void m_shift_char(char value);
 	void m_get_type(N_striing value); //wstaw znak podzialki
 	virtual ~C_date(); //destruktor wirtualny
+	friend std::ostream& operator<<(std::ostream &is, const C_date &d); //przeciazenie operatora przesuniecia bitowego na wyjscie
 private:
 	char c_value; //zmienna typu char do podzialki
 	N_striing s_value; //zmienna typu striing do typu daty

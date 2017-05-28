@@ -50,7 +50,7 @@ public:
 	N_striing m_cut(int value_front); //wycina od wybranej krotki do konca
 	N_striing& m_shift(int i, const char &value); //podmienia wybrana krotke na podany znak
 	int m_size(); //zwraca rozmiar
-	friend std::ostream& operator<<(std::ostream &is, N_striing &C);
+	friend std::ostream& operator<<(std::ostream &is,const N_striing &C);
 	friend N_striing& operator >> (std::fstream &is, N_striing &C);
 	N_striing& m_getline(std::ifstream &is);
 	virtual ~N_striing();

@@ -128,9 +128,10 @@ void C_sl_relations::m_add_new_relations(C_id id,N_vektor<C_children> V_children
 	for (i = 0; i < V_order.m_size(); i++)
 	{
 		order = V_order[i];
-		data += k_atribut_order;
 		data += order.m_what_type();
 		data += order.m_get_content();
+		data += k_atribut_order;
+		data += order.m_get_atribut();
 	}
 	data += '>';
 	std::cout << "\ntest:\n\n\ndata: " << data << "\n";

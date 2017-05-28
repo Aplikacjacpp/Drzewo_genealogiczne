@@ -188,3 +188,7 @@ void C_date::m_shift_char(char value) {
 void C_date::m_get_type(N_striing value) {
 	s_value = value;
 }
+std::ostream& operator<<(std::ostream &is, const C_date &d) {
+	is <<"data: "<< d.i_data_day << "." << d.i_data_month << "." << d.i_data_year;
+	return is;
+}

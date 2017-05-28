@@ -30,8 +30,9 @@ int main()
 	date_s.m_set_DD_MM_YYYY();
 
 	N_striing data, datak;
-	data = "Witek";
+	data = "£ukasz";
 	C_first_name First(data);
+	data = "Witek";
 	C_last_name Last(data);
 	datak = "Witkowski";
 	C_last_name Last1(datak);
@@ -42,7 +43,7 @@ int main()
 	/*ponizsza metoda ucina stringi do podanej liczby bedacej suma imienia i nazwiska - tutaj podobnie musialem zastosowac stigni (2 pierwsze arg) bo by nie dzialaly meody
 	size cut i erase - znowu human pobiera siebie w argumencie - byc moze nie tak sie robi ale jeszcze nie opanowalem dobrze programowania - pewnie beda poprawki:P*/
 	human.interf_cut(datak, data, human, 13);
-	human.m_shift_id(2);
+	human.m_shift_id(1);
 	human.m_get_first_name(First);
 	human.m_get_last_name(Last);
 	human.m_get_last_name(Last1);
@@ -197,7 +198,7 @@ C_last_name L1, L2;
 	else std::cout << "\nblad z humanem:(\n";
 	if (element == EEE) std::cout << "\nPrawidlowa stworzony element:)\n";
 	else std::cout << "\nblad z elementem:(\n";
-	int q=(int)'a';
+	std::cout << HHH << "\t==\t" << human << "\n";
 	//
 	//Engin.m_create_human(0);
 	//test na poskie znaki

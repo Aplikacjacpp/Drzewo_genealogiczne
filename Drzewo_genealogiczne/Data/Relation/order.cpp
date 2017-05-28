@@ -80,3 +80,6 @@ void C_order::m_get_atribut(N_striing atribut) {
 	satribut = atribut;
 	satribut += k_atribut_order;
 }
+N_striing C_order::m_get_atribut() {
+	return satribut;
+}

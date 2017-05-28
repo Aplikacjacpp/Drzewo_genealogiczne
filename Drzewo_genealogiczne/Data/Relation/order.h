@@ -38,6 +38,7 @@ public:
 	void m_set_bSib(bool bSibm); //metoda dostêpu do zmiennej prywatnej bSib
 	N_striing m_get_content(); // wsylanie zawartosci id
 	void m_get_atribut(N_striing atribut); //wstawianie atrybutu
+	N_striing m_get_atribut(); //zwraca wartosc atrybutu
 private:
 	C_id ID_index; //Id humana wskaznikowego
 	C_id ID_value; //Id humana na drugim koncu relacji

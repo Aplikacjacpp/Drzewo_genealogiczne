@@ -29,7 +29,7 @@ public:
 	bool operator!=(const C_first_name &first);
 	bool operator>(C_first_name &first);
 	bool operator<(C_first_name &first);
-	friend std::ostream& operator<<(std::ostream& is, C_first_name &first);
+	friend std::ostream& operator<<(std::ostream& is,const C_first_name &first);
 	//~C_first_name();
 	virtual ~C_first_name();
 	virtual bool m_wchat_is();

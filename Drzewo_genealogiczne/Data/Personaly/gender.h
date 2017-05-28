@@ -29,7 +29,7 @@ public:
 	C_gender& operator=(const C_gender &C);
 	bool operator==(const C_gender &C);
 	bool operator!=(const C_gender &C);
-	friend std::ostream& operator<<(std::ostream& is, C_gender &gender);
+	friend std::ostream& operator<<(std::ostream& is,const  C_gender &gender);
 	virtual ~C_gender();
 	virtual bool m_wchat_is();
 	virtual void m_get_contens(N_striing &contens);

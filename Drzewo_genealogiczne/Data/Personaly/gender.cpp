@@ -29,9 +29,9 @@ N_striing C_gender::m_is_there_contens(N_striing &Word) {
 	else if ((Word == "Women" || Word == "women") || Word == "0" || (Word == "False" && Word == "false")) { return "Women"; };
 		return "";
 }
-std::ostream& operator<<(std::ostream& is,C_gender &gender)
+std::ostream& operator<<(std::ostream& is,const C_gender &gender)
 {
-	is << "Plec: " << gender.m_set_contens();
+	is << "Plec: " << gender.s_data_gender;
 	return is;
 }
 int C_gender::m_set_variable() {
