@@ -33,7 +33,7 @@ protected:
 	void m_add_new_relations(C_id id,N_vektor<C_children> V_children, 
 	N_vektor<C_parent> V_parent, N_vektor<C_sibling> V_sibling, 
 	N_vektor<C_grandchildren> V_grandchildren, N_vektor <C_grandparents> V_grandparents,
-	N_vektor<C_partner> V_partner);
+	N_vektor<C_partner> V_partner, N_vektor<C_order> V_order);
 	N_vektor<C_goverment_relation> V_goverment_relation;
 	C_goverment_relation m_set_gover_relation(int i);
 private:

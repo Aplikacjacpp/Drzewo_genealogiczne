@@ -109,13 +109,13 @@ void C_enginer::m_new_element(C_element &element, bool b_what) {
 	if (b_what) //gdy byl dodany human
 	{
 		m_add_new_relations(human.m_set_id(), element.m_set_v_children(), element.m_set_v_parent(), element.m_set_v_sibling(),
-			element.m_set_v_grandchildren(), element.m_set_v_grandparents(), element.m_set_v_partner());
+			element.m_set_v_grandchildren(), element.m_set_v_grandparents(), element.m_set_v_partner(),element.m_set_v_order());
 	}
 	else // gdy nie byl dodany
 	{
 		m_new_human(human);
 		m_add_new_relations(i_index, element.m_set_v_children(), element.m_set_v_parent(), element.m_set_v_sibling(),
-			element.m_set_v_grandchildren(), element.m_set_v_grandparents(), element.m_set_v_partner());
+			element.m_set_v_grandchildren(), element.m_set_v_grandparents(), element.m_set_v_partner(), element.m_set_v_order());
 	}
 }
 C_element C_enginer::m_create_element(C_id id_finter) {

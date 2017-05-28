@@ -17,7 +17,7 @@
 *1.5	 25.05.2017  Adding private bool variable and method "m_set_bSib()"			  Lukasz Janus
 ****************************************************************************************************************/
 #ifndef ORDER_H
-#define _H
+#define ORDER_H
 #include "relation.h"
 class C_order :public C_relation
 {

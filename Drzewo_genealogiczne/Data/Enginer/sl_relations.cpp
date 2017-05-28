@@ -75,13 +75,15 @@ N_striing C_sl_relations::m_cypher_on(N_striing data) { return data; }; //odszyf
 N_striing C_sl_relations::m_cypher_off(N_striing data) { return data; }; //zaszyfrowywanie
 void C_sl_relations::m_add_new_relations(C_id id,N_vektor<C_children> V_children,
 	N_vektor<C_parent> V_parent, N_vektor<C_sibling> V_sibling,
-	N_vektor<C_grandchildren> V_grandchildren, N_vektor <C_grandparents> V_grandparents, N_vektor<C_partner> V_partner) {
+	N_vektor<C_grandchildren> V_grandchildren, N_vektor <C_grandparents> V_grandparents,
+	N_vektor<C_partner> V_partner, N_vektor<C_order> V_order) {
 	C_children children;
 	C_parent parent;
 	C_grandchildren grandchildren;
 	C_grandparents grandparents;
 	C_sibling sibling;
 	C_partner partner;
+	C_order order;
 	int i;
 	N_striing data;
 	data = "<";
@@ -122,6 +124,13 @@ void C_sl_relations::m_add_new_relations(C_id id,N_vektor<C_children> V_children
 		partner = V_partner[i];
 		data += partner.m_what_type();
 		data += partner.m_get_content();
+	}
+	for (i = 0; i < V_order.m_size(); i++)
+	{
+		order = V_order[i];
+		data += k_atribut_order;
+		data += order.m_what_type();
+		data += order.m_get_content();
 	}
 	data += '>';
 	std::cout << "\ntest:\n\n\ndata: " << data << "\n";

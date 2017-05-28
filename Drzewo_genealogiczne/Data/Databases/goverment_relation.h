@@ -23,6 +23,7 @@
 #include "../Relation/parent.h"
 #include "../Relation/sibling.h"
 #include "../Relation/partner.h"
+#include "../Relation/order.h"
 class C_goverment_relation :
 	public C_goverment
 {
@@ -43,6 +44,7 @@ public:
 	N_vektor<C_grandparents> m_set_value_grandparents(); //wyszukuje i zwraca wartosc dla grandparent
 	N_vektor<C_sibling> m_set_value_sibling(); //wyszukuje i zwraca wartosc dla sibling
 	N_vektor<C_partner> m_set_value_patner(); //wyszukuje i zwraca wartosc dla sibling
+	N_vektor<C_order> m_set_value_order();
 private:
 	virtual N_striing m_is_there_contens(N_striing &Word); //analizuje wprowadzany striing
 	N_striing s_goverment_relation; //zmienna przechowujaca striing

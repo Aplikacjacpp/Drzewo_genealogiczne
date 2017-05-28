@@ -251,3 +251,45 @@ N_vektor<C_partner> C_goverment_relation::m_set_value_patner() {
 	return Vektor;
 }
 //wyszukuje i zwraca wartosc dla sibling
+N_vektor<C_order> C_goverment_relation::m_set_value_order() {
+	N_vektor<C_order> Vektor;
+	C_order sibling;
+	int i, j,p;
+	N_striing str, relation;
+	for (i = 1; i < s_goverment_relation.m_size(); i++) {
+		relation.m_clear();
+		relation.m_push_back(s_goverment_relation[i - 1]);
+		relation.m_push_back(s_goverment_relation[i]);
+		if (relation == n_order)
+		{
+			for (j = i + 1; j < s_goverment_relation.m_size(); j++)
+			{
+				if (s_goverment_relation[j] >= '0' && s_goverment_relation[j] <= '9') {
+					str.m_push_back(s_goverment_relation[j]);
+					continue;
+				}
+				C_id Id, Id_value;
+				Id.m_get_contens(i_value_id);
+				Id_value.m_get_contens(str);
+				sibling.m_get_complete_content(Id, Id_value);
+				i = j;
+				if (s_goverment_relation[i] == k_atribut_order)
+				{
+					str.m_clear();
+					for (p = 0; p < s_goverment_relation.m_size(); p++)
+					{
+						if (s_goverment_relation[p] != k_atribut_order)
+						{
+							str.m_push_back(s_goverment_relation[p]);
+							continue;
+						}
+						break;
+					}
+				}
+				Vektor.m_push_back(sibling);
+				break;
+			}
+		}
+	}
+	return Vektor;
+}
