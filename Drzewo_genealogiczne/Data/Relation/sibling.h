@@ -35,6 +35,7 @@ public:
 	virtual ~C_sibling(); //wirtualny destruktor
 	virtual void m_get_complete_content(N_striing data); //analizuje i podstawia wyluskane dane pod dane prywatne
 	virtual void m_get_complete_content(C_id index, C_id value); //wstawia argumenty do danych prywatnych
+	friend std::ostream& operator<<(std::ostream &is, const C_sibling &data); //przeciazenie operatora przsuniecia bitowego na wyjscie
 	void m_set_bSib(bool bSibm); //metoda dostêpu do zmiennej prywatnej bSib
 	N_striing m_get_content();
 private:

@@ -36,6 +36,7 @@ public:
 	virtual ~C_parent();
 	virtual void m_get_complete_content(N_striing data);
 	virtual void m_get_complete_content(C_id index, C_id value);
+	friend std::ostream& operator<<(std::ostream &is, const C_parent &data);
 	void m_set_bParent(bool bParentm);
 	N_striing m_get_content();
 private:

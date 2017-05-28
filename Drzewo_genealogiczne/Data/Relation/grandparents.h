@@ -34,6 +34,7 @@ public:
 	virtual int m_set_variable();
 	virtual void m_get_complete_content(N_striing data);
 	virtual void m_get_complete_content(C_id index, C_id value);
+	friend std::ostream& operator<<(std::ostream &is, const C_grandparents &data);
 	void m_set_bGrandP(bool bGrandPm);
 	N_striing m_get_content();
 private:
