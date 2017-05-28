@@ -34,6 +34,7 @@ public:
 	void m_new_element(C_element &element, bool b_what);
 	C_element m_create_element(C_id id_finter);
 	C_human m_create_human(C_id id_finter);
+	//C_tree m_create_tree(C_id id_pointer);
 private:
 	void m_printer(int i);
 	void m_get_index(int value);
