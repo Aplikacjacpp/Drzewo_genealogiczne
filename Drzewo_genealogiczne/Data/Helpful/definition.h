@@ -75,4 +75,24 @@
 #define w_partner_girl "Zona"  //polskie litery
 #define w_sibling_boy "Brat"
 #define w_sibling_girl "Siostra"
+// parametry do interfejsu drzewa
+#define p_grandparent_1 1
+#define p_grandparent_2 2
+#define p_grandparent_3 4
+#define p_grandparent_4 8
+#define p_parent_1 1
+#define p_parent_2 2
+#define p_sibling_1 1
+#define p_sibling_2 2
+#define p_partner_1 1
+#define p_partner_2 2
+#define p_children_1 1
+#define p_children_2 2
+#define p_children_3 4
+#define p_children_4 8
+#define p_grandchildren_1 1
+#define p_grandchildren_2 2
+#define p_grandchildren_3 4
+#define p_grandchildren_4 8
+
 #endif // !DEFINITON_H
