@@ -73,4 +73,6 @@
 #define w_parent_girl "Matka"
 #define w_partner_boy "Maz" //polskie litery
 #define w_partner_girl "Zona"  //polskie litery
+#define w_sibling_boy "Brat"
+#define w_sibling_girl "Siostra"
 #endif // !DEFINITON_H

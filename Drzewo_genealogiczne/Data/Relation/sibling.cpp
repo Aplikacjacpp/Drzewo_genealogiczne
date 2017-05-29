@@ -73,3 +73,11 @@ N_striing C_sibling::m_get_content()
 {
 	return ID_value.m_set_contens();
 }
+std::ostream& operator<<(std::ostream &is, const C_sibling &data) {
+	if (data.bSib) {
+		is << w_sibling_boy;
+		return is;
+	}
+	is << w_sibling_girl;
+	return is;
+}

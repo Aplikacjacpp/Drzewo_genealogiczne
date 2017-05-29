@@ -73,3 +73,11 @@ N_striing C_grandparents::m_get_content()
 {
 	return ID_value.m_set_contens();
 }
+std::ostream& operator<<(std::ostream &is, const C_grandparents &data) {
+	if (data.bGrandP) {
+		is << w_grandparents_boy;
+		return is;
+	}
+	is << w_grandparents_girl;
+	return is;
+}

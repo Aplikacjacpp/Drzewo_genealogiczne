@@ -72,3 +72,11 @@ N_striing C_partner::m_get_content()
 {
 	return ID_value.m_set_contens();
 }
+std::ostream& operator<<(std::ostream &is, const C_partner &data) {
+	if (data.bPart) {
+		is << w_partner_boy;
+		return is;
+	}
+	is << w_partner_girl;
+	return is;
+}

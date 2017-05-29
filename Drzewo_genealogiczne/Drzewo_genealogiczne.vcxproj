@@ -171,7 +171,7 @@
     <ClCompile Include="Data\Relation\grandparents.cpp" />
     <ClCompile Include="Data\Relation\order.cpp" />
     <ClCompile Include="Data\Relation\partner.cpp" />
-    <ClCompile Include="Data\Relation\parents.cpp" />
+    <ClCompile Include="Data\Relation\parent.cpp" />
     <ClCompile Include="Data\Relation\relation.cpp" />
     <ClCompile Include="Data\Relation\sibling.cpp" />
     <ClCompile Include="Main.cpp" />

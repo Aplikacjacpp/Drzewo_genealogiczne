@@ -73,3 +73,11 @@ N_striing C_parent::m_get_content()
 {
 	return ID_value.m_set_contens();
 }
+std::ostream& operator<<(std::ostream &is, const C_parent &data) {
+	if (data.bParent) {
+		is << w_parent_boy;
+		return is;
+	}
+	is << w_parent_girl;
+	return is;
+}
