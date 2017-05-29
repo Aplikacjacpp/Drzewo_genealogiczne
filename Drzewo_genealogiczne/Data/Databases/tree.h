@@ -20,6 +20,7 @@ class C_tree :public C_element
 {
 public:
 	C_tree();
+	C_tree(const C_element &element);
 	C_tree(const C_human &human);
 	C_tree(const C_tree &tree);
 	C_tree& operator=(const C_tree &tree);

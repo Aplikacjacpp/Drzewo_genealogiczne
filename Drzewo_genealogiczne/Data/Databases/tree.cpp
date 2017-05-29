@@ -17,6 +17,24 @@ C_tree::C_tree():C_element() {
 		V_human_partner.m_push_back(h);
 	}
 }
+C_tree::C_tree(const C_element &element):C_element(element) {
+	int i;
+	C_id id(0);
+	for (i = 0; i < 4; i++)
+	{
+		C_human h(id);
+		V_human_grandchildren.m_push_back(h);
+		V_human_grandparent.m_push_back(h);
+		V_human_children.m_push_back(h);
+	}
+	for (i = 0; i < 2; i++)
+	{
+		C_human h(id);
+		V_human_parent.m_push_back(h);
+		V_human_sibling.m_push_back(h);
+		V_human_partner.m_push_back(h);
+	}
+}
 C_tree::C_tree(const C_human &human):C_element(human) {
 	int i;
 	C_id id(0);
@@ -295,8 +313,8 @@ std::ostream& operator<<(std::ostream& is, const C_tree &tree) { //glowny interf
 	int value;
 		for (i = 0; i < T.V_human_grandparent.m_size(); i++)
 		{
-			is << T.V_human_grandparent[i].m_short_interface_personaly();
-			is<<T.V_human_grandparent[i].m_short_interface_date();
+			is << T.V_human_grandparent[i].m_short_interface_personaly()+"\t";
+			is<<T.V_human_grandparent[i].m_short_interface_date()+"\t";
 		}
 		switch (value)
 		{
@@ -367,8 +385,8 @@ std::ostream& operator<<(std::ostream& is, const C_tree &tree) { //glowny interf
 
 		for (i = 0; i < T.V_human_parent.m_size(); i++)
 		{
-			is<<T.V_human_parent[i].m_short_interface_personaly();
-			is<<T.V_human_parent[i].m_short_interface_date();
+			is<<T.V_human_parent[i].m_short_interface_personaly()+"\t";
+			is<<T.V_human_parent[i].m_short_interface_date()+"\t";
 		}
 		switch (value)
 		{
@@ -390,8 +408,8 @@ std::ostream& operator<<(std::ostream& is, const C_tree &tree) { //glowny interf
 		//rysowanie lini
 		for (i = 0; i < T.V_human_sibling.m_size(); i++)
 		{
-			is<<T.V_human_sibling[i].m_short_interface_personaly();
-			is<<T.V_human_sibling[i].m_short_interface_date();
+			is<<T.V_human_sibling[i].m_short_interface_personaly()+"\t";
+			is<<T.V_human_sibling[i].m_short_interface_date()+"\t";
 		}
 		switch (value)
 		{
@@ -411,8 +429,8 @@ std::ostream& operator<<(std::ostream& is, const C_tree &tree) { //glowny interf
 			break;
 		}
 		//rysowanie lini
-		is << T.Human.m_short_interface_personaly();
-		is<<T.Human.m_short_interface_date();
+		is << T.Human.m_short_interface_personaly()+"\t";
+		is<<T.Human.m_short_interface_date()+"\t";
 		switch (value)
 		{
 		case 1:
@@ -432,8 +450,8 @@ std::ostream& operator<<(std::ostream& is, const C_tree &tree) { //glowny interf
 		}
 		for (i = 0; i < T.V_human_partner.m_size(); i++)
 		{
-			is<<T.V_human_partner[i].m_short_interface_personaly();
-			is<<T.V_human_partner[i].m_short_interface_date();
+			is<<T.V_human_partner[i].m_short_interface_personaly()+"\t";
+			is<<T.V_human_partner[i].m_short_interface_date()+"\t";
 		}
 		switch (value)
 		{
@@ -471,8 +489,8 @@ std::ostream& operator<<(std::ostream& is, const C_tree &tree) { //glowny interf
 		//rysowanie lini
 		for (i = 0; i < T.V_human_children.m_size(); i++)
 		{
-			is<<T.V_human_children[i].m_short_interface_personaly();
-			is<<T.V_human_children[i].m_short_interface_date();
+			is<<T.V_human_children[i].m_short_interface_personaly()+"\t";
+			is<<T.V_human_children[i].m_short_interface_date()+"\t";
 		}
 		switch (value)
 		{
@@ -542,8 +560,8 @@ std::ostream& operator<<(std::ostream& is, const C_tree &tree) { //glowny interf
 		//rysowanie lini
 		for (i = 0; i < T.V_human_grandchildren.m_size(); i++)
 		{
-			is<<T.V_human_grandchildren[i].m_short_interface_personaly();
-			is<<T.V_human_grandchildren[i].m_short_interface_date();
+			is<<T.V_human_grandchildren[i].m_short_interface_personaly()+"\t";
+			is<<T.V_human_grandchildren[i].m_short_interface_date()+"\t";
 		}
 	
 		//rysowanie lini
