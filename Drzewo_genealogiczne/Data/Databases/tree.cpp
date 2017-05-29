@@ -1,6 +1,40 @@
 #include "tree.h"
-C_tree::C_tree():C_element() {}
-C_tree::C_tree(const C_human &human):C_element(human) {}
+C_tree::C_tree():C_element() {
+	int i;
+	C_id id(0);
+	for (i = 0; i < 4; i++)
+	{
+		C_human h(id);
+		V_human_grandchildren.m_push_back(h);
+		V_human_grandparent.m_push_back(h);
+		V_human_children.m_push_back(h);
+	}
+	for (i = 0; i < 2; i++)
+	{
+		C_human h(id);
+		V_human_parent.m_push_back(h);
+		V_human_sibling.m_push_back(h);
+		V_human_partner.m_push_back(h);
+	}
+}
+C_tree::C_tree(const C_human &human):C_element(human) {
+	int i;
+	C_id id(0);
+	for (i = 0; i < 4; i++)
+	{
+		C_human h(id);
+		V_human_grandchildren.m_push_back(h);
+		V_human_grandparent.m_push_back(h);
+		V_human_children.m_push_back(h);
+	}
+	for (i = 0; i < 2; i++)
+	{
+		C_human h(id);
+		V_human_parent.m_push_back(h);
+		V_human_sibling.m_push_back(h);
+		V_human_partner.m_push_back(h);
+	}
+}
 C_tree::C_tree(const C_tree &tree):C_element(tree) { if (this != &tree) *this = tree; }
 C_tree& C_tree::operator=(const C_tree &tree) {
 	if (this == &tree) return *this;
@@ -255,3 +289,48 @@ C_human C_tree::m_get_human(int &data, int ivalue) {
 C_human C_tree::m_get_index_human() {
 	return this->Human;
 }
+std::ostream& operator<<(std::ostream& is, const C_tree &tree) { //glowny interfejs drzewa
+	C_tree T = const_cast<C_tree&> (tree);
+	int i;
+		for (i = 0; i < T.V_human_grandparent.m_size(); i++)
+		{
+			//is<<T.V_human_grandparent[i].m_sort_interface_personaly();
+			//is<<T.V_human_grandparent[i].m_sort_interface_date();
+		}
+		//rysowanie lini
+
+		for (i = 0; i < T.V_human_parent.m_size(); i++)
+		{
+			//is<<T.V_human_parent[i].m_sort_interface_personaly();
+			//is<<T.V_human_parent[i].m_sort_interface_date();
+		}
+		//rysowanie lini
+		for (i = 0; i < T.V_human_sibling.m_size(); i++)
+		{
+			//is<<T.V_human_sibling[i].m_sort_interface_personaly();
+			//is<<T.V_human_sibling[i].m_sort_interface_date();
+		}
+		//rysowanie lini
+		//is << T.Human.m_sort_interface_personaly();
+		//is<<T.Human.m_sort_interface_date();
+		for (i = 0; i < T.V_human_partner.m_size(); i++)
+		{
+			//is<<T.V_human_partner[i].m_sort_interface_personaly();
+			//is<<T.V_human_partner[i].m_sort_interface_date();
+		}
+		//rysowanie lini
+		for (i = 0; i < T.V_human_children.m_size(); i++)
+		{
+			//is<<T.V_human_children[i].m_sort_interface_personaly();
+			//is<<T.V_human_children[i].m_sort_interface_date();
+		}
+		//rysowanie lini
+		for (i = 0; i < T.V_human_grandchildren.m_size(); i++)
+		{
+			//is<<T.V_human_grandchildren[i].m_sort_interface_personaly();
+			//is<<T.V_human_grandchildren[i].m_sort_interface_date();
+		}
+		//rysowanie lini
+		return is;
+}
+	

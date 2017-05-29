@@ -498,3 +498,15 @@ std::ostream& operator<<(std::ostream &is,const C_human &h) {
 	}
 	return is;
 }
+N_striing C_human::m_short_interface_personaly() {
+	N_striing data;
+	data = First.m_set_contens()[0];
+	data += ". ";
+	int i;
+	for (i = 0; i < 5; i++)
+		data += this->V_last[0].m_set_contens()[i];
+	return data;
+}
+N_striing C_human::m_short_interface_date() {
+	return V_date[0].m_set_DD_MM_YYYY();
+}

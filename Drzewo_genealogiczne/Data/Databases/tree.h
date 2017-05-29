@@ -32,6 +32,7 @@ public:
 	void m_add_id(const C_id &id);
 	C_id m_get_id();
 	C_human m_get_human(int &data, int ivalue);
+	friend std::ostream& operator<<(std::ostream& is, const C_tree &tree);
 	C_human m_get_index_human();
 	virtual ~C_tree();
 private:
