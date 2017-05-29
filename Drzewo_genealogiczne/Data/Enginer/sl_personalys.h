@@ -28,6 +28,7 @@ public:
 	bool operator!=(const C_sl_personalys& sl_personalys); //operator porownania !=
 	virtual ~C_sl_personalys(); //destruktor virtualny
 protected:
+	bool m_what(int value);
 	void m_load_file_personaly(bool what); //czytanie z pliku
 	virtual N_striing m_cypher_on(N_striing data); //odszyfrowywanie
 	virtual N_striing m_cypher_off(N_striing data); //zaszyfrowywanie

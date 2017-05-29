@@ -28,6 +28,7 @@ public:
 	virtual ~C_sl_date(); //wirtualny destruktor
 protected:
 	void m_file_date(bool what); //czytanie z pliku
+	bool m_what(int value);
 	virtual N_striing m_cypher_on(N_striing data); //odszyfrowywanie
 	virtual N_striing m_cypher_off(N_striing data); //zaszyfrowywanie
 	void m_get_new_date(C_id id, N_vektor<C_date> V_date); //dodawanie nowych dat
