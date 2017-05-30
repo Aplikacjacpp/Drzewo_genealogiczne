@@ -22,7 +22,8 @@ bool C_sibling::operator!=(const C_sibling &sib) {
 }
 C_sibling::~C_sibling() {}
 void C_sibling::m_get_id(C_id &id) { ID_value = id; }
-C_id C_sibling::m_set_id() { return ID_index; }
+C_id C_sibling::m_set_index_id() { return ID_index; }
+C_id C_sibling::m_set_id() { return ID_value; }
 int C_sibling::m_set_variable() { return t_sibling; }
 void C_sibling::m_get_complete_content(N_striing Data) {
 	int i, j;

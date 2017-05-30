@@ -31,6 +31,7 @@ public:
 	bool operator!=(const C_children &children);
 	virtual void m_get_id(C_id &id);
 	virtual C_id m_set_id();
+	C_id m_set_index_id();
 	virtual ~C_children();
 	virtual int m_set_variable();
 	virtual void m_get_complete_content(N_striing data);

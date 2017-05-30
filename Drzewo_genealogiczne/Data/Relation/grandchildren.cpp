@@ -23,7 +23,8 @@ bool C_grandchildren::operator!=(const C_grandchildren& grandchildren) {
 }
 C_grandchildren::~C_grandchildren() {}
 void C_grandchildren::m_get_id(C_id &id) { ID_value = id; }
-C_id C_grandchildren::m_set_id() { return ID_index; }
+C_id C_grandchildren::m_set_index_id() { return ID_index; }
+C_id C_grandchildren::m_set_id() { return ID_value; }
 int C_grandchildren::m_set_variable() { return t_grandchildren; }
 void C_grandchildren::m_get_complete_content(C_id index, C_id value) {
 	ID_index = index;

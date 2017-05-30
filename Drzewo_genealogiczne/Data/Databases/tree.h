@@ -26,13 +26,13 @@ public:
 	C_tree& operator=(const C_tree &tree);
 	bool operator==(const C_tree &tree);
 	bool operator!=(const C_tree &tree);
-	void m_add_human(C_human &h, int &data);
-	void m_update_human(C_human &h, int &data, int ivalue);
-	void m_delete_human(C_human &h, int &data, int ivalue);
-	void m_delete_human(C_human &h, int &data);
+	void m_add_human(C_human &h, int data, bool bwhat, int ivalue);
+	void m_update_human(C_human &h, int data, int ivalue);
+	void m_delete_human(C_human &h, int data, int ivalue);
+	void m_delete_human(C_human &h, int data);
 	void m_add_id(const C_id &id);
 	C_id m_get_id();
-	C_human m_get_human(int &data, int ivalue);
+	C_human m_get_human(int data, int ivalue);
 	friend std::ostream& operator<<(std::ostream& is, const C_tree &tree);
 	C_human m_get_index_human();
 	virtual ~C_tree();

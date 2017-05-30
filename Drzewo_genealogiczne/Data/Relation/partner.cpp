@@ -23,7 +23,8 @@ bool C_partner::operator!=(const C_partner &partner) {
 }
 C_partner::~C_partner() {}
 void C_partner::m_get_id(C_id &id) { ID_value = id; }
-C_id C_partner::m_set_id() { return ID_index; }
+C_id C_partner::m_set_index_id() { return ID_index; }
+C_id C_partner::m_set_id() { return ID_value; }
 int C_partner::m_set_variable() { return t_partner; }
 void C_partner::m_get_complete_content(C_id index, C_id value) {
 	ID_index = index;

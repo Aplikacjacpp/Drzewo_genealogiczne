@@ -87,49 +87,102 @@ bool C_tree::operator!=(const C_tree &tree) {
 	return false;
 }
 C_tree::~C_tree() {}
-void C_tree::m_add_human(C_human &h, int &data) {
-	switch (data)
+void C_tree::m_add_human(C_human &h, int data, bool bwhat, int ivalue) {
+	if (bwhat)
 	{
-	case t_children:
-	{
-		V_human_children.m_push_back(h);
-		break;
+		switch (data)
+		{
+		case t_children:
+		{
+			V_human_children.m_erase(ivalue);
+			V_human_children.m_insert(ivalue,h);
+			break;
+		}
+		case t_grandchildren:
+		{
+			V_human_children.m_erase(ivalue);
+			V_human_grandchildren.m_insert(ivalue,h);
+			break;
+		}
+		case t_grandparent:
+		{
+			V_human_children.m_erase(ivalue);
+			V_human_grandparent.m_insert(ivalue,h);
+			break;
+		}
+		case t_parent:
+		{
+			V_human_children.m_erase(ivalue);
+			V_human_parent.m_insert(ivalue,h);
+			break;
+		}
+		case t_partner:
+		{
+			V_human_children.m_erase(ivalue);
+			V_human_partner.m_insert(ivalue,h);
+			break;
+		}
+		case t_sibling:
+		{
+			V_human_children.m_erase(ivalue);
+			V_human_sibling.m_insert(ivalue,h);
+			break;
+		}
+		case t_order:
+		{
+			V_human_children.m_erase(ivalue);
+			V_human_order.m_insert(ivalue,h);
+			break;
+		}
+		default:
+			break;
+		}
 	}
-	case t_grandchildren:
+	else
 	{
-		V_human_grandchildren.m_push_back(h);
-		break;
-	}
-	case t_grandparent:
-	{
-		V_human_grandparent.m_push_back(h);
-		break;
-	}
-	case t_parent:
-	{
-		V_human_parent.m_push_back(h);
-		break;
-	}
-	case t_partner:
-	{
-		V_human_partner.m_push_back(h);
-		break;
-	}
-	case t_sibling:
-	{
-		V_human_sibling.m_push_back(h);
-		break;
-	}
-	case t_order:
-	{
-		V_human_order.m_push_back(h);
-		break;
-	}
-	default:
-		break;
+		switch (data)
+		{
+		case t_children:
+		{
+			V_human_children.m_push_back(h);
+			break;
+		}
+		case t_grandchildren:
+		{
+			V_human_grandchildren.m_push_back(h);
+			break;
+		}
+		case t_grandparent:
+		{
+			V_human_grandparent.m_push_back(h);
+			break;
+		}
+		case t_parent:
+		{
+			V_human_parent.m_push_back(h);
+			break;
+		}
+		case t_partner:
+		{
+			V_human_partner.m_push_back(h);
+			break;
+		}
+		case t_sibling:
+		{
+			V_human_sibling.m_push_back(h);
+			break;
+		}
+		case t_order:
+		{
+			V_human_order.m_push_back(h);
+			break;
+		}
+		default:
+			break;
+		}
 	}
 }
-void C_tree::m_update_human(C_human &h, int &data, int ivalue) {
+void C_tree::m_update_human(C_human &h, int data, int ivalue) {
 
 	switch (data)
 	{
@@ -179,7 +232,7 @@ void C_tree::m_update_human(C_human &h, int &data, int ivalue) {
 		break;
 	}
 }
-void C_tree::m_delete_human(C_human &h, int &data, int ivalue) {
+void C_tree::m_delete_human(C_human &h, int data, int ivalue) {
 	switch (data)
 	{
 	case t_children:
@@ -221,7 +274,7 @@ void C_tree::m_delete_human(C_human &h, int &data, int ivalue) {
 		break;
 	}
 }
-void C_tree::m_delete_human(C_human &h, int &data) {
+void C_tree::m_delete_human(C_human &h, int data) {
 	switch (data)
 	{
 	case t_children:
@@ -269,7 +322,7 @@ void C_tree::m_add_id(const C_id &id) {
 C_id C_tree::m_get_id() {
 	return ID_tree;
 }
-C_human C_tree::m_get_human(int &data, int ivalue) {
+C_human C_tree::m_get_human(int data, int ivalue) {
 	switch (data)
 	{
 	case t_children:

@@ -160,10 +160,62 @@ C_element C_enginer::m_create_element(C_id id_finter) {
 	return element;
 }
 C_tree C_enginer::m_create_tree(C_id id_pointer) {
-	C_element element(m_create_element(id_pointer));
-	C_tree Tree(element);
+	C_tree Tree(m_create_element(id_pointer));
 	Tree.m_add_id(id_pointer);
-
-	//dodac dodawanie i wyszukiwanie humanow przez analize relacji z elementu!!
+	N_vektor <C_grandparents> V_grandparents = Tree.m_set_v_grandparents();
+	N_vektor <C_parent> V_parent = Tree.m_set_v_parent();
+	N_vektor <C_sibling> V_sibling = Tree.m_set_v_sibling();
+	N_vektor <C_partner> V_partner = Tree.m_set_v_partner();
+	N_vektor<C_children> V_children = Tree.m_set_v_children();
+	N_vektor<C_grandchildren> V_grandchildren = Tree.m_set_v_grandchildren();
+	N_vektor <C_order> V_order = Tree.m_set_v_order();
+	int i;
+	for (i = 0; i < V_grandparents.m_size(); i++)
+	{
+		if(i<=3)
+			Tree.m_add_human(m_create_human(V_grandparents[i].m_set_id()),t_grandparent,true,i);
+		else
+			Tree.m_add_human(m_create_human(V_grandparents[i].m_set_id()), t_grandparent, false, 0);
+	}
+	for (i = 0; i < V_parent.m_size(); i++)
+	{
+		if(i<=1)
+			Tree.m_add_human(m_create_human(V_parent[i].m_set_id()), t_parent, true, i);
+		else
+			Tree.m_add_human(m_create_human(V_parent[i].m_set_id()), t_parent, false, 0);
+	}
+	for (i = 0; i < V_sibling.m_size(); i++)
+	{
+		if (i <= 1)
+			Tree.m_add_human(m_create_human(V_sibling[i].m_set_id()), t_sibling, true, i);
+		else
+			Tree.m_add_human(m_create_human(V_sibling[i].m_set_id()), t_sibling, false, 0);
+	}
+	for (i = 0; i < V_partner.m_size(); i++)
+	{
+		if (i <= 1)
+			Tree.m_add_human(m_create_human(V_partner[i].m_set_id()), t_partner, true, i);
+		else
+			Tree.m_add_human(m_create_human(V_partner[i].m_set_id()), t_partner, false, 0);
+	}
+	for (i = 0; i < V_children.m_size(); i++)
+	{
+		if (i <= 3)
+			Tree.m_add_human(m_create_human(V_children[i].m_set_id()), t_children, true, i);
+		else
+			Tree.m_add_human(m_create_human(V_children[i].m_set_id()), t_children, false, 0);
+	}
+	for (i = 0; i < V_grandchildren.m_size(); i++)
+	{
+		if (i <= 3)
+			Tree.m_add_human(m_create_human(V_children[i].m_set_id()), t_grandchildren, true, i);
+		else
+			Tree.m_add_human(m_create_human(V_children[i].m_set_id()), t_grandchildren, false, 0);
+	}
+	for (i = 0; i < V_order.m_size(); i++)
+	{
+			Tree.m_add_human(m_create_human(V_order[i].m_set_id()), t_order, false, 0);
+	}
 	return Tree;
+	//teraz tylko przetestowac
 }

@@ -31,6 +31,7 @@ public:
 	virtual ~C_grandchildren();
 	virtual void m_get_id(C_id &id);
 	virtual C_id m_set_id();
+	C_id m_set_index_id();
 	virtual int m_set_variable();
 	virtual void m_get_complete_content(N_striing data);
 	virtual void m_get_complete_content(C_id index, C_id value);
