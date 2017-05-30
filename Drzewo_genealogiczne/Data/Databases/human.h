@@ -61,6 +61,8 @@ public:
 	void interf_mb(N_striing firstnamee, N_striing lastnamee, C_date &du, C_date ds = NULL, char poz = '*', char pion = '|');
 	void interf_mbd(N_striing firstname, N_striing lastname, C_date &du, C_date ds = NULL, char poz = '*', char pion = '|');
 	friend std::ostream& operator<<(std::ostream &is,const C_human &h);
+	N_striing m_short_interface_personaly();
+	N_striing m_short_interface_date();
 	C_human& m_clear();
 	C_human& m_clear_date();
 	C_human& m_clear_last_name();

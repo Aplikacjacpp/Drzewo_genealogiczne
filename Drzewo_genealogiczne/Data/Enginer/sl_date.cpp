@@ -107,10 +107,36 @@ void C_sl_date::m_get_new_date(C_id id,N_vektor<C_date> V_date) {
 	}
 	Gover.m_get_contens(data);
 	V_goverment_date.m_push_back(Gover);
+	if (m_what(Gover.m_set_value_id()))
+	{
+		int i;
+		if (V_goverment_date.m_size() == 0) {
+			V_goverment_date.m_push_back(Gover);
+			return;
+		}
+		for (i = 0; i < V_goverment_date.m_size(); i++)
+		{
+			if (Gover.m_set_value_id() < V_goverment_date[i].m_set_value_id()) {
+				V_goverment_date.m_insert(i, Gover);
+				return;
+			}
+		}
+		V_goverment_date.m_push_back(Gover);
+	}
 }
 C_goverment_date& C_sl_date::operator[](int i) {
 	return V_goverment_date[i];
 }
 C_goverment_date C_sl_date::m_set_gover_date(int i) {
 	return V_goverment_date[i];
+}
+bool C_sl_date::m_what(int value) {
+	int i;
+	for (i = 0; i < V_goverment_date.m_size(); i++) {
+		if (value == V_goverment_date[i].m_set_value_id())
+		{
+			return false;
+		}
+	}
+	return true;
 }

@@ -83,3 +83,7 @@ void C_order::m_get_atribut(N_striing atribut) {
 N_striing C_order::m_get_atribut() {
 	return satribut;
 }
+std::ostream& operator<<(std::ostream &is, const C_order &data) {
+		is << data.satribut;
+		return is;
+}

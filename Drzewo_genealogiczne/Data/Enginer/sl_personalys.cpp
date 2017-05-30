@@ -91,13 +91,39 @@ void C_sl_personalys::m_add_new_personaly(C_id id, C_first_name first, N_vektor<
 	data += gender.m_what_type();
 	data += gender.m_set_contens();
 	data += ">";
-
-//	std::cout << "test:\n" << data << "\n";
-	C_goverment_personaly Goverment;
-	Goverment.m_get_contens(data);
-	V_goverment_personaly.m_push_back(Goverment);
-//	std::cout <<"\n rozmiar vektora:"<< V_goverment_personaly.m_size() << "\n"<<V_goverment_personaly[0].m_set_contens()<<"\n";
+	C_goverment_personaly Gover;
+	Gover.m_get_contens(data);
+	if (m_what(Gover.m_set_value_id()))
+	{
+		int i;
+		if (V_goverment_personaly.m_size() == 0) {
+			V_goverment_personaly.m_push_back(Gover);
+			return;
+		}
+		for (i = 0; i < V_goverment_personaly.m_size(); i++)
+		{
+			if (Gover.m_set_value_id() < V_goverment_personaly[i].m_set_value_id()) {
+				V_goverment_personaly.m_insert(i, Gover);
+				return;
+			}
+		}
+		V_goverment_personaly.m_push_back(Gover);
+	}
+////	std::cout << "test:\n" << data << "\n";
+//	
+//	V_goverment_personaly.m_push_back(Goverment);
+////	std::cout <<"\n rozmiar vektora:"<< V_goverment_personaly.m_size() << "\n"<<V_goverment_personaly[0].m_set_contens()<<"\n";
 }
 C_goverment_personaly& C_sl_personalys::operator[](int i) {
 	return V_goverment_personaly[i];
+}
+bool C_sl_personalys::m_what(int value) {
+	int i;
+	for (i = 0; i < V_goverment_personaly.m_size(); i++) {
+		if (value == V_goverment_personaly[i].m_set_value_id())
+		{
+			return false;
+		}
+	}
+	return true;
 }

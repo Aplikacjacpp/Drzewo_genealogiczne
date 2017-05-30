@@ -159,3 +159,11 @@ C_element C_enginer::m_create_element(C_id id_finter) {
 	//std::cout << element.m_set_Human() << "test\n";
 	return element;
 }
+C_tree C_enginer::m_create_tree(C_id id_pointer) {
+	C_element element(m_create_element(id_pointer));
+	C_tree Tree(element);
+	Tree.m_add_id(id_pointer);
+
+	//dodac dodawanie i wyszukiwanie humanow przez analize relacji z elementu!!
+	return Tree;
+}

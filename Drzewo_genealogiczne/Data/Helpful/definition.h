@@ -62,4 +62,37 @@
 #define f_init_file "file"
 #define f_end_file "#@#@#@#@#@#@#@#@#@"
 #define k_atribut_order '/'
+//definicje from type relation
+#define w_children_boy "Syn"
+#define w_children_girl "Corka" //wstawic o z kreska
+#define w_grandchildren_boy "Wnok" //wstawic o z kreska
+#define w_grandchildren_girl "Wnoczka" //wstawic o z kreska
+#define w_grandparents_boy "Dziadek" 
+#define w_grandparents_girl "Babcia" 
+#define w_parent_boy "Ojciec"
+#define w_parent_girl "Matka"
+#define w_partner_boy "Maz" //polskie litery
+#define w_partner_girl "Zona"  //polskie litery
+#define w_sibling_boy "Brat"
+#define w_sibling_girl "Siostra"
+// parametry do interfejsu drzewa
+#define p_grandparent_1 1
+#define p_grandparent_2 2
+#define p_grandparent_3 4
+#define p_grandparent_4 8
+#define p_parent_1 1
+#define p_parent_2 2
+#define p_sibling_1 1
+#define p_sibling_2 2
+#define p_partner_1 1
+#define p_partner_2 2
+#define p_children_1 1
+#define p_children_2 2
+#define p_children_3 4
+#define p_children_4 8
+#define p_grandchildren_1 1
+#define p_grandchildren_2 2
+#define p_grandchildren_3 4
+#define p_grandchildren_4 8
+
 #endif // !DEFINITON_H

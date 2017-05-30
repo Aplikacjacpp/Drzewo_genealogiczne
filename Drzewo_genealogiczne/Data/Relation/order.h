@@ -37,6 +37,7 @@ public:
 	virtual void m_get_complete_content(C_id index, C_id value); //wstawia argumenty do danych prywatnych
 	void m_set_bSib(bool bSibm); //metoda dostêpu do zmiennej prywatnej bSib
 	N_striing m_get_content(); // wsylanie zawartosci id
+	friend std::ostream& operator<<(std::ostream &is, const C_order &data); //przesuniecie operatora przesuniecia bitowego na wyjscie
 	void m_get_atribut(N_striing atribut); //wstawianie atrybutu
 	N_striing m_get_atribut(); //zwraca wartosc atrybutu
 private:

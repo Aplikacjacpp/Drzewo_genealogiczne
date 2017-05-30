@@ -20,21 +20,31 @@ class C_tree :public C_element
 {
 public:
 	C_tree();
+	C_tree(const C_element &element);
 	C_tree(const C_human &human);
 	C_tree(const C_tree &tree);
 	C_tree& operator=(const C_tree &tree);
 	bool operator==(const C_tree &tree);
 	bool operator!=(const C_tree &tree);
-	void m_get_human(C_human& human);
-	void m_update_human(int value, C_human &human);
-	void m_delete_human(int value);
-	C_human m_set_human();
-	C_human m_set_human(int value);
-	C_human m_set_human_index();
-	//~C_tree();
+	void m_add_human(C_human &h, int &data);
+	void m_update_human(C_human &h, int &data, int ivalue);
+	void m_delete_human(C_human &h, int &data, int ivalue);
+	void m_delete_human(C_human &h, int &data);
+	void m_add_id(const C_id &id);
+	C_id m_get_id();
+	C_human m_get_human(int &data, int ivalue);
+	friend std::ostream& operator<<(std::ostream& is, const C_tree &tree);
+	C_human m_get_index_human();
 	virtual ~C_tree();
 private:
-		N_vektor<C_human> V_human;
+		N_vektor<C_human> V_human_grandparent;
+		N_vektor<C_human> V_human_grandchildren;
+		N_vektor<C_human> V_human_children;
+		N_vektor<C_human> V_human_parent;
+		N_vektor<C_human> V_human_sibling;
+		N_vektor<C_human> V_human_partner;
+		N_vektor<C_human> V_human_order;
+		C_id ID_tree;
 };
 #endif // !TREE_H
 

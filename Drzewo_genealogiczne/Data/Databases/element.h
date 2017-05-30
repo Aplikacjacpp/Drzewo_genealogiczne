@@ -91,8 +91,9 @@ public:
 	N_vektor <C_order> m_set_v_order();
 	//~C_element();
 	virtual ~C_element();
-private:
+protected:
 	C_human Human;
+private:
 	N_vektor<C_children> V_children;
 	N_vektor<C_parent> V_parent;
 	N_vektor<C_sibling> V_sibling;//trzeba przetestowac czy dziala, jak nie to cos wymysle!!
