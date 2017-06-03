@@ -47,7 +47,7 @@ N_striing C_goverment_personaly::m_is_there_contens(N_striing &Word) { //naprawi
 			value++; break;
 		case t_last_name:
 		//		std::cout << Word[i - 1] << " = " << Y << "\t" << Word[i] << " = " << X << "\n";
-			value++; break;
+			value++; break; 
 		case t_gender:
 	//			std::cout << Word[i - 1] << " = " << Y << "\t" << Word[i] << " = " << X << "\n";
 			value++; break;
