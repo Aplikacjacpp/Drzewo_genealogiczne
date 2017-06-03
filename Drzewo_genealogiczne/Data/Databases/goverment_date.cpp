@@ -31,25 +31,29 @@ void C_goverment_date::m_get_contens(N_striing &contens) {
 	i_value_id = m_id_value();
 }
 N_striing C_goverment_date::m_set_contens() { return this->s_goverment_data; }
-N_striing C_goverment_date::m_is_there_contens(N_striing &Word) {
+N_striing C_goverment_date::m_is_there_contens(N_striing &Word) {//naprawione!
 	int i,value=0;
 	int X;
 	for (i = 1; i < Word.m_size(); i++)
 	{
-		X = (int)Word[i] - 48 + 10 * ((int)Word[i - 1] - 48);
+		X = ((int)Word[i]-48)+ (int)Word[i - 1];
 		switch (X)
 		{
 		case t_day:
+		//	std::cout << Word[i - 1] << " = " << Y << "\t" << Word[i] << " = " << X << "\n";
 			value++; break;
 		case t_month:
+		//	std::cout << Word[i - 1] << " = " << Y << "\t" << Word[i] << " = " << X << "\n";
 			value++; break;
 		case t_year:
+		//	std::cout << Word[i - 1] << " = " << Y << "\t" << Word[i] << " = " << X << "\n";
 			value++; break;
 		default:
 			break;
 		}
 	}
-	if (value >= 0) return Word; //problem
+	if (value >= 3) return Word;
+	std::cout << "Problem z plikiem data.save!\n";
 	return "";
 }
 int C_goverment_date::m_id_value() {
