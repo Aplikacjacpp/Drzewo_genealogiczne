@@ -394,14 +394,16 @@ void C_aplication_txt::EditTree()
 								{
 								case 0:
 								{
+									bool b_what;
 									N_striing data;
-									N_striing MenuSub_add_first_name[2] = { "First name:", "Return" };
-									N_striing SubSub_add_first_name[2] = {data ,"[Return From Add Person]" };
 									Sleep(1500);    // sleepy musza byc, by uniknac "podwojnego" ENTERA!!!
 													// tutaj powinna byc metoda dolaczenia nowej osoby
 									int i;
 									while (true)
 									{
+										b_what = false;
+										N_striing MenuSub_add_first_name[2] = { "First name:", "Return" };
+										N_striing SubSub_add_first_name[2] = { data ,"[Return From Add Person]" };
 										system("cls");
 										CreateLogo();
 										SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
@@ -441,11 +443,12 @@ void C_aplication_txt::EditTree()
 										{
 											if (GetAsyncKeyState(VK_SPACE)) MainMenu();
 											if (GetAsyncKeyState(VK_UP) != 0)   // strzalka do gory przesuwa wyzej po menu
+												//naprawione:)
 											{
 												ptr -= 1;
 												if (ptr == -1)      // gdy wykracza wraca na koniec
 												{
-													ptr = 2;
+													ptr = 1;
 												}
 												break;
 											}
@@ -458,16 +461,312 @@ void C_aplication_txt::EditTree()
 												}
 												break;
 											}
-											else if (GetAsyncKeyState(VK_RETURN) != 0)
+											else
 											{
+											//	int yyy = getchar();
+											//	data.m_push_back('a');
+											//	std::cout << "klawisz!" << yyy << "\n";
+												switch (getchar()) //male litery standartowe
+												{
+												case 97:{
+													data.m_push_back((char)97);
+												//	std::cout << "klawisz!\n";
+												//	b_what = true;
+													break;
+												}
+												case 98: {
+													data.m_push_back((char)98);
+													break;
+												}
+												case 99: {
+													data.m_push_back((char)99);
+													break;
+												}
+												case 100: {
+													data.m_push_back((char)100);
+													break;
+												}
+												case 101: {
+													data.m_push_back((char)101);
+													break;
+												}
+												case 102: {
+													data.m_push_back((char)102);
+													break;
+												}
+												case 103: {
+													data.m_push_back((char)103);
+													break;
+												}
+												case 104: {
+													data.m_push_back((char)104);
+													break;
+												}
+												case 105: {
+													data.m_push_back((char)105);
+													break;
+												}
+												case 106: {
+													data.m_push_back((char)106);
+													break;
+												}
+												case 107: {
+													data.m_push_back((char)107);
+													break;
+												}
+												case 108: {
+													data.m_push_back((char)108);
+													break;
+												}
+												case 109: {
+													data.m_push_back((char)109);
+													break;
+												}
+												case 110: {
+													data.m_push_back((char)110);
+													break;
+												}
+												case 111: {
+													data.m_push_back((char)111);
+													break;
+												}
+												case 112: {
+													data.m_push_back((char)112);
+													break;
+												}
+												case 113: {
+													data.m_push_back((char)113);
+													break;
+												}
+												case 114: {
+													data.m_push_back((char)114);
+													break;
+												}
+												case 115: {
+													data.m_push_back((char)115);
+													break;
+												}
+												case 116: {
+													data.m_push_back((char)116);
+													break;
+												}
+												case 117: {
+													data.m_push_back((char)117);
+													break;
+												}
+												case 118: {
+													data.m_push_back((char)118);
+													break;
+												}
+												case 119: {
+													data.m_push_back((char)119);
+													break;
+												}
+												case 120: {
+													data.m_push_back((char)120);
+													break;
+												}
+												case 121: {
+													data.m_push_back((char)121);
+													break;
+												}
+												case 122: {
+													data.m_push_back((char)122);
+													break;
+												}
+												case 0xA0:
+												case 0xA1:
+												{
+													switch (WH_KEYBOARD)
+													{
+													case 0x41: {
+														break;
+													}
+													case 0x42: {
+														break;
+													}
+													case 0x43: {
+														break;
+													}
+													case 0x44: {
+														break;
+													}
+													case 0x45: {
+														break;
+													}
+													case 0x46: {
+														break;
+													}
+													case 0x47: {
+														break;
+													}
+													case 0x48: {
+														break;
+													}
+													case 0x49: {
+														break;
+													}
+													case 0x4A: {
+														break;
+													}
+													case 0x4B: {
+														break;
+													}
+													case 0x4C: {
+														break;
+													}
+													case 0x4D: {
+														break;
+													}
+													case 0x4E: {
+														break;
+													}
+													case 0x4F: {
+														break;
+													}
+													case 0x50: {
+														break;
+													}
+													case 0x51: {
+														break;
+													}
+													case 0x52: {
+														break;
+													}
+													case 0x53: {
+														break;
+													}
+													case 0x54: {
+														break;
+													}
+													case 0x55: {
+														break;
+													}
+													case 0x56: {
+														break;
+													}
+													case 0x57: {
+														break;
+													}
+													case 0x58: {
+														break;
+													}
+													case 0x59: {
+														break;
+													}
+													case 0x5A: {
+														break;
+													}
+													default:
+														break;
+													}
+												}//koniec switcha z duzymi literami
+												case 0xA2:
+												case 0xA3:
+												{
+													switch (WH_KEYBOARD)
+													{
+													case 0x41:
+													{
+														break;
+													}
+													case 0x43:
+													{
+														break;
+													}
+													case 0x45:
+													{
+														break;
+													}
+													case 0x4C:
+													{
+														break;
+													}
+													case 0x4E:
+													{
+														break;
+													}
+													case 0x4F:
+													{
+														break;
+													}
+													case 0x53:
+													{
+														break;
+													}
+													case 0x58: //litera zi z kreska
+													{
+														break;
+													}
+													case 0x5A:
+													{
+														break;
+													}
+													case 0xA0:
+													case 0xA1:
+													{
+														switch (WH_KEYBOARD)
+														{
+														case 0x41:
+														{
+															break;
+														}
+														case 0x43:
+														{
+															break;
+														}
+														case 0x45:
+														{
+															break;
+														}
+														case 0x4C:
+														{
+															break;
+														}
+														case 0x4E:
+														{
+															break;
+														}
+														case 0x4F:
+														{
+															break;
+														}
+														case 0x53:
+														{
+															break;
+														}
+														case 0x58: //litera zi z kreska
+														{
+															break;
+														}
+														case 0x5A:
+														{
+															break;
+														}
+														default:
+															break;
+														}
+													}//koniec duzych liter polskich
+													default:
+														break;
+													}
+												}//koniec znakow z jezyka polskiego
+												case VK_RETURN: {
+													C_first_name first(data);
+													human.m_get_first_name(first);
+													break;
+												}
+												case VK_BACK: {
+													data.m_pop_back();
+													break;
+												}
+											}
+											//if(b_what)
+											break;
 												//Mateusz dokoncz!!!
 												//pobieraj litery i wstawiaj do N_striing data!!
 												//nastepnie modul skopiuje i wstawie do innych danych :)
-												if (GetAsyncKeyState(VK_RETURN) != 0)
-												{
-													C_first_name first(data);
-													human.m_get_first_name(first);
-												}
+											
 											}
 											Sleep(200);     // szybkosc poruszania sie po menu
 										}
