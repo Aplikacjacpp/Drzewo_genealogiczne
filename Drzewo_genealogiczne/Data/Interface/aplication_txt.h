@@ -43,5 +43,6 @@ public:
 	void DisplayTree();
 	void SearchTree();
 	void CreateLogo();
+	void CreateHuman();
 };
 #endif // !APLICATION_TXT_H

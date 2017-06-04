@@ -2,6 +2,7 @@
 // #include "Data\Enginer\enginer.h"     nie widzi tego!
 #include <cstdlib>
 #include <Windows.h>
+#include <conio.h>
 
 C_aplication_txt::C_aplication_txt() {}
 C_aplication_txt::C_aplication_txt(const C_aplication_txt & aplication_txt) {}
@@ -60,6 +61,22 @@ void C_aplication_txt::CreateLogo()       // metoda tworzy logo (atrape "drzewka
 	//SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12);
 	cout << "\n\n" << "\t\t\t" << "DRZEWO GENEALOGICZNE - FAMILY TREE\n\n";
+}
+
+void C_aplication_txt::CreateHuman()
+{
+
+	std::cout << "Podaj imie: ";
+	//std::cin >>
+	std::cout << "\nPodaj nazwisko: ";
+	//std::cin >>
+	std::cout << "\nPodaj plec: ";
+	//std::cin >>
+	std::cout << "\nPodaj date ur: ";
+	//std::cin >>
+	//getch();
+
+
 }
 
 void C_aplication_txt::MainMenu()
@@ -319,14 +336,51 @@ void C_aplication_txt::EditTree()
 			}
 			else if (GetAsyncKeyState(VK_RETURN) != 0)
 			{
+				//int cos;
+				//std::cin >> cos;
+				//switch (cos)		// wpisanie na sztywno tez nic nie daje!!!
 				switch (ptr)        // po wybraniu opcji w case'ach beda instrukcje do wykonania
 				{
 				case 0:
 				{
-					C_human human; //id dodaje sie dopiero w silniku
-					N_striing MenuSub_add_person[5] = { "1. Add a first name", "2. Add a surname", "3. Add a gender", "4. Add a date", "5. Return" };
-					N_striing SubSub_add_person[5] = { "[You can add a first name to your person]", "[You can add a surname to your person]", "[You can add a gender to your person]",
-						"[You can add a date to your person]", "[Return From Add Person]" };
+					CreateLogo();
+					system("cls");
+					CreateHuman();
+
+				} break;
+
+
+				case 1:
+				{
+
+				} break;
+
+				case 2:
+				{
+
+				} break;
+
+				case 3:
+				{
+
+				} break;
+
+				case 4:
+				{
+					exit(1);
+				} break;
+				}
+				break;
+			}
+		}
+
+
+		/*
+		
+		C_human human; //id dodaje sie dopiero w silniku
+					//N_striing MenuSub_add_person[5] = { "1. Add a first name", "2. Add a surname", "3. Add a gender", "4. Add a date", "5. Return" };
+					//N_striing SubSub_add_person[5] = { "[You can add a first name to your person]", "[You can add a surname to your person]", "[You can add a gender to your person]",
+					//	"[You can add a date to your person]", "[Return From Add Person]" };
 					Sleep(1500);    // sleepy musza byc, by uniknac "podwojnego" ENTERA!!!
 					// tutaj powinna byc metoda dolaczenia nowej osoby
 					int i;
@@ -465,6 +519,9 @@ void C_aplication_txt::EditTree()
 												//nastepnie modul skopiuje i wstawie do innych danych :)
 												if (GetAsyncKeyState(VK_RETURN) != 0)
 												{
+													
+													//std::cin >> first(data);		z cin nie dziala!!!
+													
 													C_first_name first(data);
 													human.m_get_first_name(first);
 												}
@@ -488,7 +545,7 @@ void C_aplication_txt::EditTree()
 									for (i = 0; i < V_date.m_size(); i++)
 										human.m_get_date(V_date[i]);
 									m_new_human(human); //ta metoda prosto z silnika :d
-
+								
 								} break;
 
 
@@ -518,32 +575,17 @@ void C_aplication_txt::EditTree()
 						Sleep(200);     // szybkosc poruszania sie po menu
 					}
 					Sleep(200);     // szybkosc poruszania sie po menu
-				} break;
+		
+		
+		
+		*/
 
 
-				case 1:
-				{
 
-				} break;
 
-				case 2:
-				{
 
-				} break;
 
-				case 3:
-				{
 
-				} break;
-
-				case 4:
-				{
-					exit(1);
-				} break;
-				}
-				break;
-			}
-		}
 
 		Sleep(150);     // szybkosc poruszania sie po menu
  }
