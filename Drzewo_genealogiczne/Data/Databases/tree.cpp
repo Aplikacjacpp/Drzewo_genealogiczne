@@ -364,10 +364,31 @@ std::ostream& operator<<(std::ostream& is, const C_tree &tree) { //glowny interf
 	C_tree T = const_cast<C_tree&> (tree);
 	int i;
 	int value;
+	value = 0;
 		for (i = 0; i < T.V_human_grandparent.m_size(); i++)
 		{
 			is << T.V_human_grandparent[i].m_short_interface_personaly()+"\t";
 			is<<T.V_human_grandparent[i].m_short_interface_date()+"\t";
+			if (T.V_human_grandparent[i].m_short_interface_personaly().m_size() > 1 ||
+				T.V_human_grandparent[i].m_short_interface_date().m_size() > 1) {
+				switch (i)
+				{
+				case 1:
+					value += p_grandparent_1;
+					break;
+				case 2:
+					value += p_grandparent_2;
+					break;
+				case 3:
+					value += p_grandparent_3;
+					break;
+				case 4:
+					value += p_grandparent_4;
+					break;
+				default:
+					break;
+				}
+			}
 		}
 		switch (value)
 		{
@@ -435,11 +456,25 @@ std::ostream& operator<<(std::ostream& is, const C_tree &tree) { //glowny interf
 			break;
 		}
 		//rysowanie lini
-
+		value = 0;
 		for (i = 0; i < T.V_human_parent.m_size(); i++)
 		{
 			is<<T.V_human_parent[i].m_short_interface_personaly()+"\t";
 			is<<T.V_human_parent[i].m_short_interface_date()+"\t";
+			if (T.V_human_parent[i].m_short_interface_personaly().m_size() > 1 ||
+				T.V_human_parent[i].m_short_interface_date().m_size() > 1) {
+				switch (i)
+				{
+				case 1:
+					value += p_parent_1;
+					break;
+				case 2:
+					value += p_parent_2;
+					break;
+				default:
+					break;
+				}
+			}
 		}
 		switch (value)
 		{
@@ -459,10 +494,25 @@ std::ostream& operator<<(std::ostream& is, const C_tree &tree) { //glowny interf
 			break;
 		}
 		//rysowanie lini
+		value = 0;
 		for (i = 0; i < T.V_human_sibling.m_size(); i++)
 		{
 			is<<T.V_human_sibling[i].m_short_interface_personaly()+"\t";
 			is<<T.V_human_sibling[i].m_short_interface_date()+"\t";
+			if (T.V_human_sibling[i].m_short_interface_personaly().m_size() > 1 ||
+				T.V_human_sibling[i].m_short_interface_date().m_size() > 1) {
+				switch (i)
+				{
+				case 1:
+					value += p_sibling_1;
+					break;
+				case 2:
+					value += p_sibling_2;
+					break;
+				default:
+					break;
+				}
+			}
 		}
 		switch (value)
 		{
@@ -484,6 +534,23 @@ std::ostream& operator<<(std::ostream& is, const C_tree &tree) { //glowny interf
 		//rysowanie lini
 		is << T.Human.m_short_interface_personaly()+"\t";
 		is<<T.Human.m_short_interface_date()+"\t";
+		value = 0;
+		for (i = 0; i < T.V_human_partner.m_size(); i++) {
+			if (T.V_human_partner[i].m_short_interface_personaly().m_size() > 1 ||
+				T.V_human_partner[i].m_short_interface_date().m_size() > 1) {
+				switch (i)
+				{
+				case 1:
+					value += p_partner_1;
+					break;
+				case 2:
+					value += p_partner_2;
+					break;
+				default:
+					break;
+				}
+			}
+		}
 		switch (value)
 		{
 		case 1:
@@ -505,6 +572,29 @@ std::ostream& operator<<(std::ostream& is, const C_tree &tree) { //glowny interf
 		{
 			is<<T.V_human_partner[i].m_short_interface_personaly()+"\t";
 			is<<T.V_human_partner[i].m_short_interface_date()+"\t";
+		}
+		value = 0;
+		for (i = 0; i < T.V_human_children.m_size(); i++) {
+			if (T.V_human_children[i].m_short_interface_personaly().m_size() > 1 ||
+				T.V_human_children[i].m_short_interface_date().m_size() > 1) {
+				switch (i)
+				{
+				case 1:
+					value += p_children_1;
+					break;
+				case 2:
+					value += p_children_2;
+					break;
+				case 3:
+					value += p_children_3;
+					break;
+				case 4:
+					value += p_children_4;
+					break;
+				default:
+					break;
+				}
+			}
 		}
 		switch (value)
 		{
@@ -544,6 +634,29 @@ std::ostream& operator<<(std::ostream& is, const C_tree &tree) { //glowny interf
 		{
 			is<<T.V_human_children[i].m_short_interface_personaly()+"\t";
 			is<<T.V_human_children[i].m_short_interface_date()+"\t";
+		}
+		value = 0;
+		for (i = 0; i < T.V_human_grandchildren.m_size(); i++) {
+			if (T.V_human_grandchildren[i].m_short_interface_personaly().m_size() > 1 ||
+				T.V_human_grandchildren[i].m_short_interface_date().m_size() > 1) {
+				switch (i)
+				{
+				case 1:
+					value += p_grandchildren_1;
+					break;
+				case 2:
+					value += p_grandchildren_2;
+					break;
+				case 3:
+					value += p_grandchildren_3;
+					break;
+				case 4:
+					value += p_grandchildren_4;
+					break;
+				default:
+					break;
+				}
+			}
 		}
 		switch (value)
 		{

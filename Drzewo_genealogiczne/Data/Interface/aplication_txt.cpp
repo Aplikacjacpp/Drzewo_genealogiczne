@@ -323,26 +323,201 @@ void C_aplication_txt::EditTree()
 				{
 				case 0:
 				{
+					C_human human; //id dodaje sie dopiero w silniku
+					N_striing MenuSub_add_person[5] = { "1. Add a first name", "2. Add a surname", "3. Add a gender", "4. Add a date", "5. Return" };
+					N_striing SubSub_add_person[5] = { "[You can add a first name to your person]", "[You can add a surname to your person]", "[You can add a gender to your person]",
+						"[You can add a date to your person]", "[Return From Add Person]" };
 					Sleep(1500);    // sleepy musza byc, by uniknac "podwojnego" ENTERA!!!
 					// tutaj powinna byc metoda dolaczenia nowej osoby
 					int i;
-					C_human human; //id dodaje sie dopiero w silniku
-					C_first_name first;
-					C_gender gender;
-					N_vektor<C_last_name> V_last;
-					N_vektor<C_date> V_date;
-					C_last_name last;
-					C_date date;
-					//dalsza instrukcja do wstawiania odpowiednich wartosci
-					//gdy poda wartosci trzeba je zaladowac do obiektu human i przeslac jako argument ponizszej metody!
-					human.m_get_first_name(first);
-					human.m_get_gender(gender);
-					for(i=0; i<V_last.m_size();i++)
-						human.m_get_last_name(V_last[i].m_set_contens());
-					for (i = 0; i < V_date.m_size(); i++)
-						human.m_get_date(V_date[i]);
-					m_new_human(human); //ta metoda prosto z silnika :d
+					while (true)
+					{
+						system("cls");
+						CreateLogo();
+						SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
 
+						for (int i = 0; i < 5; ++i)
+						{
+							if (i == ptr)       // podswietla dana opcje na niebiesko, dopisuje strzalke
+							{
+								SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
+								cout << "\t\t\t\t" << "--> " << MenuSub_add_person[i] << " \n\t\t " << SubSub_add_person[i] << endl;
+
+
+							}
+							else                // niewybrane opcje sa biale
+							{
+								SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
+								cout << "\t\t\t\t" << MenuSub_add_person[i] << endl;
+							}
+						}
+						SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
+
+						cout << "\n\n\n\n Use the arrows to navigate the menu ";
+						SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
+						cout << char(24) << " " << char(25);        // kody ASCII strzalek
+						SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
+						cout << ". Confirm your choice with ";
+						SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
+						cout << "ENTER.";
+
+						SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
+						cout << "\n Click ";
+						SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
+						cout << "SPACEBAR";
+						SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
+						cout << " if you want back to main menu.";
+						while (true)
+						{
+							if (GetAsyncKeyState(VK_SPACE)) MainMenu();
+							if (GetAsyncKeyState(VK_UP) != 0)   // strzalka do gory przesuwa wyzej po menu
+							{
+								ptr -= 1;
+								if (ptr == -1)      // gdy wykracza wraca na koniec
+								{
+									ptr = 4;
+								}
+								break;
+							}
+							else if (GetAsyncKeyState(VK_DOWN) != 0)    // strzalka na dol przesuwa nizej po menu
+							{
+								ptr += 1;
+								if (ptr == 5)       // gdy wykracza poza menu, znow wraca na poczatek
+								{
+									ptr = 0;
+								}
+								break;
+							}
+							else if (GetAsyncKeyState(VK_RETURN) != 0)
+							{
+								switch (ptr)        // po wybraniu opcji w case'ach beda instrukcje do wykonania
+								{
+								case 0:
+								{
+									N_striing data;
+									N_striing MenuSub_add_first_name[2] = { "First name:", "Return" };
+									N_striing SubSub_add_first_name[2] = {data ,"[Return From Add Person]" };
+									Sleep(1500);    // sleepy musza byc, by uniknac "podwojnego" ENTERA!!!
+													// tutaj powinna byc metoda dolaczenia nowej osoby
+									int i;
+									while (true)
+									{
+										system("cls");
+										CreateLogo();
+										SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
+
+										for (int i = 0; i < 2; ++i)
+										{
+											if (i == ptr)       // podswietla dana opcje na niebiesko, dopisuje strzalke
+											{
+												SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
+												cout << "\t\t\t\t" << "--> " << MenuSub_add_first_name[i] << " \n\t\t " << SubSub_add_first_name[i] << endl;
+
+
+											}
+											else                // niewybrane opcje sa biale
+											{
+												SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
+												cout << "\t\t\t\t" << MenuSub_add_first_name[i] << endl;
+											}
+										}
+										SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
+
+										cout << "\n\n\n\n Use the arrows to navigate the menu ";
+										SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
+										cout << char(24) << " " << char(25);        // kody ASCII strzalek
+										SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
+										cout << ". Confirm your choice with ";
+										SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
+										cout << "ENTER.";
+
+										SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
+										cout << "\n Click ";
+										SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
+										cout << "SPACEBAR";
+										SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
+										cout << " if you want back to main menu.";
+										while (true)
+										{
+											if (GetAsyncKeyState(VK_SPACE)) MainMenu();
+											if (GetAsyncKeyState(VK_UP) != 0)   // strzalka do gory przesuwa wyzej po menu
+											{
+												ptr -= 1;
+												if (ptr == -1)      // gdy wykracza wraca na koniec
+												{
+													ptr = 2;
+												}
+												break;
+											}
+											else if (GetAsyncKeyState(VK_DOWN) != 0)    // strzalka na dol przesuwa nizej po menu
+											{
+												ptr += 1;
+												if (ptr == 2)       // gdy wykracza poza menu, znow wraca na poczatek
+												{
+													ptr = 0;
+												}
+												break;
+											}
+											else if (GetAsyncKeyState(VK_RETURN) != 0)
+											{
+												//Mateusz dokoncz!!!
+												//pobieraj litery i wstawiaj do N_striing data!!
+												//nastepnie modul skopiuje i wstawie do innych danych :)
+												if (GetAsyncKeyState(VK_RETURN) != 0)
+												{
+													C_first_name first(data);
+													human.m_get_first_name(first);
+												}
+											}
+											Sleep(200);     // szybkosc poruszania sie po menu
+										}
+										Sleep(200);     // szybkosc poruszania sie po menu
+									}
+								
+									C_gender gender;
+									N_vektor<C_last_name> V_last;
+									N_vektor<C_date> V_date;
+									C_last_name last;
+									C_date date;
+									//dalsza instrukcja do wstawiania odpowiednich wartosci
+									//gdy poda wartosci trzeba je zaladowac do obiektu human i przeslac jako argument ponizszej metody!
+								
+									human.m_get_gender(gender);
+									for (i = 0; i < V_last.m_size(); i++)
+										human.m_get_last_name(V_last[i].m_set_contens());
+									for (i = 0; i < V_date.m_size(); i++)
+										human.m_get_date(V_date[i]);
+									m_new_human(human); //ta metoda prosto z silnika :d
+
+								} break;
+
+
+								case 1:
+								{
+
+								} break;
+
+								case 2:
+								{
+
+								} break;
+
+								case 3:
+								{
+
+								} break;
+
+								case 4:
+								{
+									exit(1);
+								} break;
+								}
+								break;
+							}
+						}
+						Sleep(200);     // szybkosc poruszania sie po menu
+					}
+					Sleep(200);     // szybkosc poruszania sie po menu
 				} break;
 
 
@@ -371,7 +546,7 @@ void C_aplication_txt::EditTree()
 		}
 
 		Sleep(150);     // szybkosc poruszania sie po menu
-	}
+ }
 }
 
 
