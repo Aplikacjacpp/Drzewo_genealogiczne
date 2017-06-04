@@ -394,6 +394,7 @@ void C_aplication_txt::EditTree()
 								{
 								case 0:
 								{
+									WH_KEYBOARD_LL;//hak do klawiatury
 									bool b_what;
 									N_striing data;
 									Sleep(1500);    // sleepy musza byc, by uniknac "podwojnego" ENTERA!!!
@@ -466,7 +467,7 @@ void C_aplication_txt::EditTree()
 											//	int yyy = getchar();
 											//	data.m_push_back('a');
 											//	std::cout << "klawisz!" << yyy << "\n";
-												switch (getchar()) //male litery standartowe
+												switch (m_get_key()) //male litery standartowe
 												{
 												case 97:{
 													data.m_push_back((char)97);
@@ -1244,4 +1245,16 @@ void C_aplication_txt::ImportTree()
 
 		Sleep(150);     // szybkosc poruszania sie po menu
 	}
+}
+char& operator >> (std::iostream& is, char &c) {
+	c = NULL;
+	is >> c;
+	if (c != NULL)
+		return c;
+}
+int C_aplication_txt::m_get_key() {
+	char buf[1];
+	buf[0]= NULL;
+	scanf_s("%c", buf);
+	return (int)buf[0];
 }
