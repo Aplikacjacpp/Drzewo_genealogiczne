@@ -31,6 +31,7 @@ public:
 	bool operator!=(const C_order &sib); //operator porownania !=
 	virtual void m_get_id(C_id &id); //wstawia id do ID_value
 	virtual C_id m_set_id(); //zwraca ID_value
+	C_id m_set_index_id();
 	virtual int m_set_variable(); //zwraca wartosc w t_order
 	virtual ~C_order(); //wirtualny destruktor
 	virtual void m_get_complete_content(N_striing data); //analizuje i podstawia wyluskane dane pod dane prywatne

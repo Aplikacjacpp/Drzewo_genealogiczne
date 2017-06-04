@@ -22,7 +22,8 @@ bool C_children::operator!=(const C_children &children) {
 }
 C_children::~C_children() {}
 void C_children::m_get_id(C_id &id) { ID_value = id; }
-C_id C_children::m_set_id() { return ID_index; }
+C_id C_children::m_set_index_id() { return ID_index; }
+C_id C_children::m_set_id() { return ID_value; }
 int C_children::m_set_variable() { return t_children; }
 void C_children::m_get_complete_content(C_id index, C_id value) {
 	ID_index = index;

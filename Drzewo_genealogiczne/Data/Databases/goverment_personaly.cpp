@@ -33,27 +33,30 @@ void C_goverment_personaly::m_get_contens(N_striing &contens) {
 //	std::cout <<"\n id:"<< i_value_id<<"\n"<<s_goverment_personaly<<"\n";
 }
 N_striing C_goverment_personaly::m_set_contens(void) { return s_goverment_personaly; }
-N_striing C_goverment_personaly::m_is_there_contens(N_striing &Word) {
+N_striing C_goverment_personaly::m_is_there_contens(N_striing &Word) { //naprawione!
 	int i, value = 0;
 	int X;
 	for (i = 1; i < Word.m_size(); i++)
 	{
-		X = (int)Word[i] - 48 + 10 * ((int)Word[i - 1] - 48);
+		X = ((int)Word[i]-48)+ (int)Word[i - 1];
+	//	std::cout << Word[i - 1] << " = " << Y << "\t" << Word[i] << " = " << X << "\n";
 		switch (X)
 		{
 		case t_first_name:
+	//		std::cout << Word[i - 1] << " = " << Y << "\t" << Word[i] << " = " << X << "\n";
 			value++; break;
 		case t_last_name:
-			value++; break;
+		//		std::cout << Word[i - 1] << " = " << Y << "\t" << Word[i] << " = " << X << "\n";
+			value++; break; 
 		case t_gender:
-			value++; break;
-		case t_id_data:
+	//			std::cout << Word[i - 1] << " = " << Y << "\t" << Word[i] << " = " << X << "\n";
 			value++; break;
 		default:
 			break;
 		}
 	}
-	if (value >= 0) return Word; //problem!!
+	if (value >= 3) return Word; 
+	std::cout << "Problem z plikiem personaly.save!";
 	return "";
 }
 int C_goverment_personaly::m_id_value() {

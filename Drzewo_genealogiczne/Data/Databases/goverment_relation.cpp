@@ -27,28 +27,36 @@ void C_goverment_relation::m_get_contens(N_striing &contens) {
 	i_value_id=m_id_value(); 
 }
 N_striing C_goverment_relation::m_set_contens() { return this->s_goverment_relation; }
-N_striing C_goverment_relation::m_is_there_contens(N_striing &Word) {
-	int i, value = 0,X;
+N_striing C_goverment_relation::m_is_there_contens(N_striing &Word) { //naprawione !
+	int i, value = 0, X;// , Y;
 	for (i = 0; i < Word.m_size(); i++)
 	{
-		X = (int)Word[i] - 48 + 10 * ((int)Word[i - 1] - 48);
+		X = ((int)Word[i] - 48)+(int)Word[i - 1];
+	//	std::cout << Word[i - 1] << " = " << Y << "\t" << Word[i] << " = " << X << "\n";
+		//X = X + Y;
 		switch (X)
 		{
 		case t_children:
+			//std::cout << Word[i - 1] << " = " << Y << "\t" << Word[i] << " = " << X << "\n";
 			value++; break;
 		case t_grandchildren:
+			//std::cout << Word[i - 1] << " = " << Y << "\t" << Word[i] << " = " << X << "\n";
 			value++; break;
 		case t_grandparent:
+			//std::cout << Word[i - 1] << " = " << Y << "\t" << Word[i] << " = " << X << "\n";
 			value++; break;
 		case t_parent:
+			//std::cout << Word[i - 1] << " = " << Y << "\t" << Word[i] << " = " << X << "\n";
 			value++; break;
 		case t_sibling:
+			//std::cout << Word[i - 1] << " = " << Y << "\t" << Word[i] << " = " << X << "\n";
 			value++; break;
 		default:
 			break;
 		}
 	}
-	if (value >= 0) return Word;
+	if (value >= 1) return Word;
+	std::cout << "Problem z plikiem relation.save!\n";
 	return "";
 }
 int C_goverment_relation::m_id_value() {

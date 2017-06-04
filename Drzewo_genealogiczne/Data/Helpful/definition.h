@@ -36,22 +36,22 @@
 #define n_gender_date   "~1"
 #define n_gender_relation "~2"
 //definition from type - typ
-#define t_first_name   84
-#define t_last_name   86 //
-#define t_gender   81
-#define t_parent   162
-#define t_day   116
-#define t_month   117
-#define t_year   118
+#define t_first_name   36
+#define t_last_name   38 //
+#define t_gender   33
+#define t_parent   114
+#define t_day   68
+#define t_month   69
+#define t_year   70
 #define t_id_personaly   148
 #define t_id_data   149
 #define t_id_relation   157	//
-#define t_children   163
-#define t_sibling   164
-#define t_grandparent   165
-#define t_grandchildren   166
-#define t_partner 167
-#define t_order   168
+#define t_children   115
+#define t_sibling   116
+#define t_grandparent   117
+#define t_grandchildren   118
+#define t_partner 119
+#define t_order   120
 #define t_gender_personaly   174
 #define t_gender_date   175
 #define t_gender_relation   183 // 
