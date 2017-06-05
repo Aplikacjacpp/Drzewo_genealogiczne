@@ -35,7 +35,7 @@ public:
 	bool operator!=(const C_aplication_txt& aplication_txt);
 	virtual ~C_aplication_txt();
 	void SetWindow(int Width, int Height);
-	friend char& operator>>(std::iostream& is, char &c);
+//	friend char& operator>>(std::iostream& is, char &c);
 	void MainMenu();
 	void Sub1();
 	void SubMenu2();
@@ -44,6 +44,6 @@ public:
 	void DisplayTree();
 	void SearchTree();
 	void CreateLogo();
-	int m_get_key();
+	char m_get_key();
 };
 #endif // !APLICATION_TXT_H
