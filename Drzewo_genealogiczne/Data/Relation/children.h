@@ -19,7 +19,7 @@
 #ifndef CHILDREN_H
 #define CHILDREN_H
 #include "relation.h"
-class C_children :public C_relation
+class C_children :public C_relation 
 {
 public:
 	C_children();
