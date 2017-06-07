@@ -1,4 +1,4 @@
-#include "aplication_txt.h"
+ï»¿#include "aplication_txt.h"
 // #include "Data\Enginer\enginer.h"     nie widzi tego!
 #include <cstdlib>
 #include <Windows.h>
@@ -258,7 +258,7 @@ void C_aplication_txt::EditTree()
 	N_striing MenuSub1[5] = { "1. Add a person", "2. Edit a person", "3. Add a relation", "4. Edit a relation", "5. Exit" };
 	N_striing SubSub1[5] = { "[You can add a person to your tree]", "[You can edit a person]", "[You can add a relation to a person]",
 		"[You can edit a relation to a person]", "[Exit From Program]" };
-	int ptr = 0, p = 0;
+	int ptr = 0, p = 0,pTr=0;
 
 	while (true)
 	{
@@ -325,12 +325,12 @@ void C_aplication_txt::EditTree()
 				switch (ptr)        // po wybraniu opcji w case'ach beda instrukcje do wykonania
 				{
 				case 0: {
-				
+
 					N_striing MenuSub_add_person[5] = { "1. Add a first name", "2. Add a surname", "3. Add a gender", "4. Add a date", "5. Return" };
 					N_striing SubSub_add_person[5] = { "[You can add a first name to your person]", "[You can add a surname to your person]", "[You can add a gender to your person]",
 						"[You can add a date to your person]", "[Return From Add Person]" };
 					Sleep(1500);    // sleepy musza byc, by uniknac "podwojnego" ENTERA!!!
-					// tutaj powinna byc metoda dolaczenia nowej osoby
+									// tutaj powinna byc metoda dolaczenia nowej osoby
 					int i;
 					while (true)
 					{
@@ -392,7 +392,7 @@ void C_aplication_txt::EditTree()
 							}
 							else
 							{
-								switch (ptr)        // po wybraniu opcji w case'ach beda instrukcje do wykonania
+								switch (pTr)        // po wybraniu opcji w case'ach beda instrukcje do wykonania
 								{
 								case 0: {
 
@@ -414,7 +414,7 @@ void C_aplication_txt::EditTree()
 
 										for (int i = 0; i < 2; ++i)
 										{
-											if (i == ptr)       // podswietla dana opcje na niebiesko, dopisuje strzalke
+											if (i == pTr)       // podswietla dana opcje na niebiesko, dopisuje strzalke
 											{
 												SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
 												cout << "\t\t\t\t" << "--> " << MenuSub_add_first_name[i] << " \n\t\t " << SubSub_add_first_name[i] << endl;
@@ -447,19 +447,19 @@ void C_aplication_txt::EditTree()
 										{
 											if (GetAsyncKeyState(VK_ESCAPE)) MainMenu();
 											if (GetAsyncKeyState(VK_UP) != 0)   // strzalka do gory przesuwa wyzej po menu
-												//naprawione:)
+																				//naprawione:)
 											{
-												ptr -= 1;
-												if (ptr == -1)      // gdy wykracza wraca na koniec
+												pTr -= 1;
+												if (pTr == -1)      // gdy wykracza wraca na koniec
 												{
-													ptr = 1;
+													pTr = 1;
 												}
 												break;
 											}
 											else if (GetAsyncKeyState(VK_DOWN) != 0)    // strzalka na dol przesuwa nizej po menu
 											{
-												ptr += 1;
-												if (ptr == 2)       // gdy wykracza poza menu, znow wraca na poczatek
+												pTr += 1;
+												if (pTr == 2)       // gdy wykracza poza menu, znow wraca na poczatek
 												{
 													ptr = 0;
 												}
@@ -509,12 +509,10 @@ void C_aplication_txt::EditTree()
 
 										for (int i = 0; i < 2; ++i)
 										{
-											if (i == ptr)       // podswietla dana opcje na niebiesko, dopisuje strzalke
+											if (i == pTr)       // podswietla dana opcje na niebiesko, dopisuje strzalke
 											{
 												SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
 												cout << "\t\t\t\t" << "--> " << MenuSub_add_last_name[i] << " \n\t\t " << SubSub_add_last_name[i] << endl;
-
-
 											}
 											else                // niewybrane opcje sa biale
 											{
@@ -544,19 +542,19 @@ void C_aplication_txt::EditTree()
 											if (GetAsyncKeyState(VK_UP) != 0)   // strzalka do gory przesuwa wyzej po menu
 																				//naprawione:)
 											{
-												ptr -= 1;
-												if (ptr == -1)      // gdy wykracza wraca na koniec
+												pTr -= 1;
+												if (pTr == -1)      // gdy wykracza wraca na koniec
 												{
-													ptr = 1;
+													pTr = 1;
 												}
 												break;
 											}
 											else if (GetAsyncKeyState(VK_DOWN) != 0)    // strzalka na dol przesuwa nizej po menu
 											{
-												ptr += 1;
-												if (ptr == 2)       // gdy wykracza poza menu, znow wraca na poczatek
+												pTr += 1;
+												if (pTr == 2)       // gdy wykracza poza menu, znow wraca na poczatek
 												{
-													ptr = 0;
+													pTr = 0;
 												}
 												break;
 											}
@@ -584,6 +582,11 @@ void C_aplication_txt::EditTree()
 										}
 									}
 								}
+								case 2: {
+									break; }//Dodawanie pluci
+								case 3: {
+									break; //Dodawanie daty
+										} 
 								}
 							}
 						}
@@ -617,26 +620,26 @@ void C_aplication_txt::EditTree()
 	}
 }
 /*	case 1:
-				{
+{
 
-				} break;
+} break;
 
-				case 2:
-				{
+case 2:
+{
 
-				} break;
+} break;
 
-				case 3:
-				{
+case 3:
+{
 
-				} break;
+} break;
 
-				case 4:
-				{
-					exit(1);
-				} break;
-				default:
-					break;*/
+case 4:
+{
+exit(1);
+} break;
+default:
+break;*/
 
 
 
@@ -810,7 +813,7 @@ void C_aplication_txt::DisplayTree()
 				case 0:
 				{
 					Sleep(1500);    // sleepy musza byc, by uniknac "podwojnego" ENTERA!!!
-					//SubMenu3();
+									//SubMenu3();
 				} break;
 
 				case 1:
@@ -915,7 +918,7 @@ void C_aplication_txt::SubMenu2()
 					DisplayTree();
 					//ImportTree();
 					//system("dir /s H:\TREE_INOP");
-					//system("tree /f H:\TREE_INOP\\Drzewo_genealogiczne\\Drzewo_genealogiczne\\Data");	//w CodeBlocks dzia³a, tu nie...
+					//system("tree /f H:\TREE_INOP\\Drzewo_genealogiczne\\Drzewo_genealogiczne\\Data");	//w CodeBlocks dziaï¿½a, tu nie...
 					//system("PAUSE");
 
 				} break;
@@ -1021,7 +1024,7 @@ void C_aplication_txt::ImportTree()
 				case 0:
 				{
 					Sleep(1500);    // sleepy musza byc, by uniknac "podwojnego" ENTERA!!!
-					//SubMenu3();
+									//SubMenu3();
 				} break;
 
 				case 1:
@@ -1036,27 +1039,27 @@ void C_aplication_txt::ImportTree()
 		Sleep(150);     // szybkosc poruszania sie po menu
 	}
 }/*
-char& operator >> (std::iostream& is, char &c) {
-	c = NULL;
-	is >> c;
-	if (c != NULL)
-		return c;
-}
-int C_aplication_txt::m_get_key() {
-	char buf[1];
-	buf[0]= NULL;
-	scanf_s("%c", buf);
-	return (int)buf[0];
-}*/
+ char& operator >> (std::iostream& is, char &c) {
+ c = NULL;
+ is >> c;
+ if (c != NULL)
+ return c;
+ }
+ int C_aplication_txt::m_get_key() {
+ char buf[1];
+ buf[0]= NULL;
+ scanf_s("%c", buf);
+ return (int)buf[0];
+ }*/
 char C_aplication_txt::m_get_key() {
 	char C;
 	int Tab_key[26] = { 0x41,0x42,0x43,0x44,0x45,0x46,0x47,0x48,0x49,0x4A,0x4B,0x4C,0x4D,0x4E,0x4F,
-		0x50,0x51,0x52,0x53,0x54,0x55,0x56,0x57,0x58,0x59,0x5A};
+		0x50,0x51,0x52,0x53,0x54,0x55,0x56,0x57,0x58,0x59,0x5A };
 	int Tab_key_number[2][10] = { 0x30,0x31,0x32,0x33,0x34,0x35,0x36,0x37,0x38,0x39 };
 	char Tab_letter[2][26];
 	char Tab_number[10] = { '0','1','2','3','4','5','6','7','8','9' };
 	char Tab_polish[9] = { (char)185,(char)230,(char)234,(char)179,(char)241,(char)243,(char)156,(char)159,(char)191 }; //Polskie litery male
-	char Tab_Polish[9] = { (char)165,(char)198,(char)202,(char)163,(char)209,(char)211,(char)140,(char)143,(char)175}; //Polskie lityry duze
+	char Tab_Polish[9] = { (char)165,(char)198,(char)202,(char)163,(char)209,(char)211,(char)140,(char)143,(char)175 }; //Polskie lityry duze
 	int Tab_npolish[9] = { 0x41,0x43,0x45,0x4C,0x4E,0x4F,0x53,0x58,0x5A };
 	int i;
 	for (i = 0; i < 26; i++)
@@ -1073,17 +1076,17 @@ char C_aplication_txt::m_get_key() {
 				Sleep(100);
 				return C;
 			}
-		} 
+		}
 		for (i = 0; i < 9; i++)
 		{
 			if ((GetAsyncKeyState(Tab_npolish[i]) != 0) && (GetAsyncKeyState(VK_SHIFT) == 0) &&
-				(GetAsyncKeyState(VK_CAPITAL) == 0)&&(GetAsyncKeyState(VK_MENU)!=0)) {
+				(GetAsyncKeyState(VK_CAPITAL) == 0) && (GetAsyncKeyState(VK_MENU) != 0)) {
 				C = Tab_polish[i];
 				Sleep(100);
 				return C;
 			}
-			if ((GetAsyncKeyState(Tab_npolish[i]) != 0) && (GetAsyncKeyState(VK_SHIFT) != 0) && (GetAsyncKeyState(VK_MENU) != 0)||
-				(GetAsyncKeyState(VK_CAPITAL) != 0)&& (GetAsyncKeyState(Tab_npolish[i]) != 0) && (GetAsyncKeyState(VK_MENU) != 0)) {
+			if ((GetAsyncKeyState(Tab_npolish[i]) != 0) && (GetAsyncKeyState(VK_SHIFT) != 0) && (GetAsyncKeyState(VK_MENU) != 0) ||
+				(GetAsyncKeyState(VK_CAPITAL) != 0) && (GetAsyncKeyState(Tab_npolish[i]) != 0) && (GetAsyncKeyState(VK_MENU) != 0)) {
 				C = Tab_Polish[i];
 				Sleep(100);
 				return C;
@@ -1091,13 +1094,13 @@ char C_aplication_txt::m_get_key() {
 		}
 		for (i = 0; i < 26; i++)
 		{
-			if ((GetAsyncKeyState(Tab_key[i]) != 0)&& (GetAsyncKeyState(VK_SHIFT) == 0)&&(GetAsyncKeyState(VK_CAPITAL)==0)&&(GetAsyncKeyState(VK_MENU) == 0))   // strzalka do gory przesuwa wyzej po menu
+			if ((GetAsyncKeyState(Tab_key[i]) != 0) && (GetAsyncKeyState(VK_SHIFT) == 0) && (GetAsyncKeyState(VK_CAPITAL) == 0) && (GetAsyncKeyState(VK_MENU) == 0))   // strzalka do gory przesuwa wyzej po menu
 			{
 				C = (Tab_letter[0][i]);
 				Sleep(100);
 				return C;
 			}
-			else if (((GetAsyncKeyState(VK_SHIFT) != 0) && (GetAsyncKeyState(Tab_key[i]) != 0)) && (GetAsyncKeyState(VK_MENU) == 0) ||( (GetAsyncKeyState(VK_CAPITAL) != 0) && (GetAsyncKeyState(VK_CAPITAL) != 0) && (GetAsyncKeyState(VK_MENU) == 0)))
+			else if (((GetAsyncKeyState(VK_SHIFT) != 0) && (GetAsyncKeyState(Tab_key[i]) != 0)) && (GetAsyncKeyState(VK_MENU) == 0) || ((GetAsyncKeyState(VK_CAPITAL) != 0) && (GetAsyncKeyState(VK_CAPITAL) != 0) && (GetAsyncKeyState(VK_MENU) == 0)))
 			{
 				C = (Tab_letter[1][i]);
 				Sleep(100);
@@ -1108,7 +1111,7 @@ char C_aplication_txt::m_get_key() {
 				Sleep(100);
 				return ' ';
 			}
-			else if ((GetAsyncKeyState(VK_RETURN)!=0)||(GetAsyncKeyState(VK_BACK) != 0) || (GetAsyncKeyState(VK_DOWN) != 0) || (GetAsyncKeyState(VK_UP) != 0)|| (GetAsyncKeyState(VK_ESCAPE) != 0)) {
+			else if ((GetAsyncKeyState(VK_RETURN) != 0) || (GetAsyncKeyState(VK_BACK) != 0) || (GetAsyncKeyState(VK_DOWN) != 0) || (GetAsyncKeyState(VK_UP) != 0) || (GetAsyncKeyState(VK_ESCAPE) != 0)) {
 				return '\0';
 			}
 		}
