@@ -404,7 +404,7 @@ void C_aplication_txt::EditTree()
 									Sleep(1500);    // sleepy musza byc, by uniknac "podwojnego" ENTERA!!!
 													// tutaj powinna byc metoda dolaczenia nowej osoby
 									int i;
-									while (true)
+									while (true) 
 									{
 										//	b_what = false;
 										N_striing MenuSub_add_first_name[2] = { "First name:", "Return" };
