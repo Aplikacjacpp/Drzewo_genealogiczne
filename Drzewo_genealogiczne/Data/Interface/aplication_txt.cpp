@@ -1,4 +1,4 @@
-#include "aplication_txt.h"
+ï»¿#include "aplication_txt.h"
 // #include "Data\Enginer\enginer.h"     nie widzi tego!
 #include <cstdlib>
 #include <Windows.h>
@@ -400,7 +400,7 @@ void C_aplication_txt::EditTree()
 									Sleep(1500);    // sleepy musza byc, by uniknac "podwojnego" ENTERA!!!
 													// tutaj powinna byc metoda dolaczenia nowej osoby
 									int i;
-									while (true)
+									while (true) 
 									{
 										//	b_what = false;
 										N_striing MenuSub_add_first_name[2] = { "First name:", "Return" };
@@ -1148,7 +1148,7 @@ void C_aplication_txt::SubMenu2()
 					DisplayTree();
 					//ImportTree();
 					//system("dir /s H:\TREE_INOP");
-					//system("tree /f H:\TREE_INOP\\Drzewo_genealogiczne\\Drzewo_genealogiczne\\Data");	//w CodeBlocks dzia³a, tu nie...
+					//system("tree /f H:\TREE_INOP\\Drzewo_genealogiczne\\Drzewo_genealogiczne\\Data");	//w CodeBlocks dziaï¿½a, tu nie...
 					//system("PAUSE");
 
 				} break;
